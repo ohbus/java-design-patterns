@@ -22,9 +22,9 @@
  */
 package com.iluwatar.roleobject;
 
-import org.junit.Test;
-
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+
+import org.junit.Test;
 
 public class ApplicationRoleObjectTest {
 

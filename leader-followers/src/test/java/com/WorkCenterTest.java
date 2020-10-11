@@ -35,7 +35,7 @@ import org.junit.Test;
 public class WorkCenterTest {
 
   @Test
-  public void testCreateWorkers() {
+  void testCreateWorkers() {
     var taskSet = new TaskSet();
     var taskHandler = new TaskHandler();
     var workCenter = new WorkCenter();
@@ -45,14 +45,14 @@ public class WorkCenterTest {
   }
 
   @Test
-  public void testNullLeader() {
+  void testNullLeader() {
     var workCenter = new WorkCenter();
     workCenter.promoteLeader();
     Assert.assertNull(workCenter.getLeader());
   }
 
   @Test
-  public void testPromoteLeader() {
+  void testPromoteLeader() {
     var taskSet = new TaskSet();
     var taskHandler = new TaskHandler();
     var workCenter = new WorkCenter();

@@ -26,7 +26,6 @@ package com.iluwatar.tolerantreader;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 
-import java.io.File;
 import org.junit.Rule;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.migrationsupport.rules.EnableRuleMigrationSupport;
@@ -60,7 +59,7 @@ public class RainbowFishSerializerTest {
    * Verify if a fish, written as version 1 can be read back as version 1
    */
   @Test
-  public void testWriteV1ReadV1() throws Exception {
+  void testWriteV1ReadV1() throws Exception {
     final var outputFile = this.testFolder.newFile();
     RainbowFishSerializer.writeV1(V1, outputFile.getPath());
 
@@ -77,7 +76,7 @@ public class RainbowFishSerializerTest {
    * Verify if a fish, written as version 2 can be read back as version 1
    */
   @Test
-  public void testWriteV2ReadV1() throws Exception {
+  void testWriteV2ReadV1() throws Exception {
     final var outputFile = this.testFolder.newFile();
     RainbowFishSerializer.writeV2(V2, outputFile.getPath());
 

@@ -53,7 +53,7 @@ public class EventManager implements ThreadCompleteListener {
    */
   public EventManager() {
     rand = new Random(1);
-    eventPool = new ConcurrentHashMap<Integer, Event>(MAX_RUNNING_EVENTS);
+    eventPool = new ConcurrentHashMap<>(MAX_RUNNING_EVENTS);
 
   }
 

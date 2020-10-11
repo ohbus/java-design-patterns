@@ -21,10 +21,10 @@
  * THE SOFTWARE.
  */
 
-import org.junit.jupiter.api.Test;
-
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.MatcherAssert.assertThat;
+
+import org.junit.jupiter.api.Test;
 
 /**
  * Guard test
@@ -32,7 +32,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class GuardTest {
 
   @Test
-  public void testGuard() {
+  void testGuard() {
     var guard = new Guard();
     assertThat(guard, instanceOf(Permission.class));
   }

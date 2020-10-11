@@ -23,27 +23,27 @@
 
 package com.iluwatar.updatemethod;
 
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class SkeletonTest {
+class SkeletonTest {
 
   private Skeleton skeleton;
 
-  @Before
+  @BeforeEach
   public void setup() {
     skeleton = new Skeleton(1);
   }
 
-  @After
+  @AfterEach
   public void tearDown() {
     skeleton = null;
   }
 
   @Test
-  public void testUpdateForPatrollingLeft() {
+  void testUpdateForPatrollingLeft() {
     skeleton.patrollingLeft = true;
     skeleton.setPosition(50);
     skeleton.update();
@@ -51,7 +51,7 @@ public class SkeletonTest {
   }
 
   @Test
-  public void testUpdateForPatrollingRight() {
+  void testUpdateForPatrollingRight() {
     skeleton.patrollingLeft = false;
     skeleton.setPosition(50);
     skeleton.update();
@@ -59,7 +59,7 @@ public class SkeletonTest {
   }
 
   @Test
-  public void testUpdateForReverseDirectionFromLeftToRight() {
+  void testUpdateForReverseDirectionFromLeftToRight() {
     skeleton.patrollingLeft = true;
     skeleton.setPosition(1);
     skeleton.update();
@@ -68,7 +68,7 @@ public class SkeletonTest {
   }
 
   @Test
-  public void testUpdateForReverseDirectionFromRightToLeft() {
+  void testUpdateForReverseDirectionFromRightToLeft() {
     skeleton.patrollingLeft = false;
     skeleton.setPosition(99);
     skeleton.update();

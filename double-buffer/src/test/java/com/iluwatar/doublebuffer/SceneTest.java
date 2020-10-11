@@ -33,7 +33,7 @@ import org.junit.Test;
 public class SceneTest {
 
   @Test
-  public void testGetBuffer() {
+  void testGetBuffer() {
     try {
       var scene = new Scene();
       var field1 = Scene.class.getDeclaredField("current");
@@ -53,7 +53,7 @@ public class SceneTest {
   }
 
   @Test
-  public void testDraw() {
+  void testDraw() {
     try {
       var scene = new Scene();
       var field1 = Scene.class.getDeclaredField("current");

@@ -23,9 +23,9 @@
 
 package com.iluwatar.subclasssandbox;
 
-import org.junit.Test;
-
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+
+import org.junit.Test;
 
 /**
  * App unit tests.

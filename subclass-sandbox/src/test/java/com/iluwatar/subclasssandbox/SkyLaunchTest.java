@@ -23,11 +23,11 @@
 
 package com.iluwatar.subclasssandbox;
 
+import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOutNormalized;
+
 import com.github.stefanbirkner.systemlambda.Statement;
 import org.junit.Assert;
-import org.junit.Test;
-
-import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOutNormalized;
+import org.junit.jupiter.api.Test;
 
 /**
  * SkyLaunch unit tests.
@@ -35,7 +35,7 @@ import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOutNor
 public class SkyLaunchTest {
 
   @Test
-  public void testMove() throws Exception {
+  void testMove() throws Exception {
     var skyLaunch = new SkyLaunch();
     var outputLog = getLogContent(() -> skyLaunch.move(1.0, 1.0, 1.0));
     var expectedLog = "Move to ( 1.0, 1.0, 1.0 )";
@@ -43,7 +43,7 @@ public class SkyLaunchTest {
   }
 
   @Test
-  public void testPlaySound() throws Exception {
+  void testPlaySound() throws Exception {
     var skyLaunch = new SkyLaunch();
     var outputLog = getLogContent(() -> skyLaunch.playSound("SOUND_NAME", 1));
     var expectedLog = "Play SOUND_NAME with volumn 1";
@@ -51,19 +51,19 @@ public class SkyLaunchTest {
   }
 
   @Test
-  public void testSpawnParticles() throws Exception {
+  void testSpawnParticles() throws Exception {
     var skyLaunch = new SkyLaunch();
     var outputLog = getLogContent(
-            () -> skyLaunch.spawnParticles("PARTICLE_TYPE", 100));
+        () -> skyLaunch.spawnParticles("PARTICLE_TYPE", 100));
     var expectedLog = "Spawn 100 particle with type PARTICLE_TYPE";
     Assert.assertEquals(outputLog, expectedLog);
   }
 
   @Test
-  public void testActivate() throws Exception {
+  void testActivate() throws Exception {
     var skyLaunch = new SkyLaunch();
     var logs = tapSystemOutNormalized(skyLaunch::activate)
-            .split("\n");
+        .split("\n");
     final var expectedSize = 3;
     final var log1 = getLogContent(logs[0]);
     final var expectedLog1 = "Move to ( 0.0, 0.0, 20.0 )";

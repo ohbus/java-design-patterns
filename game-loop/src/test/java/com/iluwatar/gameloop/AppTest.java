@@ -27,13 +27,15 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
+import org.junit.Test;
+
 /**
  * App unit test class.
  */
 public class AppTest {
 
   @Test
-  public void shouldExecuteApplicationWithoutException() {
+  void shouldExecuteApplicationWithoutException() {
     assertDoesNotThrow(() -> App.main(new String[]{}));
   }
 

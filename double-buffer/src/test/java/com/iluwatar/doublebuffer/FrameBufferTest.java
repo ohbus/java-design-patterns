@@ -33,7 +33,7 @@ import org.junit.Test;
 public class FrameBufferTest {
 
   @Test
-  public void testClearAll() {
+  void testClearAll() {
     try {
       var field = FrameBuffer.class.getDeclaredField("pixels");
       var pixels = new Pixel[FrameBuffer.HEIGHT * FrameBuffer.WIDTH];
@@ -50,7 +50,7 @@ public class FrameBufferTest {
   }
 
   @Test
-  public void testClear() {
+  void testClear() {
     try {
       var field = FrameBuffer.class.getDeclaredField("pixels");
       var pixels = new Pixel[FrameBuffer.HEIGHT * FrameBuffer.WIDTH];
@@ -67,14 +67,14 @@ public class FrameBufferTest {
   }
 
   @Test
-  public void testDraw() {
+  void testDraw() {
     var frameBuffer = new FrameBuffer();
     frameBuffer.draw(0, 0);
     Assert.assertEquals(Pixel.BLACK, frameBuffer.getPixels()[0]);
   }
 
   @Test
-  public void testGetPixels() {
+  void testGetPixels() {
     try {
       var field = FrameBuffer.class.getDeclaredField("pixels");
       var pixels = new Pixel[FrameBuffer.HEIGHT * FrameBuffer.WIDTH];

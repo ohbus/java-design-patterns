@@ -33,20 +33,20 @@ import org.junit.Test;
  */
 public class TaskSetTest {
 
-    @Test
-    public void testAddTask() throws InterruptedException {
-        var taskSet = new TaskSet();
-        taskSet.addTask(new Task(10));
-        Assert.assertTrue(taskSet.getSize() == 1);
-    }
+  @Test
+  void testAddTask() throws InterruptedException {
+    var taskSet = new TaskSet();
+    taskSet.addTask(new Task(10));
+    Assert.assertTrue(taskSet.getSize() == 1);
+  }
 
-    @Test
-    public void testGetTask() throws InterruptedException {
-        var taskSet = new TaskSet();
-        taskSet.addTask(new Task(100));
-        Task task = taskSet.getTask();
-        Assert.assertTrue(task.getTime() == 100);
-        Assert.assertTrue(taskSet.getSize() == 0);
-    }
+  @Test
+  void testGetTask() throws InterruptedException {
+    var taskSet = new TaskSet();
+    taskSet.addTask(new Task(100));
+    Task task = taskSet.getTask();
+    Assert.assertTrue(task.getTime() == 100);
+    Assert.assertTrue(taskSet.getSize() == 0);
+  }
 
 }
