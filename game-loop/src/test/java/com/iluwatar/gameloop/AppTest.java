@@ -22,9 +22,6 @@
  */
 
 package com.iluwatar.gameloop;
-
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 import org.junit.Test;

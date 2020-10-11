@@ -26,6 +26,9 @@ package com.iluwatar.datatransfer.customer;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+
 /**
  * {@link CustomerDto} is a data transfer object POJO. Instead of sending individual information to
  * client We can send related information together in POJO.
