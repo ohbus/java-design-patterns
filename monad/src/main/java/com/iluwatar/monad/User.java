@@ -23,9 +23,7 @@
 
 package com.iluwatar.monad;
 
-/**
- * User Definition.
- */
+/** User Definition. */
 public class User {
 
   private final String name;
@@ -36,9 +34,9 @@ public class User {
   /**
    * Constructor.
    *
-   * @param name  - name
-   * @param age   - age
-   * @param sex   - sex
+   * @param name - name
+   * @param age - age
+   * @param sex - sex
    * @param email - email address
    */
   public User(String name, int age, Sex sex, String email) {

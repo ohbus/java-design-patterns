@@ -77,11 +77,11 @@ public class ProducerTest {
     } catch (IllegalStateException e) {
       assertNotNull(e);
       assertNotNull(e.getMessage());
-      assertEquals("Producer Hello! was stopped and fail to deliver requested message [producer].",
+      assertEquals(
+          "Producer Hello! was stopped and fail to deliver requested message [producer].",
           e.getMessage());
     }
 
     verifyNoMoreInteractions(publishPoint);
   }
-
 }

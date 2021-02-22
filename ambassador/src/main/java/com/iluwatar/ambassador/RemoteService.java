@@ -29,9 +29,7 @@ import com.iluwatar.ambassador.util.RandomProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * A remote legacy application represented by a Singleton implementation.
- */
+/** A remote legacy application represented by a Singleton implementation. */
 public class RemoteService implements RemoteServiceInterface {
   private static final int THRESHOLD = 200;
   private static final Logger LOGGER = LoggerFactory.getLogger(RemoteService.class);
@@ -49,9 +47,7 @@ public class RemoteService implements RemoteServiceInterface {
     this(Math::random);
   }
 
-  /**
-   * This constructor is used for testing purposes only.
-   */
+  /** This constructor is used for testing purposes only. */
   RemoteService(RandomProvider randomProvider) {
     this.randomProvider = randomProvider;
   }
@@ -74,7 +70,8 @@ public class RemoteService implements RemoteServiceInterface {
     } catch (InterruptedException e) {
       LOGGER.error("Thread sleep state interrupted", e);
     }
-    return waitTime <= THRESHOLD ? value * 10
-            : RemoteServiceStatus.FAILURE.getRemoteServiceStatusValue();
+    return waitTime <= THRESHOLD
+        ? value * 10
+        : RemoteServiceStatus.FAILURE.getRemoteServiceStatusValue();
   }
 }

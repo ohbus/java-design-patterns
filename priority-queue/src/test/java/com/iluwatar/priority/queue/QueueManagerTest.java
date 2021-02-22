@@ -27,9 +27,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * Check queue manager
- */
+/** Check queue manager */
 public class QueueManagerTest {
 
   @Test

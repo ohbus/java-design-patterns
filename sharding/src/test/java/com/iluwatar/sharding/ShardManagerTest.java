@@ -29,25 +29,19 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * Unit tests for ShardManager class.
- */
+/** Unit tests for ShardManager class. */
 public class ShardManagerTest {
 
   private ShardManager shardManager;
 
-  /**
-   * Initialize shardManager instance.
-   */
+  /** Initialize shardManager instance. */
   @Before
   public void setup() {
     shardManager = new TestShardManager();
   }
 
   @After
-  public void tearDown() {
-
-  }
+  public void tearDown() {}
 
   @Test
   public void testAddNewShard() {

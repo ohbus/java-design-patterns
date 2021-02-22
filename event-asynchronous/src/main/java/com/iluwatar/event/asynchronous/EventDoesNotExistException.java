@@ -23,9 +23,7 @@
 
 package com.iluwatar.event.asynchronous;
 
-/**
- * Custom Exception Class for Non Existent Event.
- */
+/** Custom Exception Class for Non Existent Event. */
 public class EventDoesNotExistException extends Exception {
 
   private static final long serialVersionUID = -3398463738273811509L;

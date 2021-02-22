@@ -23,9 +23,7 @@
 
 package com.iluwatar.interpreter;
 
-/**
- * MultiplyExpression.
- */
+/** MultiplyExpression. */
 public class MultiplyExpression extends Expression {
 
   private final Expression leftExpression;
@@ -45,5 +43,4 @@ public class MultiplyExpression extends Expression {
   public String toString() {
     return "*";
   }
-
 }

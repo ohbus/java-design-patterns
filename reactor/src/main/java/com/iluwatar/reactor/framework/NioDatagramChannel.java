@@ -33,9 +33,7 @@ import java.nio.channels.SelectionKey;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * A wrapper over {@link DatagramChannel} which can read and write data on a DatagramChannel.
- */
+/** A wrapper over {@link DatagramChannel} which can read and write data on a DatagramChannel. */
 public class NioDatagramChannel extends AbstractNioChannel {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(NioDatagramChannel.class);
@@ -49,7 +47,7 @@ public class NioDatagramChannel extends AbstractNioChannel {
    * <p>Note the constructor does not bind the socket, {@link #bind()} method should be called for
    * binding the socket.
    *
-   * @param port    the port to be bound to listen for incoming datagram requests.
+   * @param port the port to be bound to listen for incoming datagram requests.
    * @param handler the handler to be used for handling incoming requests on this channel.
    * @throws IOException if any I/O error occurs.
    */
@@ -129,9 +127,7 @@ public class NioDatagramChannel extends AbstractNioChannel {
     super.write(data, key);
   }
 
-  /**
-   * Container of data used for {@link NioDatagramChannel} to communicate with remote peer.
-   */
+  /** Container of data used for {@link NioDatagramChannel} to communicate with remote peer. */
   public static class DatagramPacket {
     private SocketAddress sender;
     private final ByteBuffer data;

@@ -37,8 +37,8 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 /**
  * Date: 12/14/15 - 11:48 AM
- * <p>
- * Test Case for Expressions
+ *
+ * <p>Test Case for Expressions
  *
  * @param <E> Type of Expression
  * @author Jeroen Meulemeester
@@ -56,19 +56,15 @@ public abstract class ExpressionTest<E extends Expression> {
     final var testData = new ArrayList<Arguments>();
     for (var i = -10; i < 10; i++) {
       for (var j = -10; j < 10; j++) {
-        testData.add(Arguments.of(
-            new NumberExpression(i),
-            new NumberExpression(j),
-            resultCalc.applyAsInt(i, j)
-        ));
+        testData.add(
+            Arguments.of(
+                new NumberExpression(i), new NumberExpression(j), resultCalc.applyAsInt(i, j)));
       }
     }
     return testData.stream();
   }
 
-  /**
-   * The expected {@link E#toString()} response
-   */
+  /** The expected {@link E#toString()} response */
   private final String expectedToString;
 
   /**
@@ -80,11 +76,11 @@ public abstract class ExpressionTest<E extends Expression> {
    * Create a new test instance with the given parameters and expected results
    *
    * @param expectedToString The expected {@link E#toString()} response
-   * @param factory          Factory, used to create a new test object instance
+   * @param factory Factory, used to create a new test object instance
    */
-  ExpressionTest(final String expectedToString,
-                 final BiFunction<NumberExpression, NumberExpression, E> factory
-  ) {
+  ExpressionTest(
+      final String expectedToString,
+      final BiFunction<NumberExpression, NumberExpression, E> factory) {
     this.expectedToString = expectedToString;
     this.factory = factory;
   }
@@ -96,9 +92,7 @@ public abstract class ExpressionTest<E extends Expression> {
    */
   public abstract Stream<Arguments> expressionProvider();
 
-  /**
-   * Verify if the expression calculates the correct result when calling {@link E#interpret()}
-   */
+  /** Verify if the expression calculates the correct result when calling {@link E#interpret()} */
   @ParameterizedTest
   @MethodSource("expressionProvider")
   public void testInterpret(NumberExpression first, NumberExpression second, int result) {
@@ -107,9 +101,7 @@ public abstract class ExpressionTest<E extends Expression> {
     assertEquals(result, expression.interpret());
   }
 
-  /**
-   * Verify if the expression has the expected {@link E#toString()} value
-   */
+  /** Verify if the expression has the expected {@link E#toString()} value */
   @ParameterizedTest
   @MethodSource("expressionProvider")
   public void testToString(NumberExpression first, NumberExpression second) {

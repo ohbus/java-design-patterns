@@ -49,7 +49,12 @@ public class InsufficientFunds implements ReceiptViewModel {
 
   @Override
   public void show() {
-    LOGGER.info("Insufficient funds: " + amount + " of user: " + userName
-        + " for buying item: " + itemName);
+    LOGGER.info(
+        "Insufficient funds: "
+            + amount
+            + " of user: "
+            + userName
+            + " for buying item: "
+            + itemName);
   }
 }

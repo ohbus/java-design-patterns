@@ -60,5 +60,4 @@ public class SimpleWizardTest {
     assertEquals("SimpleWizard smoking OldTobyTobacco", appender.getLastMessage());
     assertEquals(1, appender.getLogSize());
   }
-
 }

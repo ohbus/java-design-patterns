@@ -23,9 +23,7 @@
 
 package com.iluwatar.business.delegate;
 
-/**
- * Class for performing service lookups.
- */
+/** Class for performing service lookups. */
 public class BusinessLookup {
 
   private EjbService ejbService;

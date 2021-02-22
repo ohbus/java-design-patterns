@@ -33,9 +33,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
-/**
- * Unit tests for LambdaInfoApiHandler
- */
+/** Unit tests for LambdaInfoApiHandler */
 @RunWith(MockitoJUnitRunner.class)
 public class LambdaInfoApiHandlerTest {
 

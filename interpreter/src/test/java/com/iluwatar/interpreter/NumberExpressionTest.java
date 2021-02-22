@@ -47,9 +47,7 @@ public class NumberExpressionTest extends ExpressionTest<NumberExpression> {
     return prepareParameters((f, s) -> f);
   }
 
-  /**
-   * Create a new test instance using the given test parameters and expected result
-   */
+  /** Create a new test instance using the given test parameters and expected result */
   public NumberExpressionTest() {
     super("number", (f, s) -> f);
   }
@@ -65,5 +63,4 @@ public class NumberExpressionTest extends ExpressionTest<NumberExpression> {
     final var numberExpression = new NumberExpression(testStringValue);
     assertEquals(expectedValue, numberExpression.interpret());
   }
-
 }

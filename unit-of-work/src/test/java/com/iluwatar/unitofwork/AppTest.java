@@ -23,17 +23,15 @@
 
 package com.iluwatar.unitofwork;
 
-import org.junit.Test;
-
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
-/**
- * AppTest
- */
+import org.junit.Test;
+
+/** AppTest */
 public class AppTest {
 
   @Test
   public void shouldExecuteWithoutException() {
-    assertDoesNotThrow(() -> App.main(new String[]{}));
+    assertDoesNotThrow(() -> App.main(new String[] {}));
   }
 }

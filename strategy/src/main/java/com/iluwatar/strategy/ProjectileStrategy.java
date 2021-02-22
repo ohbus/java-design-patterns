@@ -26,9 +26,7 @@ package com.iluwatar.strategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Projectile strategy.
- */
+/** Projectile strategy. */
 public class ProjectileStrategy implements DragonSlayingStrategy {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(ProjectileStrategy.class);

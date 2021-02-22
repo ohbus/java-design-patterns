@@ -30,8 +30,7 @@ package com.iluwatar.servicelocator;
  * necessary to perform a certain task.
  *
  * <p>In this example we use the Service locator pattern to lookup JNDI-services and cache them for
- * subsequent requests.
- * <br>
+ * subsequent requests. <br>
  *
  * @author saifasif
  */

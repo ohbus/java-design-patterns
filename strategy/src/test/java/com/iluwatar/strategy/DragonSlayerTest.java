@@ -36,9 +36,7 @@ import org.junit.jupiter.api.Test;
  */
 public class DragonSlayerTest {
 
-  /**
-   * Verify if the dragon slayer uses the strategy during battle.
-   */
+  /** Verify if the dragon slayer uses the strategy during battle. */
   @Test
   public void testGoToBattle() {
     final var strategy = mock(DragonSlayingStrategy.class);
@@ -49,9 +47,7 @@ public class DragonSlayerTest {
     verifyNoMoreInteractions(strategy);
   }
 
-  /**
-   * Verify if the dragon slayer uses the new strategy during battle after a change of strategy.
-   */
+  /** Verify if the dragon slayer uses the new strategy during battle after a change of strategy. */
   @Test
   public void testChangeStrategy() {
     final var initialStrategy = mock(DragonSlayingStrategy.class);

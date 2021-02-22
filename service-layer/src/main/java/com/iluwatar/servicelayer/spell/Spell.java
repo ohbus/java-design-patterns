@@ -33,9 +33,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-/**
- * Spell entity.
- */
+/** Spell entity. */
 @Entity
 @Table(name = "SPELL")
 public class Spell extends BaseEntity {
@@ -51,8 +49,7 @@ public class Spell extends BaseEntity {
   @JoinColumn(name = "SPELLBOOK_ID_FK", referencedColumnName = "SPELLBOOK_ID")
   private Spellbook spellbook;
 
-  public Spell() {
-  }
+  public Spell() {}
 
   public Spell(String name) {
     this();

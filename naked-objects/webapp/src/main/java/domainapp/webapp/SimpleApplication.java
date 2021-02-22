@@ -46,7 +46,6 @@ import org.apache.wicket.request.http.WebRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
 /**
  * As specified in <tt>web.xml</tt>.
  *
@@ -71,12 +70,11 @@ public class SimpleApplication extends IsisWicketApplication {
   /**
    * uncomment for a (slightly hacky) way of allowing logins using query args, eg:
    *
-   * <tt>{@code ?user=sven&pass=pass}</tt>
+   * <p><tt>{@code ?user=sven&pass=pass}</tt>
    *
    * <p>for demos only, obvious.
    */
   private static final boolean DEMO_MODE_USING_CREDENTIALS_AS_QUERYARGS = false;
-
 
   @Override
   protected void init() {
@@ -123,21 +121,29 @@ public class SimpleApplication extends IsisWicketApplication {
   protected Module newIsisWicketModule() {
     final var isisDefaults = super.newIsisWicketModule();
 
-    final Module overrides = new AbstractModule() {
-      @Override
-      protected void configure() {
-        bind(String.class).annotatedWith(Names.named("applicationName")).toInstance("Simple App");
-        bind(String.class).annotatedWith(Names.named("applicationCss")).toInstance(
-            "css/application.css");
-        bind(String.class).annotatedWith(Names.named("applicationJs")).toInstance(
-            "scripts/application.js");
-        bind(String.class).annotatedWith(Names.named("welcomeMessage")).toInstance(
-            readLines(getClass(), "welcome.html"));
-        bind(String.class).annotatedWith(Names.named("aboutMessage")).toInstance("Simple App");
-        bind(InputStream.class).annotatedWith(Names.named("metaInfManifest")).toProvider(
-            Providers.of(getServletContext().getResourceAsStream("/META-INF/MANIFEST.MF")));
-      }
-    };
+    final Module overrides =
+        new AbstractModule() {
+          @Override
+          protected void configure() {
+            bind(String.class)
+                .annotatedWith(Names.named("applicationName"))
+                .toInstance("Simple App");
+            bind(String.class)
+                .annotatedWith(Names.named("applicationCss"))
+                .toInstance("css/application.css");
+            bind(String.class)
+                .annotatedWith(Names.named("applicationJs"))
+                .toInstance("scripts/application.js");
+            bind(String.class)
+                .annotatedWith(Names.named("welcomeMessage"))
+                .toInstance(readLines(getClass(), "welcome.html"));
+            bind(String.class).annotatedWith(Names.named("aboutMessage")).toInstance("Simple App");
+            bind(InputStream.class)
+                .annotatedWith(Names.named("metaInfManifest"))
+                .toProvider(
+                    Providers.of(getServletContext().getResourceAsStream("/META-INF/MANIFEST.MF")));
+          }
+        };
 
     return Modules.override(isisDefaults).with(overrides);
   }
@@ -152,5 +158,4 @@ public class SimpleApplication extends IsisWicketApplication {
       return "This is a simple app";
     }
   }
-
 }

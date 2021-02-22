@@ -23,9 +23,7 @@
 
 package com.iluwatar.prototype;
 
-/**
- * OrcMage.
- */
+/** OrcMage. */
 public class OrcMage extends Mage {
 
   private final String weapon;

@@ -25,13 +25,11 @@ package com.iluwatar.multiton;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * Application test
- */
+/** Application test */
 public class AppTest {
 
   @Test
   public void test() {
-    App.main(new String[]{});
+    App.main(new String[] {});
   }
 }

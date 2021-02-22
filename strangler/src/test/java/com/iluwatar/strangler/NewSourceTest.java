@@ -23,14 +23,12 @@
 
 package com.iluwatar.strangler;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
-/**
- * Test methods in NewSource
- */
+import org.junit.jupiter.api.Test;
+
+/** Test methods in NewSource */
 public class NewSourceTest {
   private static final NewSource source = new NewSource();
 

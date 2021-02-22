@@ -56,7 +56,6 @@ public class CharacterTest {
       assertFalse(prototype.has(stat));
       assertNull(prototype.get(stat));
     }
-
   }
 
   @Test
@@ -87,7 +86,6 @@ public class CharacterTest {
     final var weak = new Character("weak", prototype);
     weak.remove(Stats.ARMOR);
     assertEquals("Player: weak\nStats:\n - AGILITY:2\n - INTELLECT:3\n", weak.toString());
-
   }
 
   @Test
@@ -121,5 +119,4 @@ public class CharacterTest {
     weak.remove(Stats.ARMOR);
     assertNull(weak.type());
   }
-
 }

@@ -27,9 +27,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * Test for Image Rest Controller
- */
+/** Test for Image Rest Controller */
 public class ImageControllerTest {
   @Test
   public void testGetImagePath() {

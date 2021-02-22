@@ -23,18 +23,14 @@
 
 package com.iluwatar.hexagonal.domain;
 
-/**
- * Immutable value object representing lottery ticket.
- */
+/** Immutable value object representing lottery ticket. */
 public class LotteryTicket {
 
   private LotteryTicketId id;
   private final PlayerDetails playerDetails;
   private final LotteryNumbers lotteryNumbers;
 
-  /**
-   * Constructor.
-   */
+  /** Constructor. */
   public LotteryTicket(LotteryTicketId id, PlayerDetails details, LotteryNumbers numbers) {
     this.id = id;
     playerDetails = details;
@@ -68,9 +64,7 @@ public class LotteryTicket {
     return id;
   }
 
-  /**
-   * Set ticket id.
-   */
+  /** Set ticket id. */
   public void setId(LotteryTicketId id) {
     this.id = id;
   }

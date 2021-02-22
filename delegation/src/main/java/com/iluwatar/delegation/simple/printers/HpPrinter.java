@@ -37,12 +37,9 @@ public class HpPrinter implements Printer {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(HpPrinter.class);
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   public void print(String message) {
     LOGGER.info("HP Printer : {}", message);
   }
-
 }

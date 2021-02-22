@@ -34,9 +34,7 @@ import org.junit.jupiter.api.Test;
  */
 public class GiantModelTest {
 
-  /**
-   * Verify if the health value is set properly though the constructor and setter
-   */
+  /** Verify if the health value is set properly though the constructor and setter */
   @Test
   public void testSetHealth() {
     final var model = new GiantModel(Health.HEALTHY, Fatigue.ALERT, Nourishment.SATURATED);
@@ -49,9 +47,7 @@ public class GiantModelTest {
     }
   }
 
-  /**
-   * Verify if the fatigue level is set properly though the constructor and setter
-   */
+  /** Verify if the fatigue level is set properly though the constructor and setter */
   @Test
   public void testSetFatigue() {
     final var model = new GiantModel(Health.HEALTHY, Fatigue.ALERT, Nourishment.SATURATED);
@@ -64,9 +60,7 @@ public class GiantModelTest {
     }
   }
 
-  /**
-   * Verify if the nourishment level is set properly though the constructor and setter
-   */
+  /** Verify if the nourishment level is set properly though the constructor and setter */
   @Test
   public void testSetNourishment() {
     final var model = new GiantModel(Health.HEALTHY, Fatigue.ALERT, Nourishment.SATURATED);
@@ -78,5 +72,4 @@ public class GiantModelTest {
       assertEquals(String.format(messageFormat, nourishment), model.toString());
     }
   }
-
 }

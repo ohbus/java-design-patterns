@@ -67,12 +67,14 @@ public class BallItemTest {
 
     final var inOrder = inOrder(ballThread);
 
-    IntStream.range(0, 10).forEach(i -> {
-      ballItem.click();
-      inOrder.verify(ballThread).suspendMe();
-      ballItem.click();
-      inOrder.verify(ballThread).resumeMe();
-    });
+    IntStream.range(0, 10)
+        .forEach(
+            i -> {
+              ballItem.click();
+              inOrder.verify(ballThread).suspendMe();
+              ballItem.click();
+              inOrder.verify(ballThread).resumeMe();
+            });
 
     inOrder.verifyNoMoreInteractions();
   }
@@ -104,9 +106,7 @@ public class BallItemTest {
     assertEquals(1, appender.getLogSize());
   }
 
-  /**
-   * Logging Appender Implementation
-   */
+  /** Logging Appender Implementation */
   public class InMemoryAppender extends AppenderBase<ILoggingEvent> {
     private final List<ILoggingEvent> log = new LinkedList<>();
 
@@ -128,5 +128,4 @@ public class BallItemTest {
       return log.size();
     }
   }
-
 }

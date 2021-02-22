@@ -23,18 +23,14 @@
 
 package com.iluwatar.leaderelection.ring;
 
-import com.iluwatar.leaderelection.*;
-import org.junit.jupiter.api.Test;
-
-import java.lang.reflect.Field;
-import java.util.Map;
-import java.util.Queue;
-
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * RingMessageManager unit test.
- */
+import com.iluwatar.leaderelection.*;
+import java.util.Map;
+import java.util.Queue;
+import org.junit.jupiter.api.Test;
+
+/** RingMessageManager unit test. */
 public class RingMessageManagerTest {
 
   @Test
@@ -108,5 +104,4 @@ public class RingMessageManagerTest {
       fail("Error to access private field.");
     }
   }
-
 }

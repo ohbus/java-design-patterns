@@ -49,9 +49,7 @@ public class ImmutableStewTest {
     appender.stop();
   }
 
-  /**
-   * Verify if mixing the stew doesn't change the internal state
-   */
+  /** Verify if mixing the stew doesn't change the internal state */
   @Test
   public void testMix() {
     var stew = new Stew(1, 2, 3, 4);
@@ -65,22 +63,22 @@ public class ImmutableStewTest {
     assertEquals(20, appender.getLogSize());
   }
 
-  /**
-   * Verify if tasting the stew actually removes one of each ingredient
-   */
+  /** Verify if tasting the stew actually removes one of each ingredient */
   @Test
   public void testDrink() {
     final var stew = new Stew(1, 2, 3, 4);
     stew.mix();
 
-    assertEquals("Mixing the stew we find: 1 potatoes, 2 carrots, 3 meat and 4 peppers", appender
-        .getLastMessage());
+    assertEquals(
+        "Mixing the stew we find: 1 potatoes, 2 carrots, 3 meat and 4 peppers",
+        appender.getLastMessage());
 
     stew.taste();
     assertEquals("Tasting the stew", appender.getLastMessage());
 
     stew.mix();
-    assertEquals("Mixing the stew we find: 0 potatoes, 1 carrots, 2 meat and 3 peppers", appender
-        .getLastMessage());
+    assertEquals(
+        "Mixing the stew we find: 0 potatoes, 1 carrots, 2 meat and 3 peppers",
+        appender.getLastMessage());
   }
 }

@@ -27,7 +27,6 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
 /**
  * Servant offers some functionality to a group of classes without defining that functionality in
  * each of them. A Servant is a class whose instance provides methods that take care of a desired
@@ -42,17 +41,13 @@ public class App {
   private static final Servant jenkins = new Servant("Jenkins");
   private static final Servant travis = new Servant("Travis");
 
-  /**
-   * Program entry point.
-   */
+  /** Program entry point. */
   public static void main(String[] args) {
     scenario(jenkins, 1);
     scenario(travis, 0);
   }
 
-  /**
-   * Can add a List with enum Actions for variable scenarios.
-   */
+  /** Can add a List with enum Actions for variable scenarios. */
   public static void scenario(Servant servant, int compliment) {
     var k = new King();
     var q = new Queen();

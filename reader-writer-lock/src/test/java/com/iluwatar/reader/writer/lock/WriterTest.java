@@ -35,9 +35,7 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * @author hongshuwei@gmail.com
- */
+/** @author hongshuwei@gmail.com */
 public class WriterTest {
 
   private InMemoryAppender appender;
@@ -54,9 +52,7 @@ public class WriterTest {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(WriterTest.class);
 
-  /**
-   * Verify that multiple writers will get the lock in order.
-   */
+  /** Verify that multiple writers will get the lock in order. */
   @Test
   public void testWrite() throws Exception {
 

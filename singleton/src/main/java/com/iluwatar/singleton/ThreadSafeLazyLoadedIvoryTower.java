@@ -24,9 +24,8 @@
 package com.iluwatar.singleton;
 
 /**
- * <p>Thread-safe Singleton class. The instance is lazily initialized and thus needs synchronization
- * mechanism.</p>
- *
+ * Thread-safe Singleton class. The instance is lazily initialized and thus needs synchronization
+ * mechanism.
  */
 public final class ThreadSafeLazyLoadedIvoryTower {
 
@@ -41,9 +40,7 @@ public final class ThreadSafeLazyLoadedIvoryTower {
     }
   }
 
-  /**
-   * The instance doesn't get created until the method is called for the first time.
-   */
+  /** The instance doesn't get created until the method is called for the first time. */
   public static synchronized ThreadSafeLazyLoadedIvoryTower getInstance() {
     if (instance == null) {
       synchronized (ThreadSafeLazyLoadedIvoryTower.class) {

@@ -47,30 +47,22 @@ import org.junit.jupiter.api.Test;
  */
 public abstract class TaskTest<T extends Task> {
 
-  /**
-   * The number of tasks used during the concurrency test
-   */
+  /** The number of tasks used during the concurrency test */
   private static final int TASK_COUNT = 128 * 1024;
 
-  /**
-   * The number of threads used during the concurrency test
-   */
+  /** The number of threads used during the concurrency test */
   private static final int THREAD_COUNT = 8;
 
-  /**
-   * The task factory, used to create new test items
-   */
+  /** The task factory, used to create new test items */
   private final IntFunction<T> factory;
 
-  /**
-   * The expected time needed to run the task 1 single time, in milli seconds
-   */
+  /** The expected time needed to run the task 1 single time, in milli seconds */
   private final int expectedExecutionTime;
 
   /**
    * Create a new test instance
    *
-   * @param factory               The task factory, used to create new test items
+   * @param factory The task factory, used to create new test items
    * @param expectedExecutionTime The expected time needed to run the task 1 time, in milli seconds
    */
   public TaskTest(final IntFunction<T> factory, final int expectedExecutionTime) {
@@ -84,28 +76,29 @@ public abstract class TaskTest<T extends Task> {
    */
   @Test
   public void testIdGeneration() throws Exception {
-    assertTimeout(ofMillis(10000), () -> {
-      final var service = Executors.newFixedThreadPool(THREAD_COUNT);
+    assertTimeout(
+        ofMillis(10000),
+        () -> {
+          final var service = Executors.newFixedThreadPool(THREAD_COUNT);
 
-      final var tasks = IntStream.range(0, TASK_COUNT)
-          .<Callable<Integer>>mapToObj(i -> () -> factory.apply(1).getId())
-          .collect(Collectors.toCollection(ArrayList::new));
+          final var tasks =
+              IntStream.range(0, TASK_COUNT)
+                  .<Callable<Integer>>mapToObj(i -> () -> factory.apply(1).getId())
+                  .collect(Collectors.toCollection(ArrayList::new));
 
-      final var ids = service.invokeAll(tasks)
-          .stream()
-          .map(TaskTest::get)
-          .filter(Objects::nonNull)
-          .collect(Collectors.toList());
+          final var ids =
+              service.invokeAll(tasks).stream()
+                  .map(TaskTest::get)
+                  .filter(Objects::nonNull)
+                  .collect(Collectors.toList());
 
-      service.shutdownNow();
+          service.shutdownNow();
 
-      final var uniqueIdCount = ids.stream()
-          .distinct()
-          .count();
+          final var uniqueIdCount = ids.stream().distinct().count();
 
-      assertEquals(TASK_COUNT, ids.size());
-      assertEquals(TASK_COUNT, uniqueIdCount);
-    });
+          assertEquals(TASK_COUNT, ids.size());
+          assertEquals(TASK_COUNT, uniqueIdCount);
+        });
   }
 
   /**
@@ -119,9 +112,7 @@ public abstract class TaskTest<T extends Task> {
     }
   }
 
-  /**
-   * Verify if the task has some sort of {@link T#toString()}, different from 'null'
-   */
+  /** Verify if the task has some sort of {@link T#toString()}, different from 'null' */
   @Test
   public void testToString() {
     assertNotNull(this.factory.apply(0).toString());
@@ -131,7 +122,7 @@ public abstract class TaskTest<T extends Task> {
    * Extract the result from a future or returns 'null' when an exception occurred
    *
    * @param future The future we want the result from
-   * @param <O>    The result type
+   * @param <O> The result type
    * @return The result or 'null' when a checked exception occurred
    */
   private static <O> O get(Future<O> future) {
@@ -141,5 +132,4 @@ public abstract class TaskTest<T extends Task> {
       return null;
     }
   }
-
 }

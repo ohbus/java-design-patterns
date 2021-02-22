@@ -43,11 +43,8 @@ public class MinusExpressionTest extends ExpressionTest<MinusExpression> {
     return prepareParameters((f, s) -> f - s);
   }
 
-  /**
-   * Create a new test instance using the given test parameters and expected result
-   */
+  /** Create a new test instance using the given test parameters and expected result */
   public MinusExpressionTest() {
     super("-", MinusExpression::new);
   }
-
 }

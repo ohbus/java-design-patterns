@@ -35,9 +35,7 @@ import org.junit.jupiter.api.Test;
  * @author George Aristy (george.aristy@gmail.com)
  */
 public class FindCustomerTest {
-  /**
-   * Returns the given result with no exceptions.
-   */
+  /** Returns the given result with no exceptions. */
   @Test
   public void noExceptions() throws Exception {
     assertThat(new FindCustomer("123").perform(), is("123"));
@@ -61,20 +59,20 @@ public class FindCustomerTest {
    */
   @Test
   public void resultAfterExceptions() throws Exception {
-    final var op = new FindCustomer(
-        "123",
-        new CustomerNotFoundException("not found"),
-        new DatabaseNotAvailableException("not available")
-    );
+    final var op =
+        new FindCustomer(
+            "123",
+            new CustomerNotFoundException("not found"),
+            new DatabaseNotAvailableException("not available"));
     try {
       op.perform();
     } catch (CustomerNotFoundException e) {
-      //ignore
+      // ignore
     }
     try {
       op.perform();
     } catch (DatabaseNotAvailableException e) {
-      //ignore
+      // ignore
     }
 
     assertThat(op.perform(), is("123"));

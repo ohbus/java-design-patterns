@@ -30,13 +30,9 @@ public class Book {
 
   private long version = 0; // version number
 
-  public Book() {
+  public Book() {}
 
-  }
-
-  /**
-   * We need this copy constructor to copy book representation in {@link BookRepository}.
-   */
+  /** We need this copy constructor to copy book representation in {@link BookRepository}. */
   public Book(Book book) {
     this.id = book.id;
     this.title = book.title;

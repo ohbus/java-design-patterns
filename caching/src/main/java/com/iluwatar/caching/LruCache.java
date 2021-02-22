@@ -62,9 +62,7 @@ public class LruCache {
     this.capacity = capacity;
   }
 
-  /**
-   * Get user account.
-   */
+  /** Get user account. */
   public UserAccount get(String userId) {
     if (cache.containsKey(userId)) {
       var node = cache.get(userId);
@@ -75,9 +73,7 @@ public class LruCache {
     return null;
   }
 
-  /**
-   * Remove node from linked list.
-   */
+  /** Remove node from linked list. */
   public void remove(Node node) {
     if (node.previous != null) {
       node.previous.next = node.next;
@@ -91,9 +87,7 @@ public class LruCache {
     }
   }
 
-  /**
-   * Move node to the front of the list.
-   */
+  /** Move node to the front of the list. */
   public void setHead(Node node) {
     node.next = head;
     node.previous = null;
@@ -106,9 +100,7 @@ public class LruCache {
     }
   }
 
-  /**
-   * Set user account.
-   */
+  /** Set user account. */
   public void set(String userId, UserAccount userAccount) {
     if (cache.containsKey(userId)) {
       var old = cache.get(userId);
@@ -133,9 +125,7 @@ public class LruCache {
     return cache.containsKey(userId);
   }
 
-  /**
-   * Invalidate cache for user.
-   */
+  /** Invalidate cache for user. */
   public void invalidate(String userId) {
     var toBeRemoved = cache.remove(userId);
     if (toBeRemoved != null) {
@@ -152,18 +142,14 @@ public class LruCache {
     return end.userAccount;
   }
 
-  /**
-   * Clear cache.
-   */
+  /** Clear cache. */
   public void clear() {
     head = null;
     end = null;
     cache.clear();
   }
 
-  /**
-   * Returns cache data in list form.
-   */
+  /** Returns cache data in list form. */
   public List<UserAccount> getCacheDataInListForm() {
     var listOfCacheData = new ArrayList<UserAccount>();
     var temp = head;
@@ -174,9 +160,7 @@ public class LruCache {
     return listOfCacheData;
   }
 
-  /**
-   * Set cache capacity.
-   */
+  /** Set cache capacity. */
   public void setCapacity(int newCapacity) {
     if (capacity > newCapacity) {
       clear(); // Behavior can be modified to accommodate for decrease in cache size. For now, we'll

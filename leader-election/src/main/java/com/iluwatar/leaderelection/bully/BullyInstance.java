@@ -43,9 +43,7 @@ public class BullyInstance extends AbstractInstance {
   private static final Logger LOGGER = LoggerFactory.getLogger(BullyInstance.class);
   private static final String INSTANCE = "Instance ";
 
-  /**
-   * Constructor of BullyInstance.
-   */
+  /** Constructor of BullyInstance. */
   public BullyInstance(MessageManager messageManager, int localId, int leaderId) {
     super(messageManager, localId, leaderId);
   }
@@ -96,9 +94,7 @@ public class BullyInstance extends AbstractInstance {
     }
   }
 
-  /**
-   * Process leader message. Update local leader information.
-   */
+  /** Process leader message. Update local leader information. */
   @Override
   protected void handleLeaderMessage(Message message) {
     leaderId = Integer.valueOf(message.getContent());

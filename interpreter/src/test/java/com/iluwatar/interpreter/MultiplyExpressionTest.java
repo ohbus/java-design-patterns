@@ -43,11 +43,8 @@ public class MultiplyExpressionTest extends ExpressionTest<MultiplyExpression> {
     return prepareParameters((f, s) -> f * s);
   }
 
-  /**
-   * Create a new test instance using the given test parameters and expected result
-   */
+  /** Create a new test instance using the given test parameters and expected result */
   public MultiplyExpressionTest() {
     super("*", MultiplyExpression::new);
   }
-
 }

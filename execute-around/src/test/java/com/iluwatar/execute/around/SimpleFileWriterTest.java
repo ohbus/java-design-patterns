@@ -44,8 +44,7 @@ import org.junit.rules.TemporaryFolder;
 @EnableRuleMigrationSupport
 public class SimpleFileWriterTest {
 
-  @Rule
-  public final TemporaryFolder testFolder = new TemporaryFolder();
+  @Rule public final TemporaryFolder testFolder = new TemporaryFolder();
 
   @Test
   public void testWriterNotNull() throws Exception {
@@ -76,12 +75,16 @@ public class SimpleFileWriterTest {
   @Test
   public void testRipplesIoExceptionOccurredWhileWriting() {
     var message = "Some error";
-    assertThrows(IOException.class, () -> {
-      final var temporaryFile = this.testFolder.newFile();
-      new SimpleFileWriter(temporaryFile.getPath(), writer -> {
-        throw new IOException(message);
-      });
-    }, message);
+    assertThrows(
+        IOException.class,
+        () -> {
+          final var temporaryFile = this.testFolder.newFile();
+          new SimpleFileWriter(
+              temporaryFile.getPath(),
+              writer -> {
+                throw new IOException(message);
+              });
+        },
+        message);
   }
-
 }

@@ -47,7 +47,7 @@ public class App {
     var guardedQueue = new GuardedQueue();
     var executorService = Executors.newFixedThreadPool(3);
 
-    //here we create first thread which is supposed to get from guardedQueue
+    // here we create first thread which is supposed to get from guardedQueue
     executorService.execute(guardedQueue::get);
 
     // here we wait two seconds to show that the thread which is trying
@@ -67,5 +67,4 @@ public class App {
       e.printStackTrace();
     }
   }
-
 }

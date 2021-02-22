@@ -38,16 +38,13 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-/**
- * Unit tests for FindPersonApiHandler Created by dheeraj.mummar on 3/5/18.
- */
+/** Unit tests for FindPersonApiHandler Created by dheeraj.mummar on 3/5/18. */
 @RunWith(MockitoJUnitRunner.class)
 public class FindPersonApiHandlerTest {
 
   private FindPersonApiHandler findPersonApiHandler;
 
-  @Mock
-  private DynamoDBMapper dynamoDbMapper;
+  @Mock private DynamoDBMapper dynamoDbMapper;
 
   @Before
   public void setUp() {

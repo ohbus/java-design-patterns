@@ -26,9 +26,7 @@ package com.iluwatar.state;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Peaceful state.
- */
+/** Peaceful state. */
 public class PeacefulState implements State {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(PeacefulState.class);
@@ -48,5 +46,4 @@ public class PeacefulState implements State {
   public void onEnterState() {
     LOGGER.info("{} calms down.", mammoth);
   }
-
 }

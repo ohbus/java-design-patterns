@@ -40,9 +40,7 @@ import org.junit.jupiter.api.Test;
  */
 public class KingsHandTest extends EventEmitterTest<KingsHand> {
 
-  /**
-   * Create a new test instance, using the correct object factory
-   */
+  /** Create a new test instance, using the correct object factory */
   public KingsHandTest() {
     super(null, null, KingsHand::new, KingsHand::new);
   }
@@ -61,12 +59,12 @@ public class KingsHandTest extends EventEmitterTest<KingsHand> {
     verifyZeroInteractions(observer);
 
     // Verify if each event is passed on to the observer, nothing less, nothing more.
-    Arrays.stream(Event.values()).forEach(event -> {
-      kingsHand.onEvent(event);
-      verify(observer, times(1)).onEvent(eq(event));
-      verifyNoMoreInteractions(observer);
-    });
-
+    Arrays.stream(Event.values())
+        .forEach(
+            event -> {
+              kingsHand.onEvent(event);
+              verify(observer, times(1)).onEvent(eq(event));
+              verifyNoMoreInteractions(observer);
+            });
   }
-
 }

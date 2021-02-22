@@ -23,9 +23,7 @@
 
 package com.iluwatar.abstractfactory;
 
-/**
- * OrcArmy.
- */
+/** OrcArmy. */
 public class OrcArmy implements Army {
 
   static final String DESCRIPTION = "This is the Orc Army!";

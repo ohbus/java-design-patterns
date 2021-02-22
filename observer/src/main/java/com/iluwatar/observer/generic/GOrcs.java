@@ -27,9 +27,7 @@ import com.iluwatar.observer.WeatherType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * GOrcs.
- */
+/** GOrcs. */
 public class GOrcs implements Race {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(GOrcs.class);

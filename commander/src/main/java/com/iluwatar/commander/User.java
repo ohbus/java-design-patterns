@@ -23,10 +23,7 @@
 
 package com.iluwatar.commander;
 
-/**
- * User class contains details of user who places order.
- */
-
+/** User class contains details of user who places order. */
 public class User {
   String name;
   String address;
@@ -35,5 +32,4 @@ public class User {
     this.name = name;
     this.address = address;
   }
-
 }

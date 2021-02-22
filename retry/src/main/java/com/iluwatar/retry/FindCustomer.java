@@ -44,7 +44,7 @@ public final class FindCustomer implements BusinessOperation<String> {
    * Ctor.
    *
    * @param customerId the final result of the remote operation
-   * @param errors     the errors to throw before returning {@code customerId}
+   * @param errors the errors to throw before returning {@code customerId}
    */
   public FindCustomer(String customerId, BusinessException... errors) {
     this.customerId = customerId;

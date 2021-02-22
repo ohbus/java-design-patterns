@@ -53,21 +53,16 @@ public class Kingdom {
     this.army = army;
   }
 
-  /**
-   * The factory of kingdom factories.
-   */
+  /** The factory of kingdom factories. */
   public static class FactoryMaker {
 
-    /**
-     * Enumeration for the different types of Kingdoms.
-     */
+    /** Enumeration for the different types of Kingdoms. */
     public enum KingdomType {
-      ELF, ORC
+      ELF,
+      ORC
     }
 
-    /**
-     * The factory method to create KingdomFactory concrete objects.
-     */
+    /** The factory method to create KingdomFactory concrete objects. */
     public static KingdomFactory makeFactory(KingdomType type) {
       switch (type) {
         case ELF:

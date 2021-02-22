@@ -42,7 +42,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author mjoshzambales
  */
-public class Target extends JFrame { //NOSONAR
+public class Target extends JFrame { // NOSONAR
 
   private static final long serialVersionUID = 1L;
 
@@ -50,15 +50,14 @@ public class Target extends JFrame { //NOSONAR
   private final DefaultTableModel dtm;
   private final JButton del;
 
-  /**
-   * Constructor.
-   */
+  /** Constructor. */
   public Target() {
     super("Order System");
     setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     setSize(640, 480);
-    dtm = new DefaultTableModel(
-        new Object[]{"Name", "Contact Number", "Address", "Deposit Number", "Order"}, 0);
+    dtm =
+        new DefaultTableModel(
+            new Object[] {"Name", "Contact Number", "Address", "Deposit Number", "Order"}, 0);
     jt = new JTable(dtm);
     del = new JButton("Delete");
     setup();
@@ -83,7 +82,7 @@ public class Target extends JFrame { //NOSONAR
   }
 
   public void execute(String[] request) {
-    dtm.addRow(new Object[]{request[0], request[1], request[2], request[3], request[4]});
+    dtm.addRow(new Object[] {request[0], request[1], request[2], request[3], request[4]});
   }
 
   class DListener implements ActionListener {

@@ -23,15 +23,13 @@
 
 package com.iluwatar.subclasssandbox;
 
+import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOutNormalized;
+
 import com.github.stefanbirkner.systemlambda.Statement;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOutNormalized;
-
-/**
- * GroundDive unit tests.
- */
+/** GroundDive unit tests. */
 public class GroundDiveTest {
 
   @Test
@@ -54,8 +52,7 @@ public class GroundDiveTest {
   @Test
   public void testSpawnParticles() throws Exception {
     var groundDive = new GroundDive();
-    final var outputLog = getLogContent(
-            () -> groundDive.spawnParticles("PARTICLE_TYPE", 100));
+    final var outputLog = getLogContent(() -> groundDive.spawnParticles("PARTICLE_TYPE", 100));
     final var expectedLog = "Spawn 100 particle with type PARTICLE_TYPE";
     Assert.assertEquals(outputLog, expectedLog);
   }
@@ -63,8 +60,7 @@ public class GroundDiveTest {
   @Test
   public void testActivate() throws Exception {
     var groundDive = new GroundDive();
-    var logs = tapSystemOutNormalized(groundDive::activate)
-            .split("\n");
+    var logs = tapSystemOutNormalized(groundDive::activate).split("\n");
     final var expectedSize = 3;
     final var log1 = logs[0].split("-")[1].trim() + " -" + logs[0].split("-")[2].trim();
     final var expectedLog1 = "Move to ( 0.0, 0.0, -20.0 )";
@@ -86,5 +82,4 @@ public class GroundDiveTest {
   private String getLogContent(String log) {
     return log.split("-")[1].trim();
   }
-
 }

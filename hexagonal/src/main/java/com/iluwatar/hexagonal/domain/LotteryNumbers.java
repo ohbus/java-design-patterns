@@ -42,17 +42,13 @@ public class LotteryNumbers {
   public static final int MAX_NUMBER = 20;
   public static final int NUM_NUMBERS = 4;
 
-  /**
-   * Constructor. Creates random lottery numbers.
-   */
+  /** Constructor. Creates random lottery numbers. */
   private LotteryNumbers() {
     numbers = new HashSet<>();
     generateRandomNumbers();
   }
 
-  /**
-   * Constructor. Uses given numbers.
-   */
+  /** Constructor. Uses given numbers. */
   private LotteryNumbers(Set<Integer> givenNumbers) {
     numbers = new HashSet<>();
     numbers.addAll(givenNumbers);
@@ -94,9 +90,7 @@ public class LotteryNumbers {
     return Joiner.on(',').join(numbers);
   }
 
-  /**
-   * Generates 4 unique random numbers between 1-20 into numbers set.
-   */
+  /** Generates 4 unique random numbers between 1-20 into numbers set. */
   private void generateRandomNumbers() {
     numbers.clear();
     var generator = new RandomNumberGenerator(MIN_NUMBER, MAX_NUMBER);
@@ -111,9 +105,7 @@ public class LotteryNumbers {
     return "LotteryNumbers{" + "numbers=" + numbers + '}';
   }
 
-  /**
-   * Helper class for generating random numbers.
-   */
+  /** Helper class for generating random numbers. */
   private static class RandomNumberGenerator {
 
     private final PrimitiveIterator.OfInt randomIterator;

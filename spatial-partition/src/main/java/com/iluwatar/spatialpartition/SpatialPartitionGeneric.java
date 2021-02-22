@@ -31,7 +31,6 @@ import java.util.Hashtable;
  *
  * @param <T> T will be type of object (that extends Point)
  */
-
 public abstract class SpatialPartitionGeneric<T> {
 
   Hashtable<Integer, T> playerPositions;

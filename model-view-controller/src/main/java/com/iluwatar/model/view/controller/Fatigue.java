@@ -23,9 +23,7 @@
 
 package com.iluwatar.model.view.controller;
 
-/**
- * Fatigue enumeration.
- */
+/** Fatigue enumeration. */
 public enum Fatigue {
   ALERT("alert"),
   TIRED("tired"),

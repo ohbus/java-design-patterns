@@ -139,5 +139,4 @@ public class CommandServiceImpl implements ICommandService {
       session.getTransaction().commit();
     }
   }
-
 }

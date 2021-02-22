@@ -29,7 +29,7 @@ import java.util.Set;
 /**
  * The Data-Bus implementation.
  *
- * <p>This implementation uses a Singleton.</p>
+ * <p>This implementation uses a Singleton.
  *
  * @author Paul Campbell (pcampbell@kemitix.net)
  */

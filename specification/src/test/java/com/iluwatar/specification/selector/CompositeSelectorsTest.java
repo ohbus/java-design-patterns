@@ -35,9 +35,7 @@ import org.junit.jupiter.api.Test;
 
 public class CompositeSelectorsTest {
 
-  /**
-   * Verify if the conjunction selector gives the correct results.
-   */
+  /** Verify if the conjunction selector gives the correct results. */
   @Test
   public void testAndComposition() {
     final var swimmingHeavyCreature = mock(Creature.class);
@@ -48,15 +46,13 @@ public class CompositeSelectorsTest {
     when(swimmingLightCreature.getMovement()).thenReturn(Movement.SWIMMING);
     when(swimmingLightCreature.getMass()).thenReturn(new Mass(25.0));
 
-    final var lightAndSwimmingSelector = new MassSmallerThanOrEqSelector(50.0)
-        .and(new MovementSelector(Movement.SWIMMING));
+    final var lightAndSwimmingSelector =
+        new MassSmallerThanOrEqSelector(50.0).and(new MovementSelector(Movement.SWIMMING));
     assertFalse(lightAndSwimmingSelector.test(swimmingHeavyCreature));
     assertTrue(lightAndSwimmingSelector.test(swimmingLightCreature));
   }
 
-  /**
-   * Verify if the disjunction selector gives the correct results.
-   */
+  /** Verify if the disjunction selector gives the correct results. */
   @Test
   public void testOrComposition() {
     final var swimmingHeavyCreature = mock(Creature.class);
@@ -67,15 +63,13 @@ public class CompositeSelectorsTest {
     when(swimmingLightCreature.getMovement()).thenReturn(Movement.SWIMMING);
     when(swimmingLightCreature.getMass()).thenReturn(new Mass(25.0));
 
-    final var lightOrSwimmingSelector = new MassSmallerThanOrEqSelector(50.0)
-        .or(new MovementSelector(Movement.SWIMMING));
+    final var lightOrSwimmingSelector =
+        new MassSmallerThanOrEqSelector(50.0).or(new MovementSelector(Movement.SWIMMING));
     assertTrue(lightOrSwimmingSelector.test(swimmingHeavyCreature));
     assertTrue(lightOrSwimmingSelector.test(swimmingLightCreature));
   }
 
-  /**
-   * Verify if the negation selector gives the correct results.
-   */
+  /** Verify if the negation selector gives the correct results. */
   @Test
   public void testNotComposition() {
     final var swimmingHeavyCreature = mock(Creature.class);

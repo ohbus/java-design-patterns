@@ -39,17 +39,14 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-/**
- * tests {@link StudentRepository}
- */
+/** tests {@link StudentRepository} */
 @RunWith(MockitoJUnitRunner.class)
 public class StudentRepositoryTest {
   private final Student student1 = new Student(1, "Ram", "street 9, cupertino");
   private final Student student2 = new Student(1, "Sham", "Z bridge, pune");
 
   private Map<String, List<Student>> context;
-  @Mock
-  private StudentDatabase studentDatabase;
+  @Mock private StudentDatabase studentDatabase;
   private StudentRepository studentRepository;
 
   @Before

@@ -54,12 +54,13 @@ public class App {
     var camelContext = (CamelContext) context.getBean("camelContext");
 
     // Add a new routes that will handle endpoints form SplitterRoute class.
-    camelContext.addRoutes(new RouteBuilder() {
-      @Override
-      public void configure() {
-        from("{{endpoint}}").log("ENDPOINT: ${body}");
-      }
-    });
+    camelContext.addRoutes(
+        new RouteBuilder() {
+          @Override
+          public void configure() {
+            from("{{endpoint}}").log("ENDPOINT: ${body}");
+          }
+        });
 
     // Add producer that will send test message to an entry point in WireTapRoute
     String[] stringArray = {"Test item #1", "Test item #2", "Test item #3"};

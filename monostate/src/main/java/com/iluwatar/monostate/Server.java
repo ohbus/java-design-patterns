@@ -38,9 +38,7 @@ public class Server {
   public final int port;
   public final int id;
 
-  /**
-   * Constructor.
-   */
+  /** Constructor. */
   public Server(String host, int port, int id) {
     this.host = host;
     this.port = port;
@@ -56,7 +54,11 @@ public class Server {
   }
 
   public void serve(Request request) {
-    LOGGER.info("Server ID {} associated to host : {} and port {}. Processed request with value {}",
-        id, host, port, request.value);
+    LOGGER.info(
+        "Server ID {} associated to host : {} and port {}. Processed request with value {}",
+        id,
+        host,
+        port,
+        request.value);
   }
 }

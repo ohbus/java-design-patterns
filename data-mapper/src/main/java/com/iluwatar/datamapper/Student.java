@@ -25,9 +25,7 @@ package com.iluwatar.datamapper;
 
 import java.io.Serializable;
 
-/**
- * Class defining Student.
- */
+/** Class defining Student. */
 public final class Student implements Serializable {
 
   private static final long serialVersionUID = 1L;
@@ -36,13 +34,12 @@ public final class Student implements Serializable {
   private String name;
   private char grade;
 
-
   /**
    * Use this constructor to create a Student with all details.
    *
    * @param studentId as unique student id
-   * @param name      as student name
-   * @param grade     as respective grade of student
+   * @param name as student name
+   * @param grade as respective grade of student
    */
   public Student(final int studentId, final String name, final char grade) {
     this.studentId = studentId;

@@ -25,9 +25,7 @@ package com.iluwatar.bytecode.util;
 
 import com.iluwatar.bytecode.Instruction;
 
-/**
- * Utility class used for instruction validation and conversion.
- */
+/** Utility class used for instruction validation and conversion. */
 public class InstructionConverterUtil {
   /**
    * Converts instructions represented as String.
@@ -73,6 +71,4 @@ public class InstructionConverterUtil {
       return false;
     }
   }
-
-
 }

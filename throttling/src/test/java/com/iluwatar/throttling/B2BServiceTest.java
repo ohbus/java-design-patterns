@@ -29,9 +29,7 @@ import com.iluwatar.throttling.timer.Throttler;
 import java.util.stream.IntStream;
 import org.junit.jupiter.api.Test;
 
-/**
- * B2BServiceTest class to test the B2BService
- */
+/** B2BServiceTest class to test the B2BService */
 public class B2BServiceTest {
 
   private final CallsCount callsCount = new CallsCount();
@@ -39,9 +37,9 @@ public class B2BServiceTest {
   @Test
   public void dummyCustomerApiTest() {
     var tenant = new Tenant("testTenant", 2, callsCount);
-    // In order to assure that throttling limits will not be reset, we use an empty throttling implementation
-    var timer = (Throttler) () -> {
-    };
+    // In order to assure that throttling limits will not be reset, we use an empty throttling
+    // implementation
+    var timer = (Throttler) () -> {};
     var service = new B2BService(timer, callsCount);
 
     IntStream.range(0, 5).mapToObj(i -> tenant).forEach(service::dummyCustomerApi);

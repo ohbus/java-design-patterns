@@ -28,9 +28,7 @@ import com.iluwatar.eda.framework.Handler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Handles the {@link UserUpdatedEvent} message.
- */
+/** Handles the {@link UserUpdatedEvent} message. */
 public class UserUpdatedEventHandler implements Handler<UserUpdatedEvent> {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(UserUpdatedEventHandler.class);

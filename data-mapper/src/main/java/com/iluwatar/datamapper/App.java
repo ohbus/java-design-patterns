@@ -41,7 +41,6 @@ public final class App {
   private static final Logger log = LoggerFactory.getLogger(App.class);
   private static final String STUDENT_STRING = "App.main(), student : ";
 
-
   /**
    * Program entry point.
    *
@@ -78,6 +77,5 @@ public final class App {
     mapper.delete(student);
   }
 
-  private App() {
-  }
+  private App() {}
 }

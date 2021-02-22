@@ -30,10 +30,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-
-/**
- * Exposes the Image microservice's endpoints.
- */
+/** Exposes the Image microservice's endpoints. */
 @RestController
 public class ImageController {
   private static final Logger LOGGER = getLogger(ImageController.class);

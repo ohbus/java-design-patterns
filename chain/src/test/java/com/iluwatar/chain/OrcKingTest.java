@@ -35,26 +35,23 @@ import org.junit.jupiter.api.Test;
  */
 public class OrcKingTest {
 
-  /**
-   * All possible requests
-   */
-  private static final List<Request> REQUESTS = List.of(
-      new Request(RequestType.DEFEND_CASTLE, "Don't let the barbarians enter my castle!!"),
-      new Request(RequestType.TORTURE_PRISONER, "Don't just stand there, tickle him!"),
-      new Request(RequestType.COLLECT_TAX, "Don't steal, the King hates competition ...")
-  );
+  /** All possible requests */
+  private static final List<Request> REQUESTS =
+      List.of(
+          new Request(RequestType.DEFEND_CASTLE, "Don't let the barbarians enter my castle!!"),
+          new Request(RequestType.TORTURE_PRISONER, "Don't just stand there, tickle him!"),
+          new Request(RequestType.COLLECT_TAX, "Don't steal, the King hates competition ..."));
 
   @Test
   public void testMakeRequest() {
     final var king = new OrcKing();
 
-    REQUESTS.forEach(request -> {
-      king.makeRequest(request);
-      assertTrue(
-          request.isHandled(),
-          "Expected all requests from King to be handled, but [" + request + "] was not!"
-      );
-    });
+    REQUESTS.forEach(
+        request -> {
+          king.makeRequest(request);
+          assertTrue(
+              request.isHandled(),
+              "Expected all requests from King to be handled, but [" + request + "] was not!");
+        });
   }
-
 }

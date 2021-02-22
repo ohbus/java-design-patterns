@@ -70,9 +70,7 @@ public class GiantViewTest {
     assertEquals(1, appender.getLogSize());
   }
 
-  /**
-   * Logging Appender Implementation
-   */
+  /** Logging Appender Implementation */
   public static class InMemoryAppender extends AppenderBase<ILoggingEvent> {
     private final List<ILoggingEvent> log = new LinkedList<>();
 

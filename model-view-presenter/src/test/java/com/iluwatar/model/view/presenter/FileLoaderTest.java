@@ -40,5 +40,4 @@ public class FileLoaderTest {
     fileLoader.setFileName("non-existing-file");
     assertNull(fileLoader.loadData());
   }
-
 }

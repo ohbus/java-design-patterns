@@ -23,10 +23,10 @@
 
 package com.iluwatar.separatedinterface.invoice;
 
+import static org.mockito.Mockito.*;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.mockito.Mockito.*;
 
 public class InvoiceGeneratorTest {
 
@@ -44,5 +44,4 @@ public class InvoiceGeneratorTest {
     Assertions.assertEquals(target.getAmountWithTax(), productCost + tax);
     verify(taxCalculatorMock, times(1)).calculate(productCost);
   }
-
 }

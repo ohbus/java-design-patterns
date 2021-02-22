@@ -29,15 +29,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-/**
- * CakeLayer entity.
- */
+/** CakeLayer entity. */
 @Entity
 public class CakeLayer {
 
-  @Id
-  @GeneratedValue
-  private Long id;
+  @Id @GeneratedValue private Long id;
 
   private String name;
 
@@ -46,8 +42,7 @@ public class CakeLayer {
   @ManyToOne(cascade = CascadeType.ALL)
   private Cake cake;
 
-  public CakeLayer() {
-  }
+  public CakeLayer() {}
 
   public CakeLayer(String name, int calories) {
     this.setName(name);

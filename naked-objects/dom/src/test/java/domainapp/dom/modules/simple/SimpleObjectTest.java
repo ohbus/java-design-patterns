@@ -29,9 +29,7 @@ import static org.junit.Assert.assertNull;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * Test for SimpleObject
- */
+/** Test for SimpleObject */
 public class SimpleObjectTest {
 
   SimpleObject simpleObject;
@@ -40,7 +38,7 @@ public class SimpleObjectTest {
   public void setUp() {
     simpleObject = new SimpleObject();
   }
-  
+
   @Test
   public void testName() {
     // given
@@ -53,5 +51,4 @@ public class SimpleObjectTest {
     // then
     assertEquals(name, simpleObject.getName());
   }
-
 }

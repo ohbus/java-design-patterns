@@ -23,13 +23,11 @@
 
 package com.iluwatar.gameloop;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 
-/**
- * VariableStepGameLoop unit test class.
- */
+/** VariableStepGameLoop unit test class. */
 public class VariableStepGameLoopTest {
 
   private VariableStepGameLoop gameLoop;

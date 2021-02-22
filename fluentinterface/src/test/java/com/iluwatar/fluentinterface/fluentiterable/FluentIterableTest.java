@@ -72,9 +72,7 @@ public abstract class FluentIterableTest {
   @Test
   public void testFirstCount() {
     final var integers = List.of(1, 2, 3, 10, 9, 8);
-    final var first4 = createFluentIterable(integers)
-        .first(4)
-        .asList();
+    final var first4 = createFluentIterable(integers).first(4).asList();
 
     assertNotNull(first4);
     assertEquals(4, first4.size());
@@ -88,9 +86,7 @@ public abstract class FluentIterableTest {
   @Test
   public void testFirstCountLessItems() {
     final var integers = List.of(1, 2, 3);
-    final var first4 = createFluentIterable(integers)
-        .first(4)
-        .asList();
+    final var first4 = createFluentIterable(integers).first(4).asList();
 
     assertNotNull(first4);
     assertEquals(3, first4.size());
@@ -120,9 +116,7 @@ public abstract class FluentIterableTest {
   @Test
   public void testLastCount() {
     final var integers = List.of(1, 2, 3, 10, 9, 8);
-    final var last4 = createFluentIterable(integers)
-        .last(4)
-        .asList();
+    final var last4 = createFluentIterable(integers).last(4).asList();
 
     assertNotNull(last4);
     assertEquals(4, last4.size());
@@ -135,9 +129,7 @@ public abstract class FluentIterableTest {
   @Test
   public void testLastCountLessItems() {
     final var integers = List.of(1, 2, 3);
-    final var last4 = createFluentIterable(integers)
-        .last(4)
-        .asList();
+    final var last4 = createFluentIterable(integers).last(4).asList();
 
     assertNotNull(last4);
     assertEquals(3, last4.size());
@@ -150,9 +142,7 @@ public abstract class FluentIterableTest {
   @Test
   public void testFilter() {
     final var integers = List.of(1, 2, 3, 10, 9, 8);
-    final var evenItems = createFluentIterable(integers)
-        .filter(i -> i % 2 == 0)
-        .asList();
+    final var evenItems = createFluentIterable(integers).filter(i -> i % 2 == 0).asList();
 
     assertNotNull(evenItems);
     assertEquals(3, evenItems.size());
@@ -164,9 +154,7 @@ public abstract class FluentIterableTest {
   @Test
   public void testMap() {
     final var integers = List.of(1, 2, 3);
-    final var longs = createFluentIterable(integers)
-        .map(Integer::longValue)
-        .asList();
+    final var longs = createFluentIterable(integers).map(Integer::longValue).asList();
 
     assertNotNull(longs);
     assertEquals(integers.size(), longs.size());
@@ -186,7 +174,6 @@ public abstract class FluentIterableTest {
     verify(consumer, times(1)).accept(2);
     verify(consumer, times(1)).accept(3);
     verifyNoMoreInteractions(consumer);
-
   }
 
   @Test
@@ -195,5 +182,4 @@ public abstract class FluentIterableTest {
     final var split = createFluentIterable(integers).spliterator();
     assertNotNull(split);
   }
-
 }

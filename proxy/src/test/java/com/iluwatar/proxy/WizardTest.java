@@ -28,9 +28,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-/**
- * Tests for {@link Wizard}
- */
+/** Tests for {@link Wizard} */
 public class WizardTest {
 
   @Test

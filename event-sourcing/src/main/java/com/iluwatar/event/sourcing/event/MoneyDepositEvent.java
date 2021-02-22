@@ -42,10 +42,10 @@ public class MoneyDepositEvent extends DomainEvent {
   /**
    * Instantiates a new Money deposit event.
    *
-   * @param sequenceId  the sequence id
+   * @param sequenceId the sequence id
    * @param createdTime the created time
-   * @param accountNo   the account no
-   * @param money       the money
+   * @param accountNo the account no
+   * @param money the money
    */
   public MoneyDepositEvent(long sequenceId, long createdTime, int accountNo, BigDecimal money) {
     super(sequenceId, createdTime, "MoneyDepositEvent");
@@ -73,8 +73,9 @@ public class MoneyDepositEvent extends DomainEvent {
 
   @Override
   public void process() {
-    var account = Optional.ofNullable(AccountAggregate.getAccount(accountNo))
-        .orElseThrow(() -> new RuntimeException("Account not found"));
+    var account =
+        Optional.ofNullable(AccountAggregate.getAccount(accountNo))
+            .orElseThrow(() -> new RuntimeException("Account not found"));
     account.handleEvent(this);
   }
 }

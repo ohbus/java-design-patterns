@@ -23,11 +23,8 @@
 
 package com.iluwatar.factory;
 
-/**
- * Car interface.
- */
+/** Car interface. */
 public interface Car {
-  
+
   String getDescription();
-  
 }

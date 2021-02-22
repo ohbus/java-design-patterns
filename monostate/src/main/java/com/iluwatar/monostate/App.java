@@ -23,7 +23,6 @@
 
 package com.iluwatar.monostate;
 
-
 /**
  * The MonoState pattern ensures that all instances of the class will have the same state. This can
  * be used a direct replacement of the Singleton pattern.
@@ -48,5 +47,4 @@ public class App {
     loadBalancer1.serverRequest(new Request("Hello"));
     loadBalancer2.serverRequest(new Request("Hello World"));
   }
-
 }

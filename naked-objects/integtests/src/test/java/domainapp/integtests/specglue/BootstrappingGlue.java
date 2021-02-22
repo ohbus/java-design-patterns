@@ -23,19 +23,18 @@
 
 package domainapp.integtests.specglue;
 
-import org.apache.isis.core.specsupport.scenarios.ScenarioExecutionScope;
-import org.apache.isis.core.specsupport.specs.CukeGlueAbstract;
-
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import domainapp.integtests.bootstrap.SimpleAppSystemInitializer;
+import org.apache.isis.core.specsupport.scenarios.ScenarioExecutionScope;
+import org.apache.isis.core.specsupport.specs.CukeGlueAbstract;
 
-/**
- * BootStrapping IntegrationTesting Before and After Steps
- */
+/** BootStrapping IntegrationTesting Before and After Steps */
 public class BootstrappingGlue extends CukeGlueAbstract {
 
-  @Before(value = {"@integration"}, order = 100)
+  @Before(
+      value = {"@integration"},
+      order = 100)
   public void beforeScenarioIntegrationScope() {
     SimpleAppSystemInitializer.initIsft();
 

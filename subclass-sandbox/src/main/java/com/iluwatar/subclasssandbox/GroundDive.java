@@ -25,9 +25,7 @@ package com.iluwatar.subclasssandbox;
 
 import org.slf4j.LoggerFactory;
 
-/**
- * GroundDive superpower.
- */
+/** GroundDive superpower. */
 public class GroundDive extends Superpower {
 
   public GroundDive() {

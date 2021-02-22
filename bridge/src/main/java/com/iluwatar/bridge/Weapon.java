@@ -23,9 +23,7 @@
 
 package com.iluwatar.bridge;
 
-/**
- * Weapon.
- */
+/** Weapon. */
 public interface Weapon {
 
   void wield();

@@ -23,11 +23,8 @@
 
 package com.iluwatar.event.aggregator;
 
-/**
- * Weekday enumeration.
- */
+/** Weekday enumeration. */
 public enum Weekday {
-
   MONDAY("Monday"),
   TUESDAY("Tuesday"),
   WEDNESDAY("Wednesday"),

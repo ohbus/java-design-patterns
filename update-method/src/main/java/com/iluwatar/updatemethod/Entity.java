@@ -26,9 +26,7 @@ package com.iluwatar.updatemethod;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Abstract class for all the entity types.
- */
+/** Abstract class for all the entity types. */
 public abstract class Entity {
 
   protected final Logger logger = LoggerFactory.getLogger(this.getClass());

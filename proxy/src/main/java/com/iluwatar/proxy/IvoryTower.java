@@ -26,9 +26,7 @@ package com.iluwatar.proxy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * The object to be proxied.
- */
+/** The object to be proxied. */
 public class IvoryTower implements WizardTower {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(IvoryTower.class);
@@ -36,5 +34,4 @@ public class IvoryTower implements WizardTower {
   public void enter(Wizard wizard) {
     LOGGER.info("{} enters the tower.", wizard);
   }
-
 }

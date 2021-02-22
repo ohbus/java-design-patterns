@@ -30,9 +30,7 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * test to test orchestration logic
- */
+/** test to test orchestration logic */
 public class SagaOrchestratorInternallyTest {
 
   private final List<String> records = new ArrayList<>();
@@ -43,16 +41,12 @@ public class SagaOrchestratorInternallyTest {
     var result = sagaOrchestrator.execute(1);
     Assert.assertEquals(result, Result.ROLLBACK);
     Assert.assertArrayEquals(
-        records.toArray(new String[]{}),
-        new String[]{"+1", "+2", "+3", "+4", "-4", "-3", "-2", "-1"});
+        records.toArray(new String[] {}),
+        new String[] {"+1", "+2", "+3", "+4", "-4", "-3", "-2", "-1"});
   }
 
   private static Saga newSaga() {
-    return Saga.create()
-        .chapter("1")
-        .chapter("2")
-        .chapter("3")
-        .chapter("4");
+    return Saga.create().chapter("1").chapter("2").chapter("3").chapter("4");
   }
 
   private ServiceDiscoveryService serviceDiscovery() {

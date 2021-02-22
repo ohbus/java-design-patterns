@@ -32,9 +32,7 @@ import java.util.List;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
 
-/**
- * Test for Part and Car
- */
+/** Test for Part and Car */
 public class DomainTest {
 
   private static final String TEST_PART_TYPE = "test-part-type";
@@ -46,11 +44,11 @@ public class DomainTest {
 
   @Test
   public void shouldConstructPart() {
-    var partProperties = Map.of(
-        Property.TYPE.toString(), TEST_PART_TYPE,
-        Property.MODEL.toString(), TEST_PART_MODEL,
-        Property.PRICE.toString(), (Object) TEST_PART_PRICE
-    );
+    var partProperties =
+        Map.of(
+            Property.TYPE.toString(), TEST_PART_TYPE,
+            Property.MODEL.toString(), TEST_PART_MODEL,
+            Property.PRICE.toString(), (Object) TEST_PART_PRICE);
     var part = new Part(partProperties);
     assertEquals(TEST_PART_TYPE, part.getType().orElseThrow());
     assertEquals(TEST_PART_MODEL, part.getModel().orElseThrow());
@@ -59,15 +57,14 @@ public class DomainTest {
 
   @Test
   public void shouldConstructCar() {
-    var carProperties = Map.of(
-        Property.MODEL.toString(), TEST_CAR_MODEL,
-        Property.PRICE.toString(), TEST_CAR_PRICE,
-        Property.PARTS.toString(), List.of(Map.of(), Map.of())
-    );
+    var carProperties =
+        Map.of(
+            Property.MODEL.toString(), TEST_CAR_MODEL,
+            Property.PRICE.toString(), TEST_CAR_PRICE,
+            Property.PARTS.toString(), List.of(Map.of(), Map.of()));
     var car = new Car(carProperties);
     assertEquals(TEST_CAR_MODEL, car.getModel().orElseThrow());
     assertEquals(TEST_CAR_PRICE, car.getPrice().orElseThrow());
     assertEquals(2, car.getParts().count());
   }
-
 }

@@ -27,9 +27,7 @@ import com.iluwatar.servicelayer.common.DaoBaseImpl;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
-/**
- * WizardDao implementation.
- */
+/** WizardDao implementation. */
 public class WizardDaoImpl extends DaoBaseImpl<Wizard> implements WizardDao {
 
   @Override

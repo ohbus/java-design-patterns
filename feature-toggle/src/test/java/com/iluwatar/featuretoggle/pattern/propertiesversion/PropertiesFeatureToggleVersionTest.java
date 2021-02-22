@@ -32,25 +32,27 @@ import com.iluwatar.featuretoggle.user.User;
 import java.util.Properties;
 import org.junit.jupiter.api.Test;
 
-/**
- * Test Properties Toggle
- */
+/** Test Properties Toggle */
 public class PropertiesFeatureToggleVersionTest {
 
   @Test
   public void testNullPropertiesPassed() {
-    assertThrows(IllegalArgumentException.class, () -> {
-      new PropertiesFeatureToggleVersion(null);
-    });
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> {
+          new PropertiesFeatureToggleVersion(null);
+        });
   }
 
   @Test
   public void testNonBooleanProperty() {
-    assertThrows(IllegalArgumentException.class, () -> {
-      final var properties = new Properties();
-      properties.setProperty("enhancedWelcome", "Something");
-      new PropertiesFeatureToggleVersion(properties);
-    });
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> {
+          final var properties = new Properties();
+          properties.setProperty("enhancedWelcome", "Something");
+          new PropertiesFeatureToggleVersion(properties);
+        });
   }
 
   @Test
@@ -60,7 +62,8 @@ public class PropertiesFeatureToggleVersionTest {
     var service = new PropertiesFeatureToggleVersion(properties);
     assertTrue(service.isEnhanced());
     final var welcomeMessage = service.getWelcomeMessage(new User("Jamie No Code"));
-    assertEquals("Welcome Jamie No Code. You're using the enhanced welcome message.", welcomeMessage);
+    assertEquals(
+        "Welcome Jamie No Code. You're using the enhanced welcome message.", welcomeMessage);
   }
 
   @Test

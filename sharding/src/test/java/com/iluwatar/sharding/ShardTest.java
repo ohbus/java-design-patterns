@@ -30,10 +30,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-
-/**
- * Unit tests for Shard class.
- */
+/** Unit tests for Shard class. */
 public class ShardTest {
 
   private Data data;
@@ -47,8 +44,7 @@ public class ShardTest {
   }
 
   @After
-  public void tearDown() {
-  }
+  public void tearDown() {}
 
   @Test
   public void testStoreData() {
@@ -62,7 +58,6 @@ public class ShardTest {
     } catch (NoSuchFieldException | IllegalAccessException e) {
       Assert.fail("Fail to modify field access.");
     }
-
   }
 
   @Test

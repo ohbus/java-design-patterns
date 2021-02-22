@@ -57,5 +57,4 @@ public class RangeShardManager extends ShardManager {
         return -1;
     }
   }
-
 }

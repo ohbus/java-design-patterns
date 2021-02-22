@@ -39,9 +39,7 @@ package com.iluwatar.proxy;
  */
 public class App {
 
-  /**
-   * Program entry point.
-   */
+  /** Program entry point. */
   public static void main(String[] args) {
 
     var proxy = new WizardTowerProxy(new IvoryTower());
@@ -50,6 +48,5 @@ public class App {
     proxy.enter(new Wizard("Black wizard"));
     proxy.enter(new Wizard("Green wizard"));
     proxy.enter(new Wizard("Brown wizard"));
-
   }
 }

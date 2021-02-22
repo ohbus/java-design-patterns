@@ -51,5 +51,4 @@ public class WizardDaoImplTest extends BaseDaoTest<Wizard, WizardDaoImpl> {
       assertEquals(spell.getName(), byName.getName());
     }
   }
-
 }

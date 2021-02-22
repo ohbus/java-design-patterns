@@ -38,7 +38,6 @@ import com.iluwatar.flux.action.ContentAction;
 import com.iluwatar.flux.action.MenuAction;
 import com.iluwatar.flux.action.MenuItem;
 import com.iluwatar.flux.store.Store;
-import java.util.List;
 import java.util.stream.Collectors;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -87,28 +86,37 @@ public class DispatcherTest {
     verifyNoMoreInteractions(store);
 
     final var actions = actionCaptor.getAllValues();
-    final var menuActions = actions.stream()
-        .filter(a -> a.getType().equals(ActionType.MENU_ITEM_SELECTED))
-        .map(a -> (MenuAction) a)
-        .collect(Collectors.toList());
+    final var menuActions =
+        actions.stream()
+            .filter(a -> a.getType().equals(ActionType.MENU_ITEM_SELECTED))
+            .map(a -> (MenuAction) a)
+            .collect(Collectors.toList());
 
-    final var contentActions = actions.stream()
-        .filter(a -> a.getType().equals(ActionType.CONTENT_CHANGED))
-        .map(a -> (ContentAction) a)
-        .collect(Collectors.toList());
+    final var contentActions =
+        actions.stream()
+            .filter(a -> a.getType().equals(ActionType.CONTENT_CHANGED))
+            .map(a -> (ContentAction) a)
+            .collect(Collectors.toList());
 
     assertEquals(2, menuActions.size());
-    assertEquals(1, menuActions.stream().map(MenuAction::getMenuItem).filter(MenuItem.HOME::equals)
-        .count());
-    assertEquals(1, menuActions.stream().map(MenuAction::getMenuItem)
-        .filter(MenuItem.COMPANY::equals).count());
+    assertEquals(
+        1, menuActions.stream().map(MenuAction::getMenuItem).filter(MenuItem.HOME::equals).count());
+    assertEquals(
+        1,
+        menuActions.stream().map(MenuAction::getMenuItem).filter(MenuItem.COMPANY::equals).count());
 
     assertEquals(2, contentActions.size());
-    assertEquals(1, contentActions.stream().map(ContentAction::getContent)
-        .filter(Content.PRODUCTS::equals).count());
-    assertEquals(1, contentActions.stream().map(ContentAction::getContent)
-        .filter(Content.COMPANY::equals).count());
-
+    assertEquals(
+        1,
+        contentActions.stream()
+            .map(ContentAction::getContent)
+            .filter(Content.PRODUCTS::equals)
+            .count());
+    assertEquals(
+        1,
+        contentActions.stream()
+            .map(ContentAction::getContent)
+            .filter(Content.COMPANY::equals)
+            .count());
   }
-
 }

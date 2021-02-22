@@ -33,12 +33,13 @@ import org.slf4j.LoggerFactory;
  * In case an error is encountered in payment and this service is found to be unavailable, the order
  * is added to the {@link com.iluwatar.commander.employeehandle.EmployeeDatabase}.
  */
-
 public class MessagingService extends Service {
   private static final Logger LOGGER = LoggerFactory.getLogger(MessagingService.class);
 
   enum MessageToSend {
-    PAYMENT_FAIL, PAYMENT_TRYING, PAYMENT_SUCCESSFUL
+    PAYMENT_FAIL,
+    PAYMENT_TRYING,
+    PAYMENT_SUCCESSFUL
   }
 
   class MessageRequest {
@@ -55,9 +56,7 @@ public class MessagingService extends Service {
     super(db, exc);
   }
 
-  /**
-   * Public method which will receive request from {@link com.iluwatar.commander.Commander}.
-   */
+  /** Public method which will receive request from {@link com.iluwatar.commander.Commander}. */
   public String receiveRequest(Object... parameters) throws DatabaseUnavailableException {
     var messageToSend = (int) parameters[0];
     var id = generateId();
@@ -66,7 +65,7 @@ public class MessagingService extends Service {
       msg = MessageToSend.PAYMENT_FAIL;
     } else if (messageToSend == 1) {
       msg = MessageToSend.PAYMENT_TRYING;
-    } else { //messageToSend == 2
+    } else { // messageToSend == 2
       msg = MessageToSend.PAYMENT_SUCCESSFUL;
     }
     var req = new MessageRequest(id, msg);
@@ -75,8 +74,8 @@ public class MessagingService extends Service {
 
   protected String updateDb(Object... parameters) throws DatabaseUnavailableException {
     var req = (MessageRequest) parameters[0];
-    if (this.database.get(req.reqId) == null) { //idempotence, in case db fails here
-      database.add(req); //if successful:
+    if (this.database.get(req.reqId) == null) { // idempotence, in case db fails here
+      database.add(req); // if successful:
       LOGGER.info(sendMessage(req.msg));
       return req.reqId;
     }

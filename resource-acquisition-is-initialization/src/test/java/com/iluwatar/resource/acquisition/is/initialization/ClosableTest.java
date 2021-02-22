@@ -56,7 +56,8 @@ public class ClosableTest {
 
   @Test
   public void testOpenClose() {
-    try (final var ignored = new SlidingDoor(); final var ignored1 = new TreasureChest()) {
+    try (final var ignored = new SlidingDoor();
+        final var ignored1 = new TreasureChest()) {
       assertTrue(appender.logContains("Sliding door opens."));
       assertTrue(appender.logContains("Treasure chest opens."));
     }
@@ -64,9 +65,7 @@ public class ClosableTest {
     assertTrue(appender.logContains("Sliding door closes."));
   }
 
-  /**
-   * Logging Appender Implementation
-   */
+  /** Logging Appender Implementation */
   public class InMemoryAppender extends AppenderBase<ILoggingEvent> {
     private final List<ILoggingEvent> log = new LinkedList<>();
 
@@ -84,5 +83,4 @@ public class ClosableTest {
       return log.stream().anyMatch(event -> event.getMessage().equals(message));
     }
   }
-
 }

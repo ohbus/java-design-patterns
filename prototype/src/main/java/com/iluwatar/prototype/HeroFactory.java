@@ -23,9 +23,7 @@
 
 package com.iluwatar.prototype;
 
-/**
- * Interface for the factory class.
- */
+/** Interface for the factory class. */
 public interface HeroFactory {
 
   Mage createMage();
@@ -33,5 +31,4 @@ public interface HeroFactory {
   Warlord createWarlord();
 
   Beast createBeast();
-
 }

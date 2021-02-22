@@ -80,7 +80,5 @@ public class ServantTest {
 
     assertTrue(new Servant("test").checkIfYouWillBeHanged(goodCompany));
     assertTrue(new Servant("test").checkIfYouWillBeHanged(badCompany));
-
   }
-
 }

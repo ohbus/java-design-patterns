@@ -23,9 +23,7 @@
 
 package com.iluwatar.memento;
 
-/**
- * StarType enumeration.
- */
+/** StarType enumeration. */
 public enum StarType {
   SUN("sun"),
   RED_GIANT("red giant"),

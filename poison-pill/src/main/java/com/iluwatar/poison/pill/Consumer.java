@@ -27,9 +27,7 @@ import com.iluwatar.poison.pill.Message.Headers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Class responsible for receiving and handling submitted to the queue messages.
- */
+/** Class responsible for receiving and handling submitted to the queue messages. */
 public class Consumer {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(Consumer.class);
@@ -42,9 +40,7 @@ public class Consumer {
     this.queue = queue;
   }
 
-  /**
-   * Consume message.
-   */
+  /** Consume message. */
   public void consume() {
     while (true) {
       try {

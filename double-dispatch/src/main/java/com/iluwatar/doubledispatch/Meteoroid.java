@@ -27,9 +27,7 @@ import com.iluwatar.doubledispatch.constants.AppConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Meteoroid game object.
- */
+/** Meteoroid game object. */
 public class Meteoroid extends GameObject {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(Meteoroid.class);
@@ -45,14 +43,14 @@ public class Meteoroid extends GameObject {
 
   @Override
   public void collisionResolve(FlamingAsteroid asteroid) {
-    LOGGER.info(AppConstants.HITS, asteroid.getClass().getSimpleName(), this.getClass()
-        .getSimpleName());
+    LOGGER.info(
+        AppConstants.HITS, asteroid.getClass().getSimpleName(), this.getClass().getSimpleName());
   }
 
   @Override
   public void collisionResolve(Meteoroid meteoroid) {
-    LOGGER.info(AppConstants.HITS, meteoroid.getClass().getSimpleName(), this.getClass()
-        .getSimpleName());
+    LOGGER.info(
+        AppConstants.HITS, meteoroid.getClass().getSimpleName(), this.getClass().getSimpleName());
   }
 
   @Override

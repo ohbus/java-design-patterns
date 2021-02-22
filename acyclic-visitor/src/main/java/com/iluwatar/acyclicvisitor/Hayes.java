@@ -26,16 +26,12 @@ package com.iluwatar.acyclicvisitor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Hayes class implements its accept method.
- */
+/** Hayes class implements its accept method. */
 public class Hayes extends Modem {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(ConfigureForDosVisitor.class);
 
-  /**
-   * Accepts all visitors but honors only HayesVisitor.
-   */
+  /** Accepts all visitors but honors only HayesVisitor. */
   @Override
   public void accept(ModemVisitor modemVisitor) {
     if (modemVisitor instanceof HayesVisitor) {
@@ -43,12 +39,9 @@ public class Hayes extends Modem {
     } else {
       LOGGER.info("Only HayesVisitor is allowed to visit Hayes modem");
     }
-
   }
 
-  /**
-   * Hayes' modem's toString method.
-   */
+  /** Hayes' modem's toString method. */
   @Override
   public String toString() {
     return "Hayes modem";

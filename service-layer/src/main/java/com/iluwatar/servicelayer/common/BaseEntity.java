@@ -27,9 +27,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.MappedSuperclass;
 
-/**
- * Base class for entities.
- */
+/** Base class for entities. */
 @MappedSuperclass
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class BaseEntity {
@@ -61,5 +59,4 @@ public abstract class BaseEntity {
    * @param name The new name
    */
   public abstract void setName(final String name);
-
 }

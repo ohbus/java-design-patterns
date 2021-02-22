@@ -27,9 +27,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 
-/**
- * Base class for weapon tests
- */
+/** Base class for weapon tests */
 abstract class WeaponTest {
 
   /**
@@ -53,6 +51,5 @@ abstract class WeaponTest {
     weapon.unwield();
     verify(enchantment).onDeactivate();
     verifyNoMoreInteractions(enchantment);
-
   }
 }

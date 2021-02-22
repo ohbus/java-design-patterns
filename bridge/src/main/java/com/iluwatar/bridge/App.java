@@ -35,9 +35,9 @@ import org.slf4j.LoggerFactory;
  * have their own class hierarchies. The interface of the implementations can be changed without
  * affecting the clients.
  *
- * <p>In this example we have two class hierarchies. One of weapons and another one of
- * enchantments. We can easily combine any weapon with any enchantment using composition instead of
- * creating deep class hierarchy.
+ * <p>In this example we have two class hierarchies. One of weapons and another one of enchantments.
+ * We can easily combine any weapon with any enchantment using composition instead of creating deep
+ * class hierarchy.
  */
 public class App {
 

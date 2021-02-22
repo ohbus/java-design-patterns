@@ -33,16 +33,12 @@ import org.junit.Test;
  */
 public class ThreadSafeDoubleCheckLockingTest extends SingletonTest<ThreadSafeDoubleCheckLocking> {
 
-  /**
-   * Create a new singleton test instance using the given 'getInstance' method.
-   */
+  /** Create a new singleton test instance using the given 'getInstance' method. */
   public ThreadSafeDoubleCheckLockingTest() {
     super(ThreadSafeDoubleCheckLocking::getInstance);
   }
 
-  /**
-   * Test creating new instance by refection.
-   */
+  /** Test creating new instance by refection. */
   @Test(expected = InvocationTargetException.class)
   public void testCreatingNewInstanceByRefection() throws Exception {
     ThreadSafeDoubleCheckLocking.getInstance();
@@ -50,5 +46,4 @@ public class ThreadSafeDoubleCheckLockingTest extends SingletonTest<ThreadSafeDo
     constructor.setAccessible(true);
     constructor.newInstance((Object[]) null);
   }
-
 }

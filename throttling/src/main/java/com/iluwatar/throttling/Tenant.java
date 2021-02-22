@@ -25,9 +25,7 @@ package com.iluwatar.throttling;
 
 import java.security.InvalidParameterException;
 
-/**
- * A Pojo class to create a basic Tenant with the allowed calls per second.
- */
+/** A Pojo class to create a basic Tenant with the allowed calls per second. */
 public class Tenant {
 
   private final String name;
@@ -36,7 +34,7 @@ public class Tenant {
   /**
    * Constructor.
    *
-   * @param name                  Name of the tenant
+   * @param name Name of the tenant
    * @param allowedCallsPerSecond The number of calls allowed for a particular tenant.
    * @throws InvalidParameterException If number of calls is less than 0, throws exception.
    */

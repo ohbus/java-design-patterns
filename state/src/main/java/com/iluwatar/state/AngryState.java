@@ -26,9 +26,7 @@ package com.iluwatar.state;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Angry state.
- */
+/** Angry state. */
 public class AngryState implements State {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(AngryState.class);
@@ -48,5 +46,4 @@ public class AngryState implements State {
   public void onEnterState() {
     LOGGER.info("{} gets angry!", mammoth);
   }
-
 }

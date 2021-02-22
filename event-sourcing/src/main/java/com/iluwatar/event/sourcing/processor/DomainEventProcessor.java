@@ -45,16 +45,12 @@ public class DomainEventProcessor {
     processorJournal.write(domainEvent);
   }
 
-  /**
-   * Reset.
-   */
+  /** Reset. */
   public void reset() {
     processorJournal.reset();
   }
 
-  /**
-   * Recover.
-   */
+  /** Recover. */
   public void recover() {
     DomainEvent domainEvent;
     while ((domainEvent = processorJournal.readNext()) != null) {

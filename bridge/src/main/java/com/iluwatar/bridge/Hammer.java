@@ -26,9 +26,7 @@ package com.iluwatar.bridge;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Hammer.
- */
+/** Hammer. */
 public class Hammer implements Weapon {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(Hammer.class);

@@ -31,9 +31,7 @@ import com.iluwatar.serverless.baas.model.Person;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * find person from persons collection Created by dheeraj.mummar on 3/5/18.
- */
+/** find person from persons collection Created by dheeraj.mummar on 3/5/18. */
 public class FindPersonApiHandler extends AbstractDynamoDbHandler<Person>
     implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
 
@@ -51,5 +49,4 @@ public class FindPersonApiHandler extends AbstractDynamoDbHandler<Person>
   private static void logKeyValue(String key, String value) {
     LOG.info(key + "=" + value);
   }
-
 }

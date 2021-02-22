@@ -43,9 +43,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Implementation of CakeBakingService.
- */
+/** Implementation of CakeBakingService. */
 @Service
 @Transactional
 public class CakeBakingServiceImpl implements CakeBakingService {
@@ -60,11 +58,12 @@ public class CakeBakingServiceImpl implements CakeBakingService {
   public void bakeNewCake(CakeInfo cakeInfo) throws CakeBakingException {
     var allToppings = getAvailableToppingEntities();
     var matchingToppings =
-        allToppings.stream().filter(t -> t.getName().equals(cakeInfo.cakeToppingInfo.name))
+        allToppings.stream()
+            .filter(t -> t.getName().equals(cakeInfo.cakeToppingInfo.name))
             .collect(Collectors.toList());
     if (matchingToppings.isEmpty()) {
-      throw new CakeBakingException(String.format("Topping %s is not available",
-          cakeInfo.cakeToppingInfo.name));
+      throw new CakeBakingException(
+          String.format("Topping %s is not available", cakeInfo.cakeToppingInfo.name));
     }
     var allLayers = getAvailableLayerEntities();
     Set<CakeLayer> foundLayers = new HashSet<>();
@@ -92,8 +91,8 @@ public class CakeBakingServiceImpl implements CakeBakingService {
         layerBean.save(layer);
       }
     } else {
-      throw new CakeBakingException(String.format("Topping %s is not available",
-          cakeInfo.cakeToppingInfo.name));
+      throw new CakeBakingException(
+          String.format("Topping %s is not available", cakeInfo.cakeToppingInfo.name));
     }
   }
 
@@ -161,8 +160,10 @@ public class CakeBakingServiceImpl implements CakeBakingService {
     List<CakeInfo> result = new ArrayList<>();
     for (Cake cake : cakeBean.findAll()) {
       var cakeToppingInfo =
-          new CakeToppingInfo(cake.getTopping().getId(), cake.getTopping().getName(), cake
-              .getTopping().getCalories());
+          new CakeToppingInfo(
+              cake.getTopping().getId(),
+              cake.getTopping().getName(),
+              cake.getTopping().getCalories());
       List<CakeLayerInfo> cakeLayerInfos = new ArrayList<>();
       for (var layer : cake.getLayers()) {
         cakeLayerInfos.add(new CakeLayerInfo(layer.getId(), layer.getName(), layer.getCalories()));

@@ -45,8 +45,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @SpringBootTest(properties = {"locations=classpath:applicationContext.xml"})
 public class RepositoryTest {
 
-  @Resource
-  private PersonRepository repository;
+  @Resource private PersonRepository repository;
 
   private final Person peter = new Person("Peter", "Sagan", 17);
   private final Person nasta = new Person("Nasta", "Kuzminova", 25);
@@ -55,9 +54,7 @@ public class RepositoryTest {
 
   private final List<Person> persons = List.of(peter, nasta, john, terry);
 
-  /**
-   * Prepare data for test
-   */
+  /** Prepare data for test */
   @BeforeEach
   public void setup() {
     repository.saveAll(persons);
@@ -114,5 +111,4 @@ public class RepositoryTest {
   public void cleanup() {
     repository.deleteAll();
   }
-
 }

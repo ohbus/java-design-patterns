@@ -28,9 +28,7 @@ import com.iluwatar.cqrs.dto.Book;
 import java.math.BigInteger;
 import java.util.List;
 
-/**
- * This interface represents the query methods of the CQRS pattern.
- */
+/** This interface represents the query methods of the CQRS pattern. */
 public interface IQueryService {
 
   Author getAuthorByUsername(String username);
@@ -42,5 +40,4 @@ public interface IQueryService {
   BigInteger getAuthorBooksCount(String username);
 
   BigInteger getAuthorsCount();
-
 }

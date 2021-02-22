@@ -72,9 +72,9 @@ public class PropertiesFeatureToggleVersion implements Service {
    * passed {@link User}. However if disabled then a generic version fo the message is returned.
    *
    * @param user the {@link User} to be displayed in the message if the enhanced version is enabled
-   *             see {@link PropertiesFeatureToggleVersion#isEnhanced()}. If the enhanced version is
-   *             enabled, then the message will be personalised with the name of the passed {@link
-   *             User}. However if disabled then a generic version fo the message is returned.
+   *     see {@link PropertiesFeatureToggleVersion#isEnhanced()}. If the enhanced version is
+   *     enabled, then the message will be personalised with the name of the passed {@link User}.
+   *     However if disabled then a generic version fo the message is returned.
    * @return Resulting welcome message.
    * @see User
    */

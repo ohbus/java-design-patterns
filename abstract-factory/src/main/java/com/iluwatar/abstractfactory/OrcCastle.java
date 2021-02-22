@@ -23,9 +23,7 @@
 
 package com.iluwatar.abstractfactory;
 
-/**
- * OrcCastle.
- */
+/** OrcCastle. */
 public class OrcCastle implements Castle {
 
   static final String DESCRIPTION = "This is the Orc castle!";

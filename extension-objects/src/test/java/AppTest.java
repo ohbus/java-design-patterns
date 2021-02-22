@@ -21,18 +21,15 @@
  * THE SOFTWARE.
  */
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
-/**
- * Created by Srdjan on 03-May-17.
- */
+import org.junit.jupiter.api.Test;
+
+/** Created by Srdjan on 03-May-17. */
 class AppTest {
 
   @Test
   void shouldExecuteApplicationWithoutException() {
-    assertDoesNotThrow(() -> App.main(new String[]{}));
+    assertDoesNotThrow(() -> App.main(new String[] {}));
   }
-
 }

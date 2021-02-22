@@ -23,15 +23,12 @@
 
 package com.iluwatar.strangler;
 
-import org.junit.jupiter.api.Test;
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
-/**
- * Test methods in HalfSource
- */
+/** Test methods in HalfSource */
 public class HalfSourceTest {
   private static final HalfSource source = new HalfSource();
 

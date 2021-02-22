@@ -29,9 +29,7 @@ import com.iluwatar.flux.store.Store;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * ContentView is a concrete view.
- */
+/** ContentView is a concrete view. */
 public class ContentView implements View {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(ContentView.class);

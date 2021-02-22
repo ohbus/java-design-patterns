@@ -23,8 +23,8 @@
 
 package com.iluwatar.gameloop;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 
 public class GameControllerTest {
@@ -51,5 +51,4 @@ public class GameControllerTest {
   public void testGetBulletPosition() {
     Assertions.assertEquals(controller.bullet.getPosition(), controller.getBulletPosition(), 0);
   }
-
 }

@@ -28,9 +28,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-/**
- * Monitoring Service test
- */
+/** Monitoring Service test */
 public class DelayedRemoteServiceTest {
 
   /**
@@ -40,10 +38,12 @@ public class DelayedRemoteServiceTest {
    */
   @Test
   public void testDefaultConstructor() throws RemoteServiceException {
-    Assertions.assertThrows(RemoteServiceException.class, () -> {
-      var obj = new DelayedRemoteService();
-      obj.call();
-    });
+    Assertions.assertThrows(
+        RemoteServiceException.class,
+        () -> {
+          var obj = new DelayedRemoteService();
+          obj.call();
+        });
   }
 
   /**
@@ -53,7 +53,7 @@ public class DelayedRemoteServiceTest {
    */
   @Test
   public void testParameterizedConstructor() throws RemoteServiceException {
-      var obj = new DelayedRemoteService(System.nanoTime()-2000*1000*1000,1);
-      assertEquals("Delayed service is working",obj.call());
+    var obj = new DelayedRemoteService(System.nanoTime() - 2000 * 1000 * 1000, 1);
+    assertEquals("Delayed service is working", obj.call());
   }
 }

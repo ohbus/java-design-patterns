@@ -55,5 +55,4 @@ public class ConsumerTest {
 
     verify(queue, times(ITEM_COUNT)).take();
   }
-
 }

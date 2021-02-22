@@ -32,7 +32,6 @@ import java.util.HashMap;
  *
  * @param <T> T will be type subclass
  */
-
 public abstract class Point<T> {
 
   public int coordinateX;
@@ -45,9 +44,7 @@ public abstract class Point<T> {
     this.id = id;
   }
 
-  /**
-   * defines how the object moves.
-   */
+  /** defines how the object moves. */
   abstract void move();
 
   /**
@@ -62,7 +59,7 @@ public abstract class Point<T> {
    * handling interactions/collisions with other objects.
    *
    * @param toCheck contains the objects which need to be checked
-   * @param all     contains hashtable of all points on field at this time
+   * @param all contains hashtable of all points on field at this time
    */
   abstract void handleCollision(Collection<? extends Point> toCheck, HashMap<Integer, T> all);
 }

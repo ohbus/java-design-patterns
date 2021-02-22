@@ -23,9 +23,7 @@
 
 package com.iluwatar.doubledispatch;
 
-/**
- * Game objects have coordinates and some other status information.
- */
+/** Game objects have coordinates and some other status information. */
 public abstract class GameObject extends Rectangle {
 
   private boolean damaged;
@@ -37,8 +35,9 @@ public abstract class GameObject extends Rectangle {
 
   @Override
   public String toString() {
-    return String.format("%s at %s damaged=%b onFire=%b", this.getClass().getSimpleName(),
-        super.toString(), isDamaged(), isOnFire());
+    return String.format(
+        "%s at %s damaged=%b onFire=%b",
+        this.getClass().getSimpleName(), super.toString(), isDamaged(), isOnFire());
   }
 
   public boolean isOnFire() {

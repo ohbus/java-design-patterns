@@ -25,9 +25,7 @@ package com.iluwatar.stepbuilder;
 
 import java.util.List;
 
-/**
- * The class with many parameters.
- */
+/** The class with many parameters. */
 public class Character {
 
   private String name;

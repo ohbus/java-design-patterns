@@ -37,8 +37,7 @@ public final class AppManager {
 
   private static CachingPolicy cachingPolicy;
 
-  private AppManager() {
-  }
+  private AppManager() {}
 
   /**
    * Developer/Tester is able to choose whether the application should use MongoDB as its underlying
@@ -57,9 +56,7 @@ public final class AppManager {
     }
   }
 
-  /**
-   * Initialize caching policy.
-   */
+  /** Initialize caching policy. */
   public static void initCachingPolicy(CachingPolicy policy) {
     cachingPolicy = policy;
     if (cachingPolicy == CachingPolicy.BEHIND) {
@@ -72,9 +69,7 @@ public final class AppManager {
     CacheStore.initCapacity(capacity);
   }
 
-  /**
-   * Find user account.
-   */
+  /** Find user account. */
   public static UserAccount find(String userId) {
     if (cachingPolicy == CachingPolicy.THROUGH || cachingPolicy == CachingPolicy.AROUND) {
       return CacheStore.readThrough(userId);
@@ -86,9 +81,7 @@ public final class AppManager {
     return null;
   }
 
-  /**
-   * Save user account.
-   */
+  /** Save user account. */
   public static void save(UserAccount userAccount) {
     if (cachingPolicy == CachingPolicy.THROUGH) {
       CacheStore.writeThrough(userAccount);
@@ -105,24 +98,21 @@ public final class AppManager {
     return CacheStore.print();
   }
 
-  /**
-   * Cache-Aside save user account helper.
-   */
+  /** Cache-Aside save user account helper. */
   private static void saveAside(UserAccount userAccount) {
     DbManager.updateDb(userAccount);
     CacheStore.invalidate(userAccount.getUserId());
   }
 
-  /**
-   * Cache-Aside find user account helper.
-   */
+  /** Cache-Aside find user account helper. */
   private static UserAccount findAside(String userId) {
     return Optional.ofNullable(CacheStore.get(userId))
-        .or(() -> {
-          Optional<UserAccount> userAccount = Optional.ofNullable(DbManager.readFromDb(userId));
-          userAccount.ifPresent(account -> CacheStore.set(userId, account));
-          return userAccount;
-        })
+        .or(
+            () -> {
+              Optional<UserAccount> userAccount = Optional.ofNullable(DbManager.readFromDb(userId));
+              userAccount.ifPresent(account -> CacheStore.set(userId, account));
+              return userAccount;
+            })
         .orElse(null);
   }
 }

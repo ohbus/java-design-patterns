@@ -24,9 +24,7 @@
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Class defining Thief.
- */
+/** Class defining Thief. */
 public class Thief {
   private static final Logger LOGGER = LoggerFactory.getLogger(Thief.class);
 

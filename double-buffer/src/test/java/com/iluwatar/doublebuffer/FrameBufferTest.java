@@ -27,9 +27,7 @@ import java.util.Arrays;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * FrameBuffer unit test.
- */
+/** FrameBuffer unit test. */
 public class FrameBufferTest {
 
   @Test
@@ -88,5 +86,4 @@ public class FrameBufferTest {
       Assert.fail("Fail to modify field access.");
     }
   }
-
 }

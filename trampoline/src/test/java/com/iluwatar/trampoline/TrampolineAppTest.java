@@ -27,16 +27,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * Test for trampoline pattern.
- */
+/** Test for trampoline pattern. */
 public class TrampolineAppTest {
-
 
   @Test
   public void testTrampolineWithFactorialFunction() {
     long result = TrampolineApp.loop(10, 1).result();
     assertEquals(3_628_800, result);
   }
-
 }

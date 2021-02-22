@@ -39,9 +39,7 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Utility to perform various operations.
- */
+/** Utility to perform various operations. */
 public class Utility {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(Utility.class);
@@ -54,7 +52,8 @@ public class Utility {
    */
   public static Map<Character, Long> characterFrequency(String fileLocation) {
     try (var bufferedReader = new BufferedReader(new FileReader(fileLocation))) {
-      return bufferedReader.lines()
+      return bufferedReader
+          .lines()
           .flatMapToInt(String::chars)
           .mapToObj(x -> (char) x)
           .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
@@ -70,9 +69,7 @@ public class Utility {
    * @return the character, {@code Optional.empty()} otherwise.
    */
   public static Character lowestFrequencyChar(Map<Character, Long> charFrequency) {
-    return charFrequency
-        .entrySet()
-        .stream()
+    return charFrequency.entrySet().stream()
         .min(Comparator.comparingLong(Entry::getValue))
         .map(Entry::getKey)
         .orElseThrow();
@@ -102,7 +99,7 @@ public class Utility {
     var url = new URL(urlString);
     var file = File.createTempFile("promise_pattern", null);
     try (var bufferedReader = new BufferedReader(new InputStreamReader(url.openStream()));
-         var writer = new FileWriter(file)) {
+        var writer = new FileWriter(file)) {
       String line;
       while ((line = bufferedReader.readLine()) != null) {
         writer.write(line);

@@ -34,11 +34,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * console, filesystem or the database. It is important that such functionality should not modify
  * the original message and influence the processing path.
  *
- * <p>
- * Wire Tap allows you to route messages to a separate location while they are being forwarded to
+ * <p>Wire Tap allows you to route messages to a separate location while they are being forwarded to
  * the ultimate destination. It basically consumes messages of the input channel and publishes the
  * unmodified message to both output channels.
- * </p>
  */
 @SpringBootApplication
 public class App {
@@ -57,15 +55,15 @@ public class App {
     var camelContext = (CamelContext) context.getBean("camelContext");
 
     // Add a new routes that will handle endpoints form WireTapRoute class.
-    camelContext.addRoutes(new RouteBuilder() {
+    camelContext.addRoutes(
+        new RouteBuilder() {
 
-      @Override
-      public void configure() throws Exception {
-        from("{{endpoint}}").log("ENDPOINT: ${body}");
-        from("{{wireTapEndpoint}}").log("WIRETAPPED ENDPOINT: ${body}");
-      }
-
-    });
+          @Override
+          public void configure() throws Exception {
+            from("{{endpoint}}").log("ENDPOINT: ${body}");
+            from("{{wireTapEndpoint}}").log("WIRETAPPED ENDPOINT: ${body}");
+          }
+        });
 
     // Add producer that will send test message to an entry point in WireTapRoute
     camelContext.createProducerTemplate().sendBody("{{entry}}", "Test message");

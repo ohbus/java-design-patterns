@@ -37,5 +37,4 @@ public class SimpleFluentIterableTest extends FluentIterableTest {
   protected FluentIterable<Integer> createFluentIterable(Iterable<Integer> integers) {
     return SimpleFluentIterable.fromCopyOf(integers);
   }
-
 }

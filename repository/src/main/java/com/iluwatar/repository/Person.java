@@ -27,26 +27,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-/**
- * Person entity.
- */
+/** Person entity. */
 @Entity
 public class Person {
 
-  @Id
-  @GeneratedValue
-  private Long id;
+  @Id @GeneratedValue private Long id;
   private String name;
   private String surname;
 
   private int age;
 
-  public Person() {
-  }
+  public Person() {}
 
-  /**
-   * Constructor.
-   */
+  /** Constructor. */
   public Person(String name, String surname, int age) {
     this.name = name;
     this.surname = surname;
@@ -135,5 +128,4 @@ public class Person {
     }
     return surname.equals(other.surname);
   }
-
 }

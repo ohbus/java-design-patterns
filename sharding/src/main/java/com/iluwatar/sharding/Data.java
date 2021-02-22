@@ -23,9 +23,7 @@
 
 package com.iluwatar.sharding;
 
-/**
- * Basic data structure for each tuple stored in data shards.
- */
+/** Basic data structure for each tuple stored in data shards. */
 public class Data {
 
   private int key;
@@ -36,6 +34,7 @@ public class Data {
 
   /**
    * Constructor of Data class.
+   *
    * @param key data key
    * @param value data vlue
    * @param type data type
@@ -71,14 +70,13 @@ public class Data {
   }
 
   enum DataType {
-    TYPE_1, TYPE_2, TYPE_3
+    TYPE_1,
+    TYPE_2,
+    TYPE_3
   }
 
   @Override
   public String toString() {
-    return "Data {" + "key="
-      + key + ", value='" + value
-      + '\'' + ", type=" + type + '}';
+    return "Data {" + "key=" + key + ", value='" + value + '\'' + ", type=" + type + '}';
   }
 }
-

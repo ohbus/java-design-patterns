@@ -31,9 +31,7 @@ import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-/**
- * Test class
- */
+/** Test class */
 public class AdapterPatternTest {
 
   private Map<String, Object> beans;
@@ -42,9 +40,7 @@ public class AdapterPatternTest {
 
   private static final String ROWING_BEAN = "captain";
 
-  /**
-   * This method runs before the test execution and sets the bean objects in the beans Map.
-   */
+  /** This method runs before the test execution and sets the bean objects in the beans Map. */
   @BeforeEach
   public void setup() {
     beans = new HashMap<>();

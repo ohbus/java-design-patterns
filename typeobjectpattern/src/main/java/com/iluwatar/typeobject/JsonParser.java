@@ -29,16 +29,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Hashtable;
 import java.util.List;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-/**
- * The JsonParser class helps parse the json file candy.json to get all the different candies.
- */
-
+/** The JsonParser class helps parse the json file candy.json to get all the different candies. */
 public class JsonParser {
   Hashtable<String, Candy> candies;
 
@@ -82,5 +78,4 @@ public class JsonParser {
       }
     }
   }
-
 }

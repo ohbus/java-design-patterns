@@ -23,10 +23,7 @@
 
 package com.iluwatar.flux.action;
 
-
-/**
- * MenuAction is a concrete action.
- */
+/** MenuAction is a concrete action. */
 public class MenuAction extends Action {
 
   private final MenuItem menuItem;

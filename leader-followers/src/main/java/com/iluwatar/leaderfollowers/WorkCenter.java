@@ -36,9 +36,7 @@ public class WorkCenter {
   private Worker leader;
   private final List<Worker> workers = new CopyOnWriteArrayList<>();
 
-  /**
-   * Create workers and set leader.
-   */
+  /** Create workers and set leader. */
   public void createWorkers(int numberOfWorkers, TaskSet taskSet, TaskHandler taskHandler) {
     for (var id = 1; id <= numberOfWorkers; id++) {
       var worker = new Worker(id, this, taskSet, taskHandler);
@@ -59,9 +57,7 @@ public class WorkCenter {
     return leader;
   }
 
-  /**
-   * Promote a leader.
-   */
+  /** Promote a leader. */
   public void promoteLeader() {
     Worker leader = null;
     if (workers.size() > 0) {

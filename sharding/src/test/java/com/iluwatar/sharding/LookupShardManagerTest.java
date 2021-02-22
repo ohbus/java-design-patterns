@@ -28,16 +28,12 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * Unit tests for LookupShardManager class.
- */
+/** Unit tests for LookupShardManager class. */
 public class LookupShardManagerTest {
 
   private LookupShardManager lookupShardManager;
 
-  /**
-   * Initialize lookupShardManager instance.
-   */
+  /** Initialize lookupShardManager instance. */
   @Before
   public void setup() {
     lookupShardManager = new LookupShardManager();

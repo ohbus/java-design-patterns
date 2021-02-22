@@ -23,9 +23,7 @@
 
 package com.iluwatar.proxy;
 
-/**
- * Wizard.
- */
+/** Wizard. */
 public class Wizard {
 
   private final String name;
@@ -38,5 +36,4 @@ public class Wizard {
   public String toString() {
     return name;
   }
-
 }

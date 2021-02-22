@@ -33,10 +33,10 @@ import org.slf4j.LoggerFactory;
  * value, <code>AsyncCallback</code> which can be provided to be executed on task completion and
  * <code>AsyncExecutor</code> that manages the execution of the async tasks.
  *
- * <p>The main method shows example flow of async invocations. The main thread starts multiple
- * tasks with variable durations and then continues its own work. When the main thread has done it's
- * job it collects the results of the async tasks. Two of the tasks are handled with callbacks,
- * meaning the callbacks are executed immediately when the tasks complete.
+ * <p>The main method shows example flow of async invocations. The main thread starts multiple tasks
+ * with variable durations and then continues its own work. When the main thread has done it's job
+ * it collects the results of the async tasks. Two of the tasks are handled with callbacks, meaning
+ * the callbacks are executed immediately when the tasks complete.
  *
  * <p>Noteworthy difference of thread usage between the async results and callbacks is that the
  * async results are collected in the main thread but the callbacks are executed within the worker
@@ -59,9 +59,7 @@ public class App {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(App.class);
 
-  /**
-   * Program entry point.
-   */
+  /** Program entry point. */
   public static void main(String[] args) throws Exception {
     // construct a new executor that will run async tasks
     var executor = new ThreadAsyncExecutor();
@@ -94,7 +92,7 @@ public class App {
   /**
    * Creates a callable that lazily evaluates to given value with artificial delay.
    *
-   * @param value       value to evaluate
+   * @param value value to evaluate
    * @param delayMillis artificial delay in milliseconds
    * @return new callable for lazy evaluation
    */

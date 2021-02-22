@@ -23,13 +23,11 @@
 
 package com.iluwatar.strangler;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Test methods in OldArithmetic
- */
+import org.junit.jupiter.api.Test;
+
+/** Test methods in OldArithmetic */
 class OldArithmeticTest {
   private static final OldArithmetic arithmetic = new OldArithmetic(new OldSource());
 

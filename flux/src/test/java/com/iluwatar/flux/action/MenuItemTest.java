@@ -43,5 +43,4 @@ public class MenuItemTest {
       assertFalse(toString.trim().isEmpty());
     }
   }
-
 }

@@ -27,9 +27,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-/**
- * The class representing a service discovery pattern.
- */
+/** The class representing a service discovery pattern. */
 public class ServiceDiscoveryService {
   private final Map<String, OrchestrationChapter<?>> services;
 
@@ -45,6 +43,4 @@ public class ServiceDiscoveryService {
   public ServiceDiscoveryService() {
     this.services = new HashMap<>();
   }
-
-
 }

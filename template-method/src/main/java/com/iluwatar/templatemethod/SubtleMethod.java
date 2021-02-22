@@ -26,9 +26,7 @@ package com.iluwatar.templatemethod;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * SubtleMethod implementation of {@link StealingMethod}.
- */
+/** SubtleMethod implementation of {@link StealingMethod}. */
 public class SubtleMethod extends StealingMethod {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(SubtleMethod.class);

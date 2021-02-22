@@ -33,8 +33,7 @@ import org.springframework.stereotype.Component;
  * <i>direct:endpoint</i>. Route accepts messages having body of array or collection of objects.
  * Splitter component split message body and forwards single objects to the endpoint.
  *
- * <p>In this example input/output endpoints names are stored in <i>application.properties</i>
- * file.
+ * <p>In this example input/output endpoints names are stored in <i>application.properties</i> file.
  */
 @Component
 public class SplitterRoute extends RouteBuilder {

@@ -30,9 +30,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Inventory.
- */
+/** Inventory. */
 public class Inventory {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(Inventory.class);
@@ -41,18 +39,14 @@ public class Inventory {
   private final List<Item> items;
   private final Lock lock;
 
-  /**
-   * Constructor.
-   */
+  /** Constructor. */
   public Inventory(int inventorySize) {
     this.inventorySize = inventorySize;
     this.items = new ArrayList<>(inventorySize);
     this.lock = new ReentrantLock();
   }
 
-  /**
-   * Add item.
-   */
+  /** Add item. */
   public boolean addItem(Item item) {
     if (items.size() < inventorySize) {
       lock.lock();
@@ -78,5 +72,4 @@ public class Inventory {
   public final List<Item> getItems() {
     return List.copyOf(items);
   }
-
 }

@@ -30,15 +30,14 @@ import static org.junit.Assert.assertThat;
 import com.google.common.testing.EqualsTester;
 import org.junit.jupiter.api.Test;
 
-/**
- * Unit test for HeroStat.
- */
+/** Unit test for HeroStat. */
 public class HeroStatTest {
 
   /**
    * Tester for equals() and hashCode() methods of a class. Using guava's EqualsTester.
    *
-   * @see <a href="http://static.javadoc.io/com.google.guava/guava-testlib/19.0/com/google/common/testing/EqualsTester.html">
+   * @see <a
+   *     href="http://static.javadoc.io/com.google.guava/guava-testlib/19.0/com/google/common/testing/EqualsTester.html">
    *     http://static.javadoc.io/com.google.guava/guava-testlib/19.0/com/google/common/testing/EqualsTester.html
    *     </a>
    */
@@ -62,5 +61,4 @@ public class HeroStatTest {
     assertThat(heroStatA.toString(), is(heroStatB.toString()));
     assertThat(heroStatA.toString(), is(not(heroStatC.toString())));
   }
-
 }

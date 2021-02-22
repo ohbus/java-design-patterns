@@ -25,9 +25,7 @@ package com.iluwatar.cqrs.dto;
 
 import java.util.Objects;
 
-/**
- * This is a DTO (Data Transfer Object) book, contains only useful information to be returned.
- */
+/** This is a DTO (Data Transfer Object) book, contains only useful information to be returned. */
 public class Book {
 
   private String title;
@@ -44,8 +42,7 @@ public class Book {
     this.price = price;
   }
 
-  public Book() {
-  }
+  public Book() {}
 
   public String getTitle() {
     return title;
@@ -76,5 +73,4 @@ public class Book {
     var book = (Book) obj;
     return title.equals(book.getTitle()) && price == book.getPrice();
   }
-
 }

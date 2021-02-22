@@ -23,9 +23,7 @@
 
 package com.iluwatar.abstractfactory;
 
-/**
- * OrcKing.
- */
+/** OrcKing. */
 public class OrcKing implements King {
 
   static final String DESCRIPTION = "This is the Orc king!";

@@ -23,9 +23,7 @@
 
 package com.iluwatar.prototype;
 
-/**
- * OrcBeast.
- */
+/** OrcBeast. */
 public class OrcBeast extends Beast {
 
   private final String weapon;
@@ -66,6 +64,4 @@ public class OrcBeast extends Beast {
     }
     return weapon.equals(other.weapon);
   }
-
-
 }

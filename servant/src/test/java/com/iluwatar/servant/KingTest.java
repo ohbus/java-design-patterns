@@ -102,5 +102,4 @@ public class KingTest {
     king.changeMood();
     assertFalse(king.getMood());
   }
-
 }

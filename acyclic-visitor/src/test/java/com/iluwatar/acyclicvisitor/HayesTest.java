@@ -30,27 +30,25 @@ import static org.mockito.Mockito.verifyZeroInteractions;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * Hayes test class
- */
+/** Hayes test class */
 public class HayesTest {
 
   @Test
-  public void testAcceptForDos() {  
+  public void testAcceptForDos() {
     var hayes = new Hayes();
     var mockVisitor = mock(ConfigureForDosVisitor.class);
-    
+
     hayes.accept(mockVisitor);
-    verify((HayesVisitor)mockVisitor).visit(eq(hayes));
+    verify((HayesVisitor) mockVisitor).visit(eq(hayes));
   }
-  
+
   @Test
-  public void testAcceptForUnix() {    
+  public void testAcceptForUnix() {
     var hayes = new Hayes();
     var mockVisitor = mock(ConfigureForUnixVisitor.class);
-    
+
     hayes.accept(mockVisitor);
-    
+
     verifyZeroInteractions(mockVisitor);
   }
 }

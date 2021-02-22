@@ -23,14 +23,14 @@
 
 package com.iluwatar.roleobject;
 
-import org.junit.Test;
-
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+
+import org.junit.Test;
 
 public class ApplicationRoleObjectTest {
 
   @Test
   public void shouldExecuteApplicationWithoutException() {
-    assertDoesNotThrow(() -> ApplicationRoleObject.main(new String[]{}));
+    assertDoesNotThrow(() -> ApplicationRoleObject.main(new String[] {}));
   }
 }

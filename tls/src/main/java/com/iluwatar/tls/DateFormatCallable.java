@@ -46,23 +46,24 @@ public class DateFormatCallable implements Callable<Result> {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(DateFormatCallable.class);
   // class variables (members)
-  private final ThreadLocal<DateFormat> df;    //TLTL
+  private final ThreadLocal<DateFormat> df; // TLTL
   // private DateFormat df;                 //NTLNTL
 
   private final String dateValue; // for dateValue Thread Local not needed
-
 
   /**
    * The date format and the date value are passed to the constructor.
    *
    * @param inDateFormat string date format string, e.g. "dd/MM/yyyy"
-   * @param inDateValue  string date value, e.g. "21/06/2016"
+   * @param inDateValue string date value, e.g. "21/06/2016"
    */
   public DateFormatCallable(String inDateFormat, String inDateValue) {
-    final var idf = inDateFormat;                 //TLTL
-    this.df = ThreadLocal.withInitial(() -> {          //TLTL
-      return new SimpleDateFormat(idf);            //TLTL
-    });                                               //TLTL
+    final var idf = inDateFormat; // TLTL
+    this.df =
+        ThreadLocal.withInitial(
+            () -> { // TLTL
+              return new SimpleDateFormat(idf); // TLTL
+            }); // TLTL
     // this.df = new SimpleDateFormat(inDateFormat);    //NTLNTL
     this.dateValue = inDateValue;
   }
@@ -73,18 +74,20 @@ public class DateFormatCallable implements Callable<Result> {
     var result = new Result();
 
     // Convert date value to date 5 times
-    IntStream.rangeClosed(1, 5).forEach(i -> {
-      try {
-        // this is the statement where it is important to have the
-        // instance of SimpleDateFormat locally
-        // Create the date value and store it in dateList
-        result.getDateList().add(this.df.get().parse(this.dateValue));   //TLTL
-        // result.getDateList().add(this.df.parse(this.dateValue));           //NTLNTL
-      } catch (Exception e) {
-        // write the Exception to a list and continue work
-        result.getExceptionList().add(e.getClass() + ": " + e.getMessage());
-      }
-    });
+    IntStream.rangeClosed(1, 5)
+        .forEach(
+            i -> {
+              try {
+                // this is the statement where it is important to have the
+                // instance of SimpleDateFormat locally
+                // Create the date value and store it in dateList
+                result.getDateList().add(this.df.get().parse(this.dateValue)); // TLTL
+                // result.getDateList().add(this.df.parse(this.dateValue));           //NTLNTL
+              } catch (Exception e) {
+                // write the Exception to a list and continue work
+                result.getExceptionList().add(e.getClass() + ": " + e.getMessage());
+              }
+            });
 
     LOGGER.info(Thread.currentThread() + " finished processing part of the thread");
 

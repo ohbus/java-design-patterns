@@ -23,11 +23,11 @@
 
 package com.iluwatar.multiton;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
+
+import org.junit.jupiter.api.Test;
 
 /**
  * Date: 12/22/15 - 22:28 AM
@@ -48,5 +48,4 @@ public class NazgulTest {
       assertEquals(name, nazgul.getName());
     }
   }
-
 }

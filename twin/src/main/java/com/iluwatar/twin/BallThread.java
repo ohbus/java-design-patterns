@@ -30,7 +30,6 @@ import org.slf4j.LoggerFactory;
  * This class is a UI thread for drawing the {@link BallItem}, and provide the method for suspend
  * and resume. It hold the reference of {@link BallItem} to delegate the draw task.
  */
-
 public class BallThread extends Thread {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(BallThread.class);
@@ -45,9 +44,7 @@ public class BallThread extends Thread {
     this.twin = twin;
   }
 
-  /**
-   * Run the thread.
-   */
+  /** Run the thread. */
   public void run() {
 
     while (isRunning) {
@@ -78,4 +75,3 @@ public class BallThread extends Thread {
     this.isSuspended = true;
   }
 }
-

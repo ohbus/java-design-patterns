@@ -40,22 +40,19 @@ public class Producer {
   private final String name;
   private boolean isStopped;
 
-  /**
-   * Constructor.
-   */
+  /** Constructor. */
   public Producer(String name, MqPublishPoint queue) {
     this.name = name;
     this.queue = queue;
     this.isStopped = false;
   }
 
-  /**
-   * Send message to queue.
-   */
+  /** Send message to queue. */
   public void send(String body) {
     if (isStopped) {
-      throw new IllegalStateException(String.format(
-          "Producer %s was stopped and fail to deliver requested message [%s].", body, name));
+      throw new IllegalStateException(
+          String.format(
+              "Producer %s was stopped and fail to deliver requested message [%s].", body, name));
     }
     var msg = new SimpleMessage();
     msg.addHeader(Headers.DATE, new Date().toString());
@@ -70,9 +67,7 @@ public class Producer {
     }
   }
 
-  /**
-   * Stop system by sending poison pill.
-   */
+  /** Stop system by sending poison pill. */
   public void stop() {
     isStopped = true;
     try {

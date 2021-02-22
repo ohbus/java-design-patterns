@@ -39,9 +39,7 @@ import org.junit.jupiter.api.Test;
  */
 public class MovementSelectorTest {
 
-  /**
-   * Verify if the movement selector gives the correct results.
-   */
+  /** Verify if the movement selector gives the correct results. */
   @Test
   public void testMovement() {
     final var swimmingCreature = mock(Creature.class);
@@ -53,7 +51,5 @@ public class MovementSelectorTest {
     final var swimmingSelector = new MovementSelector(Movement.SWIMMING);
     assertTrue(swimmingSelector.test(swimmingCreature));
     assertFalse(swimmingSelector.test(flyingCreature));
-
   }
-
 }

@@ -31,14 +31,10 @@ import java.io.Serializable;
  */
 public interface FileSelectorView extends Serializable {
 
-  /**
-   * Opens the view.
-   */
+  /** Opens the view. */
   void open();
 
-  /**
-   * Closes the view.
-   */
+  /** Closes the view. */
   void close();
 
   /**

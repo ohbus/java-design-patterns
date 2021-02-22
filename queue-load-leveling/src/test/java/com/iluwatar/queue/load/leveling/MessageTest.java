@@ -27,9 +27,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * Test case for creating and checking the Message.
- */
+/** Test case for creating and checking the Message. */
 public class MessageTest {
 
   @Test

@@ -28,15 +28,15 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.security.InvalidParameterException;
 import org.junit.jupiter.api.Test;
 
-/**
- * TenantTest to test the creation of Tenant with valid parameters.
- */
+/** TenantTest to test the creation of Tenant with valid parameters. */
 public class TenantTest {
 
   @Test
   public void constructorTest() {
-    assertThrows(InvalidParameterException.class, () -> {
-      new Tenant("FailTenant", -1, new CallsCount());
-    });
+    assertThrows(
+        InvalidParameterException.class,
+        () -> {
+          new Tenant("FailTenant", -1, new CallsCount());
+        });
   }
 }

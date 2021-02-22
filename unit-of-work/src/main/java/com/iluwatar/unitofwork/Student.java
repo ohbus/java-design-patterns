@@ -23,9 +23,7 @@
 
 package com.iluwatar.unitofwork;
 
-/**
- * {@link Student} is an entity.
- */
+/** {@link Student} is an entity. */
 public class Student {
   private final Integer id;
   private final String name;
@@ -34,8 +32,8 @@ public class Student {
   /**
    * Constructor.
    *
-   * @param id      student unique id
-   * @param name    name of student
+   * @param id student unique id
+   * @param name name of student
    * @param address address of student
    */
   public Student(Integer id, String name, String address) {

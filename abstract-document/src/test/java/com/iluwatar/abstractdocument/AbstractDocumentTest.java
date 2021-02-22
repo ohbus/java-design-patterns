@@ -32,9 +32,7 @@ import java.util.List;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
 
-/**
- * AbstractDocument test class
- */
+/** AbstractDocument test class */
 public class AbstractDocumentTest {
 
   private static final String KEY = "key";
@@ -80,5 +78,4 @@ public class AbstractDocumentTest {
     assertTrue(document.toString().contains(KEY));
     assertTrue(document.toString().contains(VALUE));
   }
-
 }

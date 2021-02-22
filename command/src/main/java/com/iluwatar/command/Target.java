@@ -26,9 +26,7 @@ package com.iluwatar.command;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Base class for spell targets.
- */
+/** Base class for spell targets. */
 public abstract class Target {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(Target.class);
@@ -56,27 +54,21 @@ public abstract class Target {
   @Override
   public abstract String toString();
 
-  /**
-   * Print status.
-   */
+  /** Print status. */
   public void printStatus() {
     LOGGER.info("{}, [size={}] [visibility={}]", this, getSize(), getVisibility());
   }
 
-  /**
-   * Changes the size of the target.
-   */
+  /** Changes the size of the target. */
   public void changeSize() {
     var oldSize = getSize() == Size.NORMAL ? Size.SMALL : Size.NORMAL;
     setSize(oldSize);
   }
 
-  /**
-   * Changes the visibility of the target.
-   */
+  /** Changes the visibility of the target. */
   public void changeVisibility() {
-    var visible = getVisibility() == Visibility.INVISIBLE
-            ? Visibility.VISIBLE : Visibility.INVISIBLE;
+    var visible =
+        getVisibility() == Visibility.INVISIBLE ? Visibility.VISIBLE : Visibility.INVISIBLE;
     setVisibility(visible);
   }
 }

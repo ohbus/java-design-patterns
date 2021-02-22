@@ -25,64 +25,48 @@ package com.iluwatar.filterer.threat;
 
 import com.google.common.collect.ImmutableList;
 import com.iluwatar.filterer.domain.Filterer;
-
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-/**
- * {@inheritDoc}
- */
+/** {@inheritDoc} */
 public class SimpleProbabilisticThreatAwareSystem implements ProbabilisticThreatAwareSystem {
 
   private final String systemId;
   private final ImmutableList<ProbableThreat> threats;
 
   public SimpleProbabilisticThreatAwareSystem(
-          final String systemId,
-          final List<ProbableThreat> threats
-  ) {
+      final String systemId, final List<ProbableThreat> threats) {
     this.systemId = systemId;
     this.threats = ImmutableList.copyOf(threats);
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   public String systemId() {
     return systemId;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   public List<? extends ProbableThreat> threats() {
     return threats;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   public Filterer<? extends ProbabilisticThreatAwareSystem, ? extends ProbableThreat> filtered() {
     return this::filteredGroup;
   }
 
   private ProbabilisticThreatAwareSystem filteredGroup(
-          final Predicate<? super ProbableThreat> predicate
-  ) {
+      final Predicate<? super ProbableThreat> predicate) {
     return new SimpleProbabilisticThreatAwareSystem(this.systemId, filteredItems(predicate));
   }
 
-  private List<ProbableThreat> filteredItems(
-          final Predicate<? super ProbableThreat> predicate
-  ) {
-    return this.threats.stream()
-            .filter(predicate)
-            .collect(Collectors.toList());
+  private List<ProbableThreat> filteredItems(final Predicate<? super ProbableThreat> predicate) {
+    return this.threats.stream().filter(predicate).collect(Collectors.toList());
   }
 
   @Override
@@ -94,8 +78,7 @@ public class SimpleProbabilisticThreatAwareSystem implements ProbabilisticThreat
       return false;
     }
     var that = (SimpleProbabilisticThreatAwareSystem) o;
-    return systemId.equals(that.systemId)
-            && threats.equals(that.threats);
+    return systemId.equals(that.systemId) && threats.equals(that.threats);
   }
 
   @Override
@@ -106,8 +89,11 @@ public class SimpleProbabilisticThreatAwareSystem implements ProbabilisticThreat
   @Override
   public String toString() {
     return "SimpleProbabilisticThreatAwareSystem{"
-            + "systemId='" + systemId + '\''
-            + ", threats=" + threats
-            + '}';
+        + "systemId='"
+        + systemId
+        + '\''
+        + ", threats="
+        + threats
+        + '}';
   }
 }

@@ -23,18 +23,14 @@
 
 package com.iluwatar.leaderelection.bully;
 
-import com.iluwatar.leaderelection.*;
-import org.junit.jupiter.api.Test;
-
-import java.lang.reflect.Field;
-import java.util.Map;
-import java.util.Queue;
-
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * BullyMessageManager unit test.
- */
+import com.iluwatar.leaderelection.*;
+import java.util.Map;
+import java.util.Queue;
+import org.junit.jupiter.api.Test;
+
+/** BullyMessageManager unit test. */
 public class BullyMessageManagerTest {
 
   @Test
@@ -52,7 +48,8 @@ public class BullyMessageManagerTest {
       var instance2 = new BullyInstance(null, 1, 2);
       var instance3 = new BullyInstance(null, 1, 3);
       var instance4 = new BullyInstance(null, 1, 4);
-      Map<Integer, Instance> instanceMap = Map.of(1, instance1, 2, instance2, 3, instance3, 4, instance4);
+      Map<Integer, Instance> instanceMap =
+          Map.of(1, instance1, 2, instance2, 3, instance3, 4, instance4);
       instance1.setAlive(false);
       var messageManager = new BullyMessageManager(instanceMap);
       var result = messageManager.sendElectionMessage(3, "3");
@@ -76,7 +73,8 @@ public class BullyMessageManagerTest {
     var instance2 = new BullyInstance(null, 1, 2);
     var instance3 = new BullyInstance(null, 1, 3);
     var instance4 = new BullyInstance(null, 1, 4);
-    Map<Integer, Instance> instanceMap = Map.of(1, instance1, 2, instance2, 3, instance3, 4, instance4);
+    Map<Integer, Instance> instanceMap =
+        Map.of(1, instance1, 2, instance2, 3, instance3, 4, instance4);
     instance1.setAlive(false);
     var messageManager = new BullyMessageManager(instanceMap);
     var result = messageManager.sendElectionMessage(2, "2");
@@ -90,7 +88,8 @@ public class BullyMessageManagerTest {
       var instance2 = new BullyInstance(null, 1, 2);
       var instance3 = new BullyInstance(null, 1, 3);
       var instance4 = new BullyInstance(null, 1, 4);
-      Map<Integer, Instance> instanceMap = Map.of(1, instance1, 2, instance2, 3, instance3, 4, instance4);
+      Map<Integer, Instance> instanceMap =
+          Map.of(1, instance1, 2, instance2, 3, instance3, 4, instance4);
       instance1.setAlive(false);
       var messageManager = new BullyMessageManager(instanceMap);
       messageManager.sendLeaderMessage(2, 2);
@@ -127,6 +126,4 @@ public class BullyMessageManagerTest {
       fail("Error to access private field.");
     }
   }
-
-
 }

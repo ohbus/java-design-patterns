@@ -25,13 +25,10 @@ package com.iluwatar.sharding;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Abstract class for ShardManager.
- */
+/** Abstract class for ShardManager. */
 public abstract class ShardManager {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(ShardManager.class);
@@ -46,8 +43,8 @@ public abstract class ShardManager {
    * Add a provided shard instance to shardMap.
    *
    * @param shard new shard instance.
-   * @return {@code true} if succeed to add the new instance.
-   *         {@code false} if the shardId is already existed.
+   * @return {@code true} if succeed to add the new instance. {@code false} if the shardId is
+   *     already existed.
    */
   public boolean addNewShard(final Shard shard) {
     var shardId = shard.getId();
@@ -99,5 +96,4 @@ public abstract class ShardManager {
    * @return id of shard that the data should be stored
    */
   protected abstract int allocateShard(final Data data);
-
 }

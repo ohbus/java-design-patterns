@@ -30,9 +30,7 @@ import com.mongodb.client.model.UpdateOptions;
 import java.util.ArrayList;
 import org.bson.Document;
 
-/**
- * Mongo based banking adapter.
- */
+/** Mongo based banking adapter. */
 public class MongoBank implements WireTransfers {
 
   private static final String DEFAULT_DB = "lotteryDB";
@@ -42,36 +40,29 @@ public class MongoBank implements WireTransfers {
   private MongoDatabase database;
   private MongoCollection<Document> accountsCollection;
 
-  /**
-   * Constructor.
-   */
+  /** Constructor. */
   public MongoBank() {
     connect();
   }
 
-  /**
-   * Constructor accepting parameters.
-   */
+  /** Constructor accepting parameters. */
   public MongoBank(String dbName, String accountsCollectionName) {
     connect(dbName, accountsCollectionName);
   }
 
-  /**
-   * Connect to database with default parameters.
-   */
+  /** Connect to database with default parameters. */
   public void connect() {
     connect(DEFAULT_DB, DEFAULT_ACCOUNTS_COLLECTION);
   }
 
-  /**
-   * Connect to database with given parameters.
-   */
+  /** Connect to database with given parameters. */
   public void connect(String dbName, String accountsCollectionName) {
     if (mongoClient != null) {
       mongoClient.close();
     }
-    mongoClient = new MongoClient(System.getProperty("mongo-host"),
-        Integer.parseInt(System.getProperty("mongo-port")));
+    mongoClient =
+        new MongoClient(
+            System.getProperty("mongo-host"), Integer.parseInt(System.getProperty("mongo-port")));
     database = mongoClient.getDatabase(dbName);
     accountsCollection = database.getCollection(accountsCollectionName);
   }
@@ -102,7 +93,6 @@ public class MongoBank implements WireTransfers {
   public MongoCollection<Document> getAccountsCollection() {
     return accountsCollection;
   }
-
 
   @Override
   public void setFunds(String bankAccount, int amount) {

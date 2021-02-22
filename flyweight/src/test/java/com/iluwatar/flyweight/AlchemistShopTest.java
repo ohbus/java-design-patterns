@@ -55,7 +55,5 @@ public class AlchemistShopTest {
     // There are 13 potion instances, but only 5 unique instance types
     assertEquals(13, allPotions.size());
     assertEquals(5, allPotions.stream().map(System::identityHashCode).distinct().count());
-
   }
-
 }

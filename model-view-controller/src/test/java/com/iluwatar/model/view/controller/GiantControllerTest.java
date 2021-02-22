@@ -37,9 +37,7 @@ import org.junit.jupiter.api.Test;
  */
 public class GiantControllerTest {
 
-  /**
-   * Verify if the controller passes the health level through to the model and vice versa
-   */
+  /** Verify if the controller passes the health level through to the model and vice versa */
   @Test
   public void testSetHealth() {
     final var model = mock(GiantModel.class);
@@ -61,9 +59,7 @@ public class GiantControllerTest {
     verifyNoMoreInteractions(model, view);
   }
 
-  /**
-   * Verify if the controller passes the fatigue level through to the model and vice versa
-   */
+  /** Verify if the controller passes the fatigue level through to the model and vice versa */
   @Test
   public void testSetFatigue() {
     final var model = mock(GiantModel.class);
@@ -85,9 +81,7 @@ public class GiantControllerTest {
     verifyNoMoreInteractions(model, view);
   }
 
-  /**
-   * Verify if the controller passes the nourishment level through to the model and vice versa
-   */
+  /** Verify if the controller passes the nourishment level through to the model and vice versa */
   @Test
   public void testSetNourishment() {
     final var model = mock(GiantModel.class);
@@ -122,5 +116,4 @@ public class GiantControllerTest {
 
     verifyNoMoreInteractions(model, view);
   }
-
 }

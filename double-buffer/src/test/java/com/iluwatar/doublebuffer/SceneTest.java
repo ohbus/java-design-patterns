@@ -27,9 +27,7 @@ import java.util.ArrayList;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Scene unit tests.
- */
+/** Scene unit tests. */
 public class SceneTest {
 
   @Test

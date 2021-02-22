@@ -26,9 +26,7 @@ package com.iluwatar.priority.queue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Message Worker.
- */
+/** Message Worker. */
 public class Worker {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(Worker.class);
@@ -39,9 +37,7 @@ public class Worker {
     this.queueManager = queueManager;
   }
 
-  /**
-   * Keep checking queue for message.
-   */
+  /** Keep checking queue for message. */
   @SuppressWarnings("squid:S2189")
   public void run() throws Exception {
     while (true) {
@@ -55,11 +51,8 @@ public class Worker {
     }
   }
 
-  /**
-   * Process message.
-   */
+  /** Process message. */
   private void processMessage(Message message) {
     LOGGER.info(message.toString());
   }
-
 }

@@ -28,16 +28,12 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * Unit tests for HashShardManager class.
- */
+/** Unit tests for HashShardManager class. */
 public class HashShardManagerTest {
 
   private HashShardManager hashShardManager;
 
-  /**
-   * Initialize hashShardManager instance.
-   */
+  /** Initialize hashShardManager instance. */
   @Before
   public void setup() {
     hashShardManager = new HashShardManager();
@@ -50,9 +46,7 @@ public class HashShardManagerTest {
   }
 
   @After
-  public void tearDown() {
-
-  }
+  public void tearDown() {}
 
   @Test
   public void testStoreData() {
@@ -60,5 +54,4 @@ public class HashShardManagerTest {
     hashShardManager.storeData(data);
     Assert.assertEquals(data, hashShardManager.getShardById(1).getDataById(1));
   }
-
 }

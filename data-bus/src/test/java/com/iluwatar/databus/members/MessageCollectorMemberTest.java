@@ -40,25 +40,24 @@ public class MessageCollectorMemberTest {
 
   @Test
   public void collectMessageFromMessageData() {
-    //given
+    // given
     final var message = "message";
     final var messageData = new MessageData(message);
     final var collector = new MessageCollectorMember("collector");
-    //when
+    // when
     collector.accept(messageData);
-    //then
+    // then
     assertTrue(collector.getMessages().contains(message));
   }
 
   @Test
   public void collectIgnoresMessageFromOtherDataTypes() {
-    //given
+    // given
     final var startingData = new StartingData(LocalDateTime.now());
     final var collector = new MessageCollectorMember("collector");
-    //when
+    // when
     collector.accept(startingData);
-    //then
+    // then
     assertEquals(0, collector.getMessages().size());
   }
-
 }

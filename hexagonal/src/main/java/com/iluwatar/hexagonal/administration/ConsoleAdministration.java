@@ -33,16 +33,12 @@ import java.util.Scanner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Console interface for lottery administration.
- */
+/** Console interface for lottery administration. */
 public class ConsoleAdministration {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(ConsoleAdministration.class);
 
-  /**
-   * Program entry point.
-   */
+  /** Program entry point. */
   public static void main(String[] args) {
     MongoConnectionPropertiesLoader.load();
     var injector = Guice.createInjector(new LotteryModule());

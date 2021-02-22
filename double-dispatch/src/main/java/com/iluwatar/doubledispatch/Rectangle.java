@@ -23,9 +23,7 @@
 
 package com.iluwatar.doubledispatch;
 
-/**
- * Rectangle has coordinates and can be checked for overlap against other Rectangles.
- */
+/** Rectangle has coordinates and can be checked for overlap against other Rectangles. */
 public class Rectangle {
 
   private final int left;
@@ -33,9 +31,7 @@ public class Rectangle {
   private final int right;
   private final int bottom;
 
-  /**
-   * Constructor.
-   */
+  /** Constructor. */
   public Rectangle(int left, int top, int right, int bottom) {
     this.left = left;
     this.top = top;
@@ -60,8 +56,10 @@ public class Rectangle {
   }
 
   boolean intersectsWith(Rectangle r) {
-    return !(r.getLeft() > getRight() || r.getRight() < getLeft() || r.getTop() > getBottom() || r
-        .getBottom() < getTop());
+    return !(r.getLeft() > getRight()
+        || r.getRight() < getLeft()
+        || r.getTop() > getBottom()
+        || r.getBottom() < getTop());
   }
 
   @Override

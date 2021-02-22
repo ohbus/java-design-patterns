@@ -23,11 +23,8 @@
 
 package com.iluwatar.doublebuffer;
 
-/**
- * Pixel enum. Each pixel can be white (not drawn) or black (drawn).
- */
+/** Pixel enum. Each pixel can be white (not drawn) or black (drawn). */
 public enum Pixel {
-
   WHITE(0),
   BLACK(1);
 

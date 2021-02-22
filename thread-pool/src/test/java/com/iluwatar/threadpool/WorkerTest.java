@@ -37,9 +37,7 @@ import org.junit.jupiter.api.Test;
  */
 public class WorkerTest {
 
-  /**
-   * Verify if a worker does the actual job
-   */
+  /** Verify if a worker does the actual job */
   @Test
   public void testRun() {
     final var task = mock(Task.class);
@@ -50,5 +48,4 @@ public class WorkerTest {
     verify(task).getTimeMs();
     verifyNoMoreInteractions(task);
   }
-
 }

@@ -24,10 +24,9 @@
 package com.iluwatar.updatemethod;
 
 /**
- * Skeletons are always patrolling on the game map. Initially all the skeletons
- * patrolling to the right, and after them reach the bounding, it will start
- * patrolling to the left. For each frame, one skeleton will move 1 position
- * step.
+ * Skeletons are always patrolling on the game map. Initially all the skeletons patrolling to the
+ * right, and after them reach the bounding, it will start patrolling to the left. For each frame,
+ * one skeleton will move 1 position step.
  */
 public class Skeleton extends Entity {
 
@@ -75,4 +74,3 @@ public class Skeleton extends Entity {
     logger.info("Skeleton " + id + " is on position " + position + ".");
   }
 }
-

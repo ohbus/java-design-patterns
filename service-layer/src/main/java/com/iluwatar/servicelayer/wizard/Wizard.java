@@ -35,9 +35,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-/**
- * Wizard entity.
- */
+/** Wizard entity. */
 @Entity
 @Table(name = "WIZARD")
 public class Wizard extends BaseEntity {

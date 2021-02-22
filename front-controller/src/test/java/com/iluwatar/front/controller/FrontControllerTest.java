@@ -53,14 +53,13 @@ public class FrontControllerTest {
 
   static List<Object[]> dataProvider() {
     return List.of(
-        new Object[]{new ArcherCommand(), "Displaying archers"},
-        new Object[]{new CatapultCommand(), "Displaying catapults"},
-        new Object[]{new UnknownCommand(), "Error 500"}
-    );
+        new Object[] {new ArcherCommand(), "Displaying archers"},
+        new Object[] {new CatapultCommand(), "Displaying catapults"},
+        new Object[] {new UnknownCommand(), "Error 500"});
   }
 
   /**
-   * @param command        The command that's been tested
+   * @param command The command that's been tested
    * @param displayMessage The expected display message
    */
   @ParameterizedTest
@@ -71,5 +70,4 @@ public class FrontControllerTest {
     assertEquals(displayMessage, appender.getLastMessage());
     assertEquals(1, appender.getLogSize());
   }
-
 }

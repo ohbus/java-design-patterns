@@ -82,12 +82,9 @@ public class MammothTest {
     mammoth.observe();
     assertEquals("The mammoth is calm and peaceful.", appender.getLastMessage());
     assertEquals(5, appender.getLogSize());
-
   }
 
-  /**
-   * Verify if {@link Mammoth#toString()} gives the expected value
-   */
+  /** Verify if {@link Mammoth#toString()} gives the expected value */
   @Test
   public void testToString() {
     final var toString = new Mammoth().toString();
@@ -116,5 +113,4 @@ public class MammothTest {
       return log.get(log.size() - 1).getFormattedMessage();
     }
   }
-
 }

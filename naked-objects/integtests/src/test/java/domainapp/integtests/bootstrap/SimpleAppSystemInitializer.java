@@ -28,17 +28,12 @@ import org.apache.isis.core.integtestsupport.IsisSystemForTest;
 import org.apache.isis.objectstore.jdo.datanucleus.DataNucleusPersistenceMechanismInstaller;
 import org.apache.isis.objectstore.jdo.datanucleus.IsisConfigurationForJdoIntegTests;
 
-/**
- * Initializer for the Simple App
- */
+/** Initializer for the Simple App */
 public final class SimpleAppSystemInitializer {
 
-  private SimpleAppSystemInitializer() {
-  }
+  private SimpleAppSystemInitializer() {}
 
-  /**
-   * Init test system
-   */
+  /** Init test system */
   public static void initIsft() {
     var isft = IsisSystemForTest.getElseNull();
     if (isft == null) {

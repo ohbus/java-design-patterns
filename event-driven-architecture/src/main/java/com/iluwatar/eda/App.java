@@ -60,5 +60,4 @@ public class App {
     dispatcher.dispatch(new UserCreatedEvent(user));
     dispatcher.dispatch(new UserUpdatedEvent(user));
   }
-
 }

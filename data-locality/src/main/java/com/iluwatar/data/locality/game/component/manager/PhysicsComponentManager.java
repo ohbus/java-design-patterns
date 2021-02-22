@@ -29,9 +29,7 @@ import java.util.stream.IntStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Physics component Manager for Game.
- */
+/** Physics component Manager for Game. */
 public class PhysicsComponentManager {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(PhysicsComponentManager.class);
@@ -46,18 +44,13 @@ public class PhysicsComponentManager {
     this.numEntities = numEntities;
   }
 
-  /**
-   * Start physics component of Game.
-   */
+  /** Start physics component of Game. */
   public void start() {
     LOGGER.info("Start Physics Game Component ");
     IntStream.range(0, numEntities).forEach(i -> physicsComponents[i] = new PhysicsComponent());
   }
 
-
-  /**
-   * Update physics component of Game.
-   */
+  /** Update physics component of Game. */
   public void update() {
     LOGGER.info("Update Physics Game Component ");
     // Process physics.

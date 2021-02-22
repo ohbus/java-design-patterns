@@ -47,5 +47,4 @@ public final class CustomerRegistry {
   public Customer getCustomer(String id) {
     return customerMap.get(id);
   }
-
 }

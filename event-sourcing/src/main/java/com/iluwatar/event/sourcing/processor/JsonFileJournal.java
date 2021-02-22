@@ -54,14 +54,13 @@ public class JsonFileJournal {
   private final List<String> events = new ArrayList<>();
   private int index = 0;
 
-  /**
-   * Instantiates a new Json file journal.
-   */
+  /** Instantiates a new Json file journal. */
   public JsonFileJournal() {
     file = new File("Journal.json");
     if (file.exists()) {
-      try (var input = new BufferedReader(
-          new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8))) {
+      try (var input =
+          new BufferedReader(
+              new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8))) {
         String line;
         while ((line = input.readLine()) != null) {
           events.add(line);
@@ -73,7 +72,6 @@ public class JsonFileJournal {
       reset();
     }
   }
-
 
   /**
    * Write.
@@ -93,8 +91,9 @@ public class JsonFileJournal {
       throw new RuntimeException("Journal Event not recegnized");
     }
 
-    try (var output = new BufferedWriter(
-        new OutputStreamWriter(new FileOutputStream(file, true), StandardCharsets.UTF_8))) {
+    try (var output =
+        new BufferedWriter(
+            new OutputStreamWriter(new FileOutputStream(file, true), StandardCharsets.UTF_8))) {
       var eventString = jsonElement.toString();
       output.write(eventString + "\r\n");
     } catch (IOException e) {
@@ -102,14 +101,10 @@ public class JsonFileJournal {
     }
   }
 
-
-  /**
-   * Reset.
-   */
+  /** Reset. */
   public void reset() {
     file.delete();
   }
-
 
   /**
    * Read next domain event.

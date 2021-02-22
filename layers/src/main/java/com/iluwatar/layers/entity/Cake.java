@@ -25,7 +25,6 @@ package com.iluwatar.layers.entity;
 
 import java.util.HashSet;
 import java.util.Set;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -34,15 +33,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-/**
- * Cake entity.
- */
+/** Cake entity. */
 @Entity
 public class Cake {
 
-  @Id
-  @GeneratedValue
-  private Long id;
+  @Id @GeneratedValue private Long id;
 
   @OneToOne(cascade = CascadeType.REMOVE)
   private CakeTopping topping;

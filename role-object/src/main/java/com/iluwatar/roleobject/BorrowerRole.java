@@ -38,5 +38,4 @@ public class BorrowerRole extends CustomerRole {
   public String borrow() {
     return String.format("Borrower %s wants to get some money.", name);
   }
-
 }

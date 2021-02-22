@@ -28,14 +28,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.iluwatar.datatransfer.customer.CustomerDto;
-import com.iluwatar.datatransfer.customer.CustomerResource;
 import org.junit.jupiter.api.Test;
 
-/**
- * tests {@link CustomerResource}.
- */
+/** tests {@link CustomerResource}. */
 public class CustomerResourceTest {
   @Test
   public void shouldGetAllCustomers() {
@@ -73,5 +68,4 @@ public class CustomerResourceTest {
     var allCustomers = customerResource.getAllCustomers();
     assertTrue(allCustomers.isEmpty());
   }
-
 }

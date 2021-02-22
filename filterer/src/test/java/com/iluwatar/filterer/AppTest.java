@@ -28,6 +28,6 @@ import org.junit.jupiter.api.Test;
 class AppTest {
   @Test
   void shouldLaunchApp() {
-    App.main(new String[]{});
+    App.main(new String[] {});
   }
 }

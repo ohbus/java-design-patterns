@@ -35,9 +35,7 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * @author hongshuwei@gmail.com
- */
+/** @author hongshuwei@gmail.com */
 public class ReaderTest {
 
   private InMemoryAppender appender;
@@ -54,9 +52,7 @@ public class ReaderTest {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(ReaderTest.class);
 
-  /**
-   * Verify that multiple readers can get the read lock concurrently
-   */
+  /** Verify that multiple readers can get the read lock concurrently */
   @Test
   public void testRead() throws Exception {
 

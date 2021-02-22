@@ -27,8 +27,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * System under migration. Depends on old version source ({@link OldSource}) and
- * developing one ({@link HalfSource}).
+ * System under migration. Depends on old version source ({@link OldSource}) and developing one
+ * ({@link HalfSource}).
  */
 public class HalfArithmetic {
   private static final Logger LOGGER = LoggerFactory.getLogger(HalfArithmetic.class);
@@ -44,6 +44,7 @@ public class HalfArithmetic {
 
   /**
    * Accumulate sum.
+   *
    * @param nums numbers need to add together
    * @return accumulate sum
    */
@@ -54,6 +55,7 @@ public class HalfArithmetic {
 
   /**
    * Accumulate multiplication.
+   *
    * @param nums numbers need to multiply together
    * @return accumulate multiplication
    */
@@ -64,8 +66,9 @@ public class HalfArithmetic {
 
   /**
    * Chech if has any zero.
+   *
    * @param nums numbers need to check
-   * @return  if has any zero, return true, else, return false
+   * @return if has any zero, return true, else, return false
    */
   public boolean ifHasZero(int... nums) {
     LOGGER.info("Arithmetic check zero {}", VERSION);

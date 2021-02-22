@@ -37,12 +37,9 @@ public class CanonPrinter implements Printer {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(CanonPrinter.class);
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   public void print(String message) {
     LOGGER.info("Canon Printer : {}", message);
   }
-
 }

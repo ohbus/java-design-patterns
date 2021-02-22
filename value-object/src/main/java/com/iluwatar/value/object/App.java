@@ -44,9 +44,7 @@ public class App {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(App.class);
 
-  /**
-   * This practice creates three HeroStats(Value object) and checks equality between those.
-   */
+  /** This practice creates three HeroStats(Value object) and checks equality between those. */
   public static void main(String[] args) {
     var statA = HeroStat.valueOf(10, 5, 0);
     var statB = HeroStat.valueOf(10, 5, 0);

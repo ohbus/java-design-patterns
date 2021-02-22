@@ -35,11 +35,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * accepted by other systems. This is where splitter pattern comes in handy. It will take the whole
  * document, split it based on given criteria and send individual items to the endpoint.
  *
- * <p>
- * Splitter allows you to split messages based on defined criteria. It takes original message,
+ * <p>Splitter allows you to split messages based on defined criteria. It takes original message,
  * process it and send multiple parts to the output channel. It is not defined if it should keep the
  * order of items though.
- * </p>
  */
 @SpringBootApplication
 public class App {
@@ -58,14 +56,14 @@ public class App {
     var camelContext = (CamelContext) context.getBean("camelContext");
 
     // Add a new routes that will handle endpoints form SplitterRoute class.
-    camelContext.addRoutes(new RouteBuilder() {
+    camelContext.addRoutes(
+        new RouteBuilder() {
 
-      @Override
-      public void configure() throws Exception {
-        from("{{endpoint}}").log("ENDPOINT: ${body}");
-      }
-
-    });
+          @Override
+          public void configure() throws Exception {
+            from("{{endpoint}}").log("ENDPOINT: ${body}");
+          }
+        });
 
     // Add producer that will send test message to an entry point in WireTapRoute
     String[] stringArray = {"Test item #1", "Test item #2", "Test item #3"};

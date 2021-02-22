@@ -26,9 +26,7 @@ package com.iluwatar.nullobject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Implementation for binary tree's normal nodes.
- */
+/** Implementation for binary tree's normal nodes. */
 public class NodeImpl implements Node {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(NodeImpl.class);
@@ -37,9 +35,7 @@ public class NodeImpl implements Node {
   private final Node left;
   private final Node right;
 
-  /**
-   * Constructor.
-   */
+  /** Constructor. */
   public NodeImpl(String name, Node left, Node right) {
     this.name = name;
     this.left = left;

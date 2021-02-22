@@ -28,9 +28,7 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
-/**
- * The class representing a service discovery pattern.
- */
+/** The class representing a service discovery pattern. */
 public class ServiceDiscoveryService {
   private final Map<String, ChoreographyChapter> services;
 
@@ -56,6 +54,4 @@ public class ServiceDiscoveryService {
   public ServiceDiscoveryService() {
     this.services = new HashMap<>();
   }
-
-
 }

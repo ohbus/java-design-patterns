@@ -23,19 +23,15 @@
 
 package com.iluwatar.leaderelection.ring;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import com.iluwatar.leaderelection.AbstractInstance;
 import com.iluwatar.leaderelection.Message;
 import com.iluwatar.leaderelection.MessageType;
+import java.util.Queue;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Field;
-import java.util.Queue;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-/**
- * RingInstance unit test.
- */
+/** RingInstance unit test. */
 public class RingInstanceTest {
 
   @Test

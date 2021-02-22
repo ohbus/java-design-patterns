@@ -42,24 +42,27 @@ import org.junit.jupiter.params.provider.MethodSource;
  */
 public class CreatureTest {
 
-  /**
-   * @return The tested {@link Creature} instance and its expected specs
-   */
+  /** @return The tested {@link Creature} instance and its expected specs */
   public static Collection<Object[]> dataProvider() {
     return List.of(
-        new Object[]{new Dragon(), "Dragon", Size.LARGE, Movement.FLYING, Color.RED,
-            new Mass(39300.0)},
-        new Object[]{new Goblin(), "Goblin", Size.SMALL, Movement.WALKING, Color.GREEN,
-            new Mass(30.0)},
-        new Object[]{new KillerBee(), "KillerBee", Size.SMALL, Movement.FLYING, Color.LIGHT,
-            new Mass(6.7)},
-        new Object[]{new Octopus(), "Octopus", Size.NORMAL, Movement.SWIMMING, Color.DARK,
-            new Mass(12.0)},
-        new Object[]{new Shark(), "Shark", Size.NORMAL, Movement.SWIMMING, Color.LIGHT,
-            new Mass(500.0)},
-        new Object[]{new Troll(), "Troll", Size.LARGE, Movement.WALKING, Color.DARK,
-            new Mass(4000.0)}
-    );
+        new Object[] {
+          new Dragon(), "Dragon", Size.LARGE, Movement.FLYING, Color.RED, new Mass(39300.0)
+        },
+        new Object[] {
+          new Goblin(), "Goblin", Size.SMALL, Movement.WALKING, Color.GREEN, new Mass(30.0)
+        },
+        new Object[] {
+          new KillerBee(), "KillerBee", Size.SMALL, Movement.FLYING, Color.LIGHT, new Mass(6.7)
+        },
+        new Object[] {
+          new Octopus(), "Octopus", Size.NORMAL, Movement.SWIMMING, Color.DARK, new Mass(12.0)
+        },
+        new Object[] {
+          new Shark(), "Shark", Size.NORMAL, Movement.SWIMMING, Color.LIGHT, new Mass(500.0)
+        },
+        new Object[] {
+          new Troll(), "Troll", Size.LARGE, Movement.WALKING, Color.DARK, new Mass(4000.0)
+        });
   }
 
   @ParameterizedTest
@@ -82,25 +85,27 @@ public class CreatureTest {
 
   @ParameterizedTest
   @MethodSource("dataProvider")
-  public void testGetColor(Creature testedCreature, String name, Size size, Movement movement,
-                           Color color) {
+  public void testGetColor(
+      Creature testedCreature, String name, Size size, Movement movement, Color color) {
     assertEquals(color, testedCreature.getColor());
   }
 
   @ParameterizedTest
   @MethodSource("dataProvider")
-  public void testGetMass(Creature testedCreature, String name, Size size, Movement movement,
-                          Color color, Mass mass) {
+  public void testGetMass(
+      Creature testedCreature, String name, Size size, Movement movement, Color color, Mass mass) {
     assertEquals(mass, testedCreature.getMass());
   }
 
   @ParameterizedTest
   @MethodSource("dataProvider")
-  public void testToString(Creature testedCreature, String name, Size size, Movement movement,
-                           Color color, Mass mass) {
+  public void testToString(
+      Creature testedCreature, String name, Size size, Movement movement, Color color, Mass mass) {
     final var toString = testedCreature.toString();
     assertNotNull(toString);
-    assertEquals(String
-        .format("%s [size=%s, movement=%s, color=%s, mass=%s]", name, size, movement, color, mass), toString);
+    assertEquals(
+        String.format(
+            "%s [size=%s, movement=%s, color=%s, mass=%s]", name, size, movement, color, mass),
+        toString);
   }
 }

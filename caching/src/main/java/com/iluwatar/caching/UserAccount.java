@@ -23,17 +23,13 @@
 
 package com.iluwatar.caching;
 
-/**
- * Entity class (stored in cache and DB) used in the application.
- */
+/** Entity class (stored in cache and DB) used in the application. */
 public class UserAccount {
   private String userId;
   private String userName;
   private String additionalInfo;
 
-  /**
-   * Constructor.
-   */
+  /** Constructor. */
   public UserAccount(String userId, String userName, String additionalInfo) {
     this.userId = userId;
     this.userName = userName;

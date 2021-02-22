@@ -23,13 +23,11 @@
 
 package com.iluwatar.event.aggregator;
 
-/**
- * Event enumeration.
- */
+/** Event enumeration. */
 public enum Event {
-
-  STARK_SIGHTED("Stark sighted"), WARSHIPS_APPROACHING("Warships approaching"), TRAITOR_DETECTED(
-      "Traitor detected");
+  STARK_SIGHTED("Stark sighted"),
+  WARSHIPS_APPROACHING("Warships approaching"),
+  TRAITOR_DETECTED("Traitor detected");
 
   private final String description;
 

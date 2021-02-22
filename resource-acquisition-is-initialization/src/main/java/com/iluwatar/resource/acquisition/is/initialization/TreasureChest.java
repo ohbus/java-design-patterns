@@ -27,9 +27,7 @@ import java.io.Closeable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * TreasureChest resource.
- */
+/** TreasureChest resource. */
 public class TreasureChest implements Closeable {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(TreasureChest.class);

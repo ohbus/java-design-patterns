@@ -24,12 +24,9 @@
 package com.iluwatar.filterer.threat;
 
 import com.iluwatar.filterer.domain.Filterer;
-
 import java.util.List;
 
-/**
- * Represents system that is aware of threats that are present in it.
- */
+/** Represents system that is aware of threats that are present in it. */
 public interface ThreatAwareSystem {
 
   /**
@@ -41,15 +38,16 @@ public interface ThreatAwareSystem {
 
   /**
    * Returns list of threats for this system.
+   *
    * @return list of threats for this system.
    */
   List<? extends Threat> threats();
 
   /**
-   * Returns the instance of {@link Filterer} helper interface that allows to covariantly
-   * specify lower bound for predicate that we want to filter by.
+   * Returns the instance of {@link Filterer} helper interface that allows to covariantly specify
+   * lower bound for predicate that we want to filter by.
+   *
    * @return an instance of {@link Filterer} helper interface.
    */
   Filterer<? extends ThreatAwareSystem, ? extends Threat> filtered();
-
 }

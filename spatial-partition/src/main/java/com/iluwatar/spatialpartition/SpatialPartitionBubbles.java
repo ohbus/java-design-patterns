@@ -30,7 +30,6 @@ import java.util.HashMap;
  * This class extends the generic SpatialPartition abstract class and is used in our example to keep
  * track of all the bubbles that collide, pop and stay un-popped.
  */
-
 public class SpatialPartitionBubbles extends SpatialPartitionGeneric<Bubble> {
 
   private final HashMap<Integer, Bubble> bubbles;
@@ -47,7 +46,7 @@ public class SpatialPartitionBubbles extends SpatialPartitionGeneric<Bubble> {
     var rect = new Rect(b.coordinateX, b.coordinateY, 2D * b.radius, 2D * b.radius);
     var quadTreeQueryResult = new ArrayList<Point>();
     this.quadTree.query(rect, quadTreeQueryResult);
-    //handling these collisions
+    // handling these collisions
     b.handleCollision(quadTreeQueryResult, this.bubbles);
   }
 }

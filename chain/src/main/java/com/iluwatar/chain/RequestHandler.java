@@ -26,9 +26,7 @@ package com.iluwatar.chain;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * RequestHandler.
- */
+/** RequestHandler. */
 public abstract class RequestHandler {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(RequestHandler.class);
@@ -39,9 +37,7 @@ public abstract class RequestHandler {
     this.next = next;
   }
 
-  /**
-   * Request handler.
-   */
+  /** Request handler. */
   public void handleRequest(Request req) {
     if (next != null) {
       next.handleRequest(req);

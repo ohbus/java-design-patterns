@@ -25,9 +25,7 @@ package com.iluwatar.collectionpipeline;
 
 import java.util.List;
 
-/**
- * A Person class that has the list of cars that the person owns and use.
- */
+/** A Person class that has the list of cars that the person owns and use. */
 public class Person {
   private final List<Car> cars;
 

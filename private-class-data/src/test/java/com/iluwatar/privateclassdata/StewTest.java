@@ -49,14 +49,12 @@ public class StewTest {
     appender.stop();
   }
 
-  /**
-   * Verify if mixing the stew doesn't change the internal state
-   */
+  /** Verify if mixing the stew doesn't change the internal state */
   @Test
   public void testMix() {
     final var stew = new ImmutableStew(1, 2, 3, 4);
-    final var expectedMessage = "Mixing the immutable stew we find: 1 potatoes, "
-        + "2 carrots, 3 meat and 4 peppers";
+    final var expectedMessage =
+        "Mixing the immutable stew we find: 1 potatoes, " + "2 carrots, 3 meat and 4 peppers";
 
     for (var i = 0; i < 20; i++) {
       stew.mix();
@@ -65,5 +63,4 @@ public class StewTest {
 
     assertEquals(20, appender.getLogSize());
   }
-
 }

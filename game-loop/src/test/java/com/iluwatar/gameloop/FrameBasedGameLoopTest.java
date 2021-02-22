@@ -28,9 +28,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
-/**
- * FrameBasedGameLoop unit test class.
- */
+/** FrameBasedGameLoop unit test class. */
 public class FrameBasedGameLoopTest {
 
   private FrameBasedGameLoop gameLoop;

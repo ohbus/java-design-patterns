@@ -32,9 +32,7 @@ import domainapp.dom.modules.simple.SimpleObjects;
 import java.util.UUID;
 import org.apache.isis.core.specsupport.specs.CukeGlueAbstract;
 
-/**
- * Test Simple Object Operations
- */
+/** Test Simple Object Operations */
 public class SimpleObjectGlue extends CukeGlueAbstract {
 
   @Given("^there are.* (\\d+) simple objects$")
@@ -53,5 +51,4 @@ public class SimpleObjectGlue extends CukeGlueAbstract {
   public void createNewSimpleObject() {
     service(SimpleObjects.class).create(UUID.randomUUID().toString());
   }
-
 }

@@ -29,9 +29,7 @@ import com.iluwatar.leaderfollowers.WorkCenter;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Tests for WorkCenter
- */
+/** Tests for WorkCenter */
 public class WorkCenterTest {
 
   @Test

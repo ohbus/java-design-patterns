@@ -23,15 +23,13 @@
 
 package com.iluwatar.bytecode;
 
-import org.junit.jupiter.api.Test;
-
 import static com.iluwatar.bytecode.Instruction.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-/**
- * Test for {@Link VirtualMachine}
- */
+import org.junit.jupiter.api.Test;
+
+/** Test for {@Link VirtualMachine} */
 public class VirtualMachineTest {
 
   @Test
@@ -54,7 +52,7 @@ public class VirtualMachineTest {
     bytecode[0] = LITERAL.getIntValue();
     bytecode[1] = wizardNumber;
     bytecode[2] = LITERAL.getIntValue();
-    bytecode[3] = 50;                        // health amount
+    bytecode[3] = 50; // health amount
     bytecode[4] = SET_HEALTH.getIntValue();
 
     var vm = new VirtualMachine();
@@ -70,7 +68,7 @@ public class VirtualMachineTest {
     bytecode[0] = LITERAL.getIntValue();
     bytecode[1] = wizardNumber;
     bytecode[2] = LITERAL.getIntValue();
-    bytecode[3] = 50;                        // agility amount
+    bytecode[3] = 50; // agility amount
     bytecode[4] = SET_AGILITY.getIntValue();
 
     var vm = new VirtualMachine();
@@ -86,7 +84,7 @@ public class VirtualMachineTest {
     bytecode[0] = LITERAL.getIntValue();
     bytecode[1] = wizardNumber;
     bytecode[2] = LITERAL.getIntValue();
-    bytecode[3] = 50;                        // wisdom amount
+    bytecode[3] = 50; // wisdom amount
     bytecode[4] = SET_WISDOM.getIntValue();
 
     var vm = new VirtualMachine();
@@ -102,7 +100,7 @@ public class VirtualMachineTest {
     bytecode[0] = LITERAL.getIntValue();
     bytecode[1] = wizardNumber;
     bytecode[2] = LITERAL.getIntValue();
-    bytecode[3] = 50;                        // health amount
+    bytecode[3] = 50; // health amount
     bytecode[4] = SET_HEALTH.getIntValue();
     bytecode[5] = LITERAL.getIntValue();
     bytecode[6] = wizardNumber;

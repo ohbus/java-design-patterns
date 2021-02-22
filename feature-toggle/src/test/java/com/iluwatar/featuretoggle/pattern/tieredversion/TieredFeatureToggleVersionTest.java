@@ -32,9 +32,7 @@ import com.iluwatar.featuretoggle.user.UserGroup;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-/**
- * Test Tiered Feature Toggle
- */
+/** Test Tiered Feature Toggle */
 public class TieredFeatureToggleVersionTest {
 
   final User paidUser = new User("Jamie Coder");

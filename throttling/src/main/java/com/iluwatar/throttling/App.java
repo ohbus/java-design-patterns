@@ -34,12 +34,11 @@ import org.slf4j.LoggerFactory;
  * Throttling pattern is a design pattern to throttle or limit the use of resources or even a
  * complete service by users or a particular tenant. This can allow systems to continue to function
  * and meet service level agreements, even when an increase in demand places load on resources.
- * <p>
- * In this example we have ({@link App}) as the initiating point of the service. This is a time
- * based throttling, i.e. only a certain number of calls are allowed per second.
- * </p>
- * ({@link Tenant}) is the Tenant POJO class with which many tenants can be created ({@link
- * B2BService}) is the service which is consumed by the tenants and is throttled.
+ *
+ * <p>In this example we have ({@link App}) as the initiating point of the service. This is a time
+ * based throttling, i.e. only a certain number of calls are allowed per second. ({@link Tenant}) is
+ * the Tenant POJO class with which many tenants can be created ({@link B2BService}) is the service
+ * which is consumed by the tenants and is throttled.
  */
 public class App {
 
@@ -68,20 +67,20 @@ public class App {
     }
   }
 
-  /**
-   * Make calls to the B2BService dummy API.
-   */
+  /** Make calls to the B2BService dummy API. */
   private static void makeServiceCalls(Tenant tenant, CallsCount callsCount) {
     var timer = new ThrottleTimerImpl(10, callsCount);
     var service = new B2BService(timer, callsCount);
     // Sleep is introduced to keep the output in check and easy to view and analyze the results.
-    IntStream.range(0, 20).forEach(i -> {
-      service.dummyCustomerApi(tenant);
-      try {
-        Thread.sleep(1);
-      } catch (InterruptedException e) {
-        LOGGER.error("Thread interrupted: {}", e.getMessage());
-      }
-    });
+    IntStream.range(0, 20)
+        .forEach(
+            i -> {
+              service.dummyCustomerApi(tenant);
+              try {
+                Thread.sleep(1);
+              } catch (InterruptedException e) {
+                LOGGER.error("Thread interrupted: {}", e.getMessage());
+              }
+            });
   }
 }

@@ -23,18 +23,15 @@
 
 package com.iluwatar.transactionscript;
 
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.List;
+import javax.sql.DataSource;
 import org.h2.jdbcx.JdbcDataSource;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import javax.sql.DataSource;
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-/**
- * Tests {@link Hotel}
- */
+/** Tests {@link Hotel} */
 public class HotelTest {
 
   private static final String H2_DB_URL = "jdbc:h2:~/test";
@@ -50,7 +47,6 @@ public class HotelTest {
     dao = new HotelDaoImpl(dataSource);
     addRooms(dao);
     hotel = new Hotel(dao);
-
   }
 
   @Test
@@ -61,17 +57,21 @@ public class HotelTest {
 
   @Test()
   public void bookingRoomWithInvalidIdShouldRaiseException() {
-    assertThrows(Exception.class, () -> {
-      hotel.bookRoom(getNonExistingRoomId());
-    });
+    assertThrows(
+        Exception.class,
+        () -> {
+          hotel.bookRoom(getNonExistingRoomId());
+        });
   }
 
   @Test()
   public void bookingRoomAgainShouldRaiseException() {
-    assertThrows(Exception.class, () -> {
-      hotel.bookRoom(1);
-      hotel.bookRoom(1);
-    });
+    assertThrows(
+        Exception.class,
+        () -> {
+          hotel.bookRoom(1);
+          hotel.bookRoom(1);
+        });
   }
 
   @Test
@@ -89,29 +89,32 @@ public class HotelTest {
 
   @Test
   public void cancelRoomBookingWithInvalidIdShouldRaiseException() {
-    assertThrows(Exception.class, () -> {
-      hotel.cancelRoomBooking(getNonExistingRoomId());
-    });
+    assertThrows(
+        Exception.class,
+        () -> {
+          hotel.cancelRoomBooking(getNonExistingRoomId());
+        });
   }
 
   @Test
   public void cancelRoomBookingForUnbookedRoomShouldRaiseException() {
-    assertThrows(Exception.class, () -> {
-      hotel.cancelRoomBooking(1);
-    });
+    assertThrows(
+        Exception.class,
+        () -> {
+          hotel.cancelRoomBooking(1);
+        });
   }
-
 
   private static void deleteSchema(DataSource dataSource) throws java.sql.SQLException {
     try (var connection = dataSource.getConnection();
-         var statement = connection.createStatement()) {
+        var statement = connection.createStatement()) {
       statement.execute(RoomSchemaSql.DELETE_SCHEMA_SQL);
     }
   }
 
   private static void createSchema(DataSource dataSource) throws Exception {
     try (var connection = dataSource.getConnection();
-         var statement = connection.createStatement()) {
+        var statement = connection.createStatement()) {
       statement.execute(RoomSchemaSql.CREATE_SCHEMA_SQL);
     } catch (Exception e) {
       throw new Exception(e.getMessage(), e);

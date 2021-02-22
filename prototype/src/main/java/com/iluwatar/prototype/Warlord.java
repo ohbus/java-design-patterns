@@ -23,16 +23,12 @@
 
 package com.iluwatar.prototype;
 
-/**
- * Warlord.
- */
+/** Warlord. */
 public abstract class Warlord implements Prototype {
 
-  public Warlord() {
-  }
+  public Warlord() {}
 
-  public Warlord(Warlord source) {
-  }
+  public Warlord(Warlord source) {}
 
   @Override
   public abstract Warlord copy();
@@ -47,5 +43,4 @@ public abstract class Warlord implements Prototype {
     }
     return getClass() == obj.getClass();
   }
-
 }

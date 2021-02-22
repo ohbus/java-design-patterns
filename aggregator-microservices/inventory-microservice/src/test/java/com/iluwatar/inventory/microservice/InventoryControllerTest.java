@@ -27,9 +27,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * Test Inventory Rest Controller
- */
+/** Test Inventory Rest Controller */
 public class InventoryControllerTest {
   @Test
   public void testGetProductInventories() {

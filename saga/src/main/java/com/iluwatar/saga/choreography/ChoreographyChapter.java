@@ -23,7 +23,6 @@
 
 package com.iluwatar.saga.choreography;
 
-
 /**
  * ChoreographyChapter is an interface representing a contract for an external service. In that
  * case, a service needs to make a decision what to do further hence the server needs to get all
@@ -61,6 +60,4 @@ public interface ChoreographyChapter {
    * @return result {@link Saga}
    */
   Saga rollback(Saga saga);
-
-
 }

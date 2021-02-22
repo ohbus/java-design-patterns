@@ -23,13 +23,11 @@
 
 package com.iluwatar.strangler;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/**
- * Test methods in OldSource
- */
+import org.junit.jupiter.api.Test;
+
+/** Test methods in OldSource */
 public class OldSourceTest {
   private static final OldSource source = new OldSource();
 

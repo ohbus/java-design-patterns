@@ -31,9 +31,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- * Person class Created by dheeraj.mummarareddy on 3/4/18.
- */
+/** Person class Created by dheeraj.mummarareddy on 3/4/18. */
 @DynamoDBTable(tableName = "persons")
 public class Person implements Serializable {
 
@@ -115,10 +113,17 @@ public class Person implements Serializable {
   @Override
   public String toString() {
     return "Person{"
-        + "id='" + id + '\''
-        + ", firstName='" + firstName + '\''
-        + ", lastName='" + lastName + '\''
-        + ", address=" + address
+        + "id='"
+        + id
+        + '\''
+        + ", firstName='"
+        + firstName
+        + '\''
+        + ", lastName='"
+        + lastName
+        + '\''
+        + ", address="
+        + address
         + '}';
   }
 }

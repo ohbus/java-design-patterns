@@ -23,9 +23,7 @@
 
 package com.iluwatar.proxy;
 
-/**
- * WizardTower interface.
- */
+/** WizardTower interface. */
 public interface WizardTower {
 
   void enter(Wizard wizard);

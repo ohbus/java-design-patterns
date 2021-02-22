@@ -28,9 +28,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import units.SoldierUnit;
 
-/**
- * Class defining Soldier.
- */
+/** Class defining Soldier. */
 public class Soldier implements SoldierExtension {
   private static final Logger LOGGER = LoggerFactory.getLogger(Soldier.class);
 

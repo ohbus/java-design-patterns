@@ -21,14 +21,12 @@
  * THE SOFTWARE.
  */
 
-import org.junit.jupiter.api.Test;
-
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-/**
- * Guard test
- */
+import org.junit.jupiter.api.Test;
+
+/** Guard test */
 public class GuardTest {
 
   @Test

@@ -23,9 +23,7 @@
 
 package com.iluwatar.doublebuffer;
 
-/**
- * Buffer interface.
- */
+/** Buffer interface. */
 public interface Buffer {
 
   /**
@@ -44,9 +42,7 @@ public interface Buffer {
    */
   void draw(int x, int y);
 
-  /**
-   * Clear all the pixels.
-   */
+  /** Clear all the pixels. */
   void clearAll();
 
   /**
@@ -55,5 +51,4 @@ public interface Buffer {
    * @return pixel list
    */
   Pixel[] getPixels();
-
 }

@@ -59,5 +59,4 @@ public class App {
     canonPrinterController.print(MESSAGE_TO_PRINT);
     epsonPrinterController.print(MESSAGE_TO_PRINT);
   }
-
 }

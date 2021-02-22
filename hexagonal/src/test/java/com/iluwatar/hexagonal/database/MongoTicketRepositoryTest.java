@@ -36,9 +36,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-/**
- * Tests for Mongo based ticket repository
- */
+/** Tests for Mongo based ticket repository */
 @Disabled
 class MongoTicketRepositoryTest {
 
@@ -51,12 +49,13 @@ class MongoTicketRepositoryTest {
   @BeforeEach
   void init() {
     MongoConnectionPropertiesLoader.load();
-    var mongoClient = new MongoClient(System.getProperty("mongo-host"),
-        Integer.parseInt(System.getProperty("mongo-port")));
+    var mongoClient =
+        new MongoClient(
+            System.getProperty("mongo-host"), Integer.parseInt(System.getProperty("mongo-port")));
     mongoClient.dropDatabase(TEST_DB);
     mongoClient.close();
-    repository = new MongoTicketRepository(TEST_DB, TEST_TICKETS_COLLECTION,
-        TEST_COUNTERS_COLLECTION);
+    repository =
+        new MongoTicketRepository(TEST_DB, TEST_TICKETS_COLLECTION, TEST_COUNTERS_COLLECTION);
   }
 
   @Test

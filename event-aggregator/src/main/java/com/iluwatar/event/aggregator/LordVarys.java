@@ -23,13 +23,10 @@
 
 package com.iluwatar.event.aggregator;
 
-/**
- * LordVarys produces events.
- */
+/** LordVarys produces events. */
 public class LordVarys extends EventEmitter {
 
-  public LordVarys() {
-  }
+  public LordVarys() {}
 
   public LordVarys(EventObserver obs) {
     super(obs);

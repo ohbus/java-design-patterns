@@ -28,17 +28,14 @@ import com.iluwatar.leaderfollowers.TaskHandler;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Tests for TaskHandler
- */
+/** Tests for TaskHandler */
 public class TaskHandlerTest {
 
-    @Test
-    public void testHandleTask() throws InterruptedException {
-        var taskHandler = new TaskHandler();
-        var handle = new Task(100);
-        taskHandler.handleTask(handle);
-        Assert.assertTrue(handle.isFinished());
-    }
-
+  @Test
+  public void testHandleTask() throws InterruptedException {
+    var taskHandler = new TaskHandler();
+    var handle = new Task(100);
+    taskHandler.handleTask(handle);
+    Assert.assertTrue(handle.isFinished());
+  }
 }

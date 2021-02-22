@@ -27,9 +27,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * Test for Information Rest Controller
- */
+/** Test for Information Rest Controller */
 public class InformationControllerTest {
 
   @Test
@@ -38,5 +36,4 @@ public class InformationControllerTest {
     var title = infoController.getProductTitle();
     assertEquals("The Product Title.", title);
   }
-
 }

@@ -23,18 +23,15 @@
 
 package com.iluwatar.sharding;
 
-import org.junit.Test;
-
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
-/**
- * Unit tests for App class.
- */
+import org.junit.Test;
+
+/** Unit tests for App class. */
 public class AppTest {
 
   @Test
   public void shouldExecuteWithoutException() {
-    assertDoesNotThrow(() -> App.main(new String[]{}));
+    assertDoesNotThrow(() -> App.main(new String[] {}));
   }
-
 }

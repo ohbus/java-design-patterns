@@ -29,9 +29,7 @@ import org.apache.camel.CamelContext;
 import org.apache.camel.impl.DefaultExchange;
 import org.junit.jupiter.api.Test;
 
-/**
- * Tests MessageAggregationStrategy
- */
+/** Tests MessageAggregationStrategy */
 public class MessageAggregationStrategyTest {
 
   @Test

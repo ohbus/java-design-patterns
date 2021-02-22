@@ -67,9 +67,7 @@ public class InventoryTest {
    */
   private static final int THREAD_COUNT = 8;
 
-  /**
-   * The maximum number of {@link Item}s allowed in the {@link Inventory}
-   */
+  /** The maximum number of {@link Item}s allowed in the {@link Inventory} */
   private static final int INVENTORY_SIZE = 1000;
 
   /**
@@ -80,33 +78,41 @@ public class InventoryTest {
    */
   @Test
   public void testAddItem() throws Exception {
-    assertTimeout(ofMillis(10000), () -> {
-      // Create a new inventory with a limit of 1000 items and put some load on the add method
-      final var inventory = new Inventory(INVENTORY_SIZE);
-      final var executorService = Executors.newFixedThreadPool(THREAD_COUNT);
-      IntStream.range(0, THREAD_COUNT).<Runnable>mapToObj(i -> () -> {
-        while (inventory.addItem(new Item())) ;
-      }).forEach(executorService::execute);
+    assertTimeout(
+        ofMillis(10000),
+        () -> {
+          // Create a new inventory with a limit of 1000 items and put some load on the add method
+          final var inventory = new Inventory(INVENTORY_SIZE);
+          final var executorService = Executors.newFixedThreadPool(THREAD_COUNT);
+          IntStream.range(0, THREAD_COUNT)
+              .<Runnable>mapToObj(
+                  i ->
+                      () -> {
+                        while (inventory.addItem(new Item()))
+                          ;
+                      })
+              .forEach(executorService::execute);
 
-      // Wait until all threads have finished
-      executorService.shutdown();
-      executorService.awaitTermination(5, TimeUnit.SECONDS);
+          // Wait until all threads have finished
+          executorService.shutdown();
+          executorService.awaitTermination(5, TimeUnit.SECONDS);
 
-      // Check the number of items in the inventory. It should not have exceeded the allowed maximum
-      final var items = inventory.getItems();
-      assertNotNull(items);
-      assertEquals(INVENTORY_SIZE, items.size());
+          // Check the number of items in the inventory. It should not have exceeded the allowed
+          // maximum
+          final var items = inventory.getItems();
+          assertNotNull(items);
+          assertEquals(INVENTORY_SIZE, items.size());
 
-      assertEquals(INVENTORY_SIZE, appender.getLogSize());
+          assertEquals(INVENTORY_SIZE, appender.getLogSize());
 
-      // ... and check if the inventory size is increasing continuously
-      IntStream.range(0, items.size())
-          .mapToObj(i -> appender.log.get(i).getFormattedMessage()
-              .contains("items.size()=" + (i + 1)))
-          .forEach(Assertions::assertTrue);
-    });
+          // ... and check if the inventory size is increasing continuously
+          IntStream.range(0, items.size())
+              .mapToObj(
+                  i ->
+                      appender.log.get(i).getFormattedMessage().contains("items.size()=" + (i + 1)))
+              .forEach(Assertions::assertTrue);
+        });
   }
-
 
   private class InMemoryAppender extends AppenderBase<ILoggingEvent> {
     private final List<ILoggingEvent> log = new LinkedList<>();
@@ -125,5 +131,4 @@ public class InventoryTest {
       return log.size();
     }
   }
-
 }

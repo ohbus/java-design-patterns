@@ -51,5 +51,4 @@ public class SpellDaoImplTest extends BaseDaoTest<Spell, SpellDaoImpl> {
       assertEquals(spell.getName(), spellByName.getName());
     }
   }
-
 }

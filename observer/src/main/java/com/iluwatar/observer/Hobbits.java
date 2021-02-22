@@ -26,9 +26,7 @@ package com.iluwatar.observer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Hobbits.
- */
+/** Hobbits. */
 public class Hobbits implements WeatherObserver {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(Hobbits.class);

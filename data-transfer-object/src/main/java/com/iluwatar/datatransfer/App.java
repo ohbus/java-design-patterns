@@ -38,17 +38,16 @@ import org.slf4j.LoggerFactory;
  * The Data Transfer Object pattern is a design pattern in which an data transfer object is used to
  * serve related information together to avoid multiple call for each piece of information.
  *
- * <p>In the first example, {@link App} is a customer details consumer i.e. client to
- * request for customer details to server. {@link CustomerResource} act as server to serve customer
- * information. {@link CustomerDto} is data transfer object to share customer information.
+ * <p>In the first example, {@link App} is a customer details consumer i.e. client to request for
+ * customer details to server. {@link CustomerResource} act as server to serve customer information.
+ * {@link CustomerDto} is data transfer object to share customer information.
  *
- * <p>In the second example, {@link App} is a product details consumer i.e. client to
- * request for product details to server. {@link ProductResource} acts as server to serve
- * product information. {@link ProductDto} is data transfer object to share product information.
+ * <p>In the second example, {@link App} is a product details consumer i.e. client to request for
+ * product details to server. {@link ProductResource} acts as server to serve product information.
+ * {@link ProductDto} is data transfer object to share product information.
  *
  * <p>The pattern implementation is a bit different in each of the examples. The first can be
  * thought as a traditional example and the second is an enum based implementation.
- *
  */
 public class App {
 

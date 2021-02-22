@@ -23,11 +23,8 @@
 
 package com.iluwatar.bytecode;
 
-/**
- * Representation of instructions understandable by virtual machine.
- */
+/** Representation of instructions understandable by virtual machine. */
 public enum Instruction {
-
   LITERAL(1),
   SET_HEALTH(2),
   SET_WISDOM(3),

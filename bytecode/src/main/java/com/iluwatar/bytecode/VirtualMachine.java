@@ -25,18 +25,14 @@ package com.iluwatar.bytecode;
 
 import java.util.Stack;
 
-/**
- * Implementation of virtual machine.
- */
+/** Implementation of virtual machine. */
 public class VirtualMachine {
 
   private final Stack<Integer> stack = new Stack<>();
 
   private final Wizard[] wizards = new Wizard[2];
 
-  /**
-   * Constructor.
-   */
+  /** Constructor. */
   public VirtualMachine() {
     for (var i = 0; i < wizards.length; i++) {
       wizards[i] = new Wizard();

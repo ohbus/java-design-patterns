@@ -26,9 +26,7 @@ package com.iluwatar.event.aggregator;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * EventEmitter is the base class for event producers that can be observed.
- */
+/** EventEmitter is the base class for event producers that can be observed. */
 public abstract class EventEmitter {
 
   private final List<EventObserver> observers;

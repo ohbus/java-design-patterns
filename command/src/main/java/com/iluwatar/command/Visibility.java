@@ -23,12 +23,10 @@
 
 package com.iluwatar.command;
 
-/**
- * Enumeration for target visibility.
- */
+/** Enumeration for target visibility. */
 public enum Visibility {
-
-  VISIBLE("visible"), INVISIBLE("invisible");
+  VISIBLE("visible"),
+  INVISIBLE("invisible");
 
   private final String title;
 

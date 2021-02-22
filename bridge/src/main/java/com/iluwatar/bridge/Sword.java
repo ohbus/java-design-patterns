@@ -26,9 +26,7 @@ package com.iluwatar.bridge;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Sword.
- */
+/** Sword. */
 public class Sword implements Weapon {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(Sword.class);

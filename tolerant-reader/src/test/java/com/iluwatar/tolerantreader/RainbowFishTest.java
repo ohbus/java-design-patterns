@@ -34,9 +34,7 @@ import org.junit.Test;
  */
 public class RainbowFishTest {
 
-  /**
-   * Verify if the getters of a {@link RainbowFish} return the expected values
-   */
+  /** Verify if the getters of a {@link RainbowFish} return the expected values */
   @Test
   public void testValues() {
     final var fish = new RainbowFish("name", 1, 2, 3);
@@ -45,5 +43,4 @@ public class RainbowFishTest {
     assertEquals(2, fish.getLengthMeters());
     assertEquals(3, fish.getWeightTons());
   }
-
 }

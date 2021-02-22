@@ -23,13 +23,10 @@
 
 package com.iluwatar.event.aggregator;
 
-/**
- * LordBaelish produces events.
- */
+/** LordBaelish produces events. */
 public class LordBaelish extends EventEmitter {
 
-  public LordBaelish() {
-  }
+  public LordBaelish() {}
 
   public LordBaelish(EventObserver obs) {
     super(obs);

@@ -27,21 +27,20 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * A game loop runs continuously during gameplay. Each turn of the loop, it processes
- * user input without blocking, updates the game state, and renders the game. It tracks
- * the passage of time to control the rate of gameplay.
+ * A game loop runs continuously during gameplay. Each turn of the loop, it processes user input
+ * without blocking, updates the game state, and renders the game. It tracks the passage of time to
+ * control the rate of gameplay.
  */
 public class App {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(App.class);
 
-  /**
-   * Each type of game loop will run for 2 seconds.
-   */
+  /** Each type of game loop will run for 2 seconds. */
   private static final int GAME_LOOP_DURATION_TIME = 2000;
 
   /**
    * Program entry point.
+   *
    * @param args runtime arguments
    */
   public static void main(String[] args) {
@@ -72,5 +71,4 @@ public class App {
       LOGGER.error(e.getMessage());
     }
   }
-
 }

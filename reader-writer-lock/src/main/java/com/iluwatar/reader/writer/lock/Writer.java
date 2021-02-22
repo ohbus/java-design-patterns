@@ -27,9 +27,7 @@ import java.util.concurrent.locks.Lock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Writer class, write when it acquired the write lock.
- */
+/** Writer class, write when it acquired the write lock. */
 public class Writer implements Runnable {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(Writer.class);
@@ -43,7 +41,7 @@ public class Writer implements Runnable {
   /**
    * Create new Writer who writes for 250ms.
    *
-   * @param name      - Name of the thread owning the writer
+   * @param name - Name of the thread owning the writer
    * @param writeLock - Lock for this writer
    */
   public Writer(String name, Lock writeLock) {
@@ -53,8 +51,8 @@ public class Writer implements Runnable {
   /**
    * Create new Writer.
    *
-   * @param name        - Name of the thread owning the writer
-   * @param writeLock   - Lock for this writer
+   * @param name - Name of the thread owning the writer
+   * @param writeLock - Lock for this writer
    * @param writingTime - amount of time (in milliseconds) for this reader to engage writing
    */
   public Writer(String name, Lock writeLock, long writingTime) {
@@ -62,7 +60,6 @@ public class Writer implements Runnable {
     this.writeLock = writeLock;
     this.writingTime = writingTime;
   }
-
 
   @Override
   public void run() {
@@ -77,9 +74,7 @@ public class Writer implements Runnable {
     }
   }
 
-  /**
-   * Simulate the write operation.
-   */
+  /** Simulate the write operation. */
   public void write() throws InterruptedException {
     LOGGER.info("{} begin", name);
     Thread.sleep(writingTime);

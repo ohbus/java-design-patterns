@@ -37,5 +37,4 @@ public class LazyFluentIterableTest extends FluentIterableTest {
   protected FluentIterable<Integer> createFluentIterable(Iterable<Integer> integers) {
     return LazyFluentIterable.from(integers);
   }
-
 }

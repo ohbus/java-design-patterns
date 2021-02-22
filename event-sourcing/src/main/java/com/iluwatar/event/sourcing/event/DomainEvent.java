@@ -40,8 +40,8 @@ public abstract class DomainEvent implements Serializable {
   /**
    * Instantiates a new Domain event.
    *
-   * @param sequenceId     the sequence id
-   * @param createdTime    the created time
+   * @param sequenceId the sequence id
+   * @param createdTime the created time
    * @param eventClassName the event class name
    */
   public DomainEvent(long sequenceId, long createdTime, String eventClassName) {
@@ -86,9 +86,7 @@ public abstract class DomainEvent implements Serializable {
     this.realTime = realTime;
   }
 
-  /**
-   * Process.
-   */
+  /** Process. */
   public abstract void process();
 
   /**

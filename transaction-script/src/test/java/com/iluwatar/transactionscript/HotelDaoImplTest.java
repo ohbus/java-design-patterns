@@ -23,6 +23,14 @@
 
 package com.iluwatar.transactionscript;
 
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
+import static org.mockito.Mockito.*;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import javax.sql.DataSource;
 import org.h2.jdbcx.JdbcDataSource;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -31,18 +39,7 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-
-import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assumptions.assumeTrue;
-import static org.mockito.Mockito.*;
-
-/**
- * Tests {@link HotelDaoImpl}.
- */
+/** Tests {@link HotelDaoImpl}. */
 public class HotelDaoImplTest {
 
   private static final String DB_URL = "jdbc:h2:~/test";
@@ -57,15 +54,13 @@ public class HotelDaoImplTest {
   @BeforeEach
   public void createSchema() throws SQLException {
     try (var connection = DriverManager.getConnection(DB_URL);
-         var statement = connection.createStatement()) {
+        var statement = connection.createStatement()) {
       statement.execute(RoomSchemaSql.DELETE_SCHEMA_SQL);
       statement.execute(RoomSchemaSql.CREATE_SCHEMA_SQL);
     }
   }
 
-  /**
-   * Represents the scenario where DB connectivity is present.
-   */
+  /** Represents the scenario where DB connectivity is present. */
   @Nested
   public class ConnectionSuccess {
 
@@ -83,9 +78,7 @@ public class HotelDaoImplTest {
       Assertions.assertTrue(result);
     }
 
-    /**
-     * Represents the scenario when DAO operations are being performed on a non existing room.
-     */
+    /** Represents the scenario when DAO operations are being performed on a non existing room. */
     @Nested
     public class NonExistingRoom {
 
@@ -131,8 +124,7 @@ public class HotelDaoImplTest {
     }
 
     /**
-     * Represents a scenario where DAO operations are being performed on an already existing
-     * room.
+     * Represents a scenario where DAO operations are being performed on an already existing room.
      */
     @Nested
     public class ExistingRoom {
@@ -157,8 +149,8 @@ public class HotelDaoImplTest {
       }
 
       @Test
-      public void updationShouldBeSuccessAndAccessingTheSameRoomShouldReturnUpdatedInformation() throws
-          Exception {
+      public void updationShouldBeSuccessAndAccessingTheSameRoomShouldReturnUpdatedInformation()
+          throws Exception {
         final var newRoomType = "Double";
         final var newPrice = 80;
         final var newBookingStatus = false;
@@ -205,16 +197,20 @@ public class HotelDaoImplTest {
 
     @Test
     public void addingARoomFailsWithExceptionAsFeedbackToClient() {
-      assertThrows(Exception.class, () -> {
-        dao.add(new Room(2, "Double", 80, false));
-      });
+      assertThrows(
+          Exception.class,
+          () -> {
+            dao.add(new Room(2, "Double", 80, false));
+          });
     }
 
     @Test
     public void deletingARoomFailsWithExceptionAsFeedbackToTheClient() {
-      assertThrows(Exception.class, () -> {
-        dao.delete(existingRoom);
-      });
+      assertThrows(
+          Exception.class,
+          () -> {
+            dao.delete(existingRoom);
+          });
     }
 
     @Test
@@ -222,25 +218,30 @@ public class HotelDaoImplTest {
       final var newRoomType = "Double";
       final var newPrice = 80;
       final var newBookingStatus = false;
-      assertThrows(Exception.class, () -> {
-        dao.update(new Room(existingRoom.getId(), newRoomType, newPrice, newBookingStatus));
-      });
+      assertThrows(
+          Exception.class,
+          () -> {
+            dao.update(new Room(existingRoom.getId(), newRoomType, newPrice, newBookingStatus));
+          });
     }
 
     @Test
     public void retrievingARoomByIdFailsWithExceptionAsFeedbackToClient() {
-      assertThrows(Exception.class, () -> {
-        dao.getById(existingRoom.getId());
-      });
+      assertThrows(
+          Exception.class,
+          () -> {
+            dao.getById(existingRoom.getId());
+          });
     }
 
     @Test
     public void retrievingAllRoomsFailsWithExceptionAsFeedbackToClient() {
-      assertThrows(Exception.class, () -> {
-        dao.getAll();
-      });
+      assertThrows(
+          Exception.class,
+          () -> {
+            dao.getAll();
+          });
     }
-
   }
 
   /**
@@ -251,7 +252,7 @@ public class HotelDaoImplTest {
   @AfterEach
   public void deleteSchema() throws SQLException {
     try (var connection = DriverManager.getConnection(DB_URL);
-         var statement = connection.createStatement()) {
+        var statement = connection.createStatement()) {
       statement.execute(RoomSchemaSql.DELETE_SCHEMA_SQL);
     }
   }

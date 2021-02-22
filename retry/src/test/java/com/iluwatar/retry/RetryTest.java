@@ -35,23 +35,21 @@ import org.junit.jupiter.api.Test;
  * @author George Aristy (george.aristy@gmail.com)
  */
 public class RetryTest {
-  /**
-   * Should contain all errors thrown.
-   */
+  /** Should contain all errors thrown. */
   @Test
   public void errors() {
     final var e = new BusinessException("unhandled");
-    final var retry = new Retry<String>(
-        () -> {
-          throw e;
-        },
-        2,
-        0
-    );
+    final var retry =
+        new Retry<String>(
+            () -> {
+              throw e;
+            },
+            2,
+            0);
     try {
       retry.perform();
     } catch (BusinessException ex) {
-      //ignore
+      // ignore
     }
 
     assertThat(retry.errors(), hasItem(e));
@@ -64,17 +62,17 @@ public class RetryTest {
   @Test
   public void attempts() {
     final var e = new BusinessException("unhandled");
-    final var retry = new Retry<String>(
-        () -> {
-          throw e;
-        },
-        2,
-        0
-    );
+    final var retry =
+        new Retry<String>(
+            () -> {
+              throw e;
+            },
+            2,
+            0);
     try {
       retry.perform();
     } catch (BusinessException ex) {
-      //ignore
+      // ignore
     }
 
     assertThat(retry.attempts(), is(1));
@@ -87,21 +85,20 @@ public class RetryTest {
   @Test
   public void ignore() {
     final var e = new CustomerNotFoundException("customer not found");
-    final var retry = new Retry<String>(
-        () -> {
-          throw e;
-        },
-        2,
-        0,
-        ex -> CustomerNotFoundException.class.isAssignableFrom(ex.getClass())
-    );
+    final var retry =
+        new Retry<String>(
+            () -> {
+              throw e;
+            },
+            2,
+            0,
+            ex -> CustomerNotFoundException.class.isAssignableFrom(ex.getClass()));
     try {
       retry.perform();
     } catch (BusinessException ex) {
-      //ignore
+      // ignore
     }
 
     assertThat(retry.attempts(), is(2));
   }
-
 }

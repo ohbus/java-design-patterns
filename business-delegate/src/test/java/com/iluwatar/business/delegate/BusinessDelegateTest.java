@@ -23,19 +23,19 @@
 
 package com.iluwatar.business.delegate;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * The Business Delegate pattern adds an abstraction layer between the presentation and business
  * tiers. By using the pattern we gain loose coupling between the tiers. The Business Delegate
  * encapsulates knowledge about how to locate, connect to, and interact with the business objects
  * that make up the application.
- * 
+ *
  * <p>Some of the services the Business Delegate uses are instantiated directly, and some can be
  * retrieved through service lookups. The Business Delegate itself may contain business logic too
  * potentially tying together multiple service calls, exception handling, retrying etc.
@@ -68,8 +68,8 @@ public class BusinessDelegateTest {
   }
 
   /**
-   * In this example the client ({@link Client}) utilizes a business delegate (
-   * {@link BusinessDelegate}) to execute a task. The Business Delegate then selects the appropriate
+   * In this example the client ({@link Client}) utilizes a business delegate ( {@link
+   * BusinessDelegate}) to execute a task. The Business Delegate then selects the appropriate
    * service and makes the service call.
    */
   @Test

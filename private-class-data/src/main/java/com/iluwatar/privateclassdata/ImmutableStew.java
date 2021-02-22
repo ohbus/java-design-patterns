@@ -26,9 +26,7 @@ package com.iluwatar.privateclassdata;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Immutable stew class, protected with Private Class Data pattern.
- */
+/** Immutable stew class, protected with Private Class Data pattern. */
 public class ImmutableStew {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(ImmutableStew.class);
@@ -39,12 +37,13 @@ public class ImmutableStew {
     data = new StewData(numPotatoes, numCarrots, numMeat, numPeppers);
   }
 
-  /**
-   * Mix the stew.
-   */
+  /** Mix the stew. */
   public void mix() {
-    LOGGER
-        .info("Mixing the immutable stew we find: {} potatoes, {} carrots, {} meat and {} peppers",
-            data.getNumPotatoes(), data.getNumCarrots(), data.getNumMeat(), data.getNumPeppers());
+    LOGGER.info(
+        "Mixing the immutable stew we find: {} potatoes, {} carrots, {} meat and {} peppers",
+        data.getNumPotatoes(),
+        data.getNumCarrots(),
+        data.getNumMeat(),
+        data.getNumPeppers());
   }
 }

@@ -31,14 +31,10 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
-
 import org.slf4j.Logger;
 import org.springframework.stereotype.Component;
 
-
-/**
- * An adapter to communicate with the Price microservice.
- */
+/** An adapter to communicate with the Price microservice. */
 @Component
 public class PriceClientImpl implements PriceClient {
   private static final Logger LOGGER = getLogger(PriceClientImpl.class);
@@ -51,10 +47,8 @@ public class PriceClientImpl implements PriceClient {
   @Override
   public String getPrice() {
     var httpClient = HttpClient.newHttpClient();
-    var httpGet = HttpRequest.newBuilder()
-        .GET()
-        .uri(URI.create("http://localhost:50006/price"))
-        .build();
+    var httpGet =
+        HttpRequest.newBuilder().GET().uri(URI.create("http://localhost:50006/price")).build();
 
     try {
       LOGGER.info("Sending request to fetch price info");

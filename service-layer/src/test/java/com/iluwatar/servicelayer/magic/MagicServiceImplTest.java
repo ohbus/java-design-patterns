@@ -94,11 +94,7 @@ public class MagicServiceImplTest {
   public void testFindWizardsWithSpellbook() {
     final var bookname = "bookname";
     final var spellbook = mock(Spellbook.class);
-    final var wizards = Set.of(
-        mock(Wizard.class),
-        mock(Wizard.class),
-        mock(Wizard.class)
-    );
+    final var wizards = Set.of(mock(Wizard.class), mock(Wizard.class), mock(Wizard.class));
     when(spellbook.getWizards()).thenReturn(wizards);
 
     final var spellbookDao = mock(SpellbookDao.class);
@@ -106,7 +102,6 @@ public class MagicServiceImplTest {
 
     final var wizardDao = mock(WizardDao.class);
     final var spellDao = mock(SpellDao.class);
-
 
     final var service = new MagicServiceImpl(wizardDao, spellbookDao, spellDao);
     verifyZeroInteractions(wizardDao, spellbookDao, spellDao, spellbook);
@@ -123,11 +118,7 @@ public class MagicServiceImplTest {
 
   @Test
   public void testFindWizardsWithSpell() throws Exception {
-    final var wizards = Set.of(
-        mock(Wizard.class),
-        mock(Wizard.class),
-        mock(Wizard.class)
-    );
+    final var wizards = Set.of(mock(Wizard.class), mock(Wizard.class), mock(Wizard.class));
     final var spellbook = mock(Spellbook.class);
     when(spellbook.getWizards()).thenReturn(wizards);
 
@@ -153,5 +144,4 @@ public class MagicServiceImplTest {
 
     verifyNoMoreInteractions(wizardDao, spellbookDao, spellDao);
   }
-
 }

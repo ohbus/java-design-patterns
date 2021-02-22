@@ -40,8 +40,8 @@ import org.slf4j.LoggerFactory;
  * An object that applies this pattern can provide the equivalent of a namespace, providing the
  * initialization and finalization process of a static class or a class with static members with
  * cleaner, more concise syntax and semantics.
- * <p>
- * The below example demonstrates a JUnit test for testing two different modules: File Logger and
+ *
+ * <p>The below example demonstrates a JUnit test for testing two different modules: File Logger and
  * Console Logger
  */
 public final class FileLoggerModuleTest {
@@ -53,7 +53,6 @@ public final class FileLoggerModuleTest {
 
   private static final String MESSAGE = "MESSAGE";
   private static final String ERROR = "ERROR";
-
 
   /**
    * This test verify that 'MESSAGE' is perfectly printed in output file
@@ -104,7 +103,7 @@ public final class FileLoggerModuleTest {
    * This test verify that 'ERROR' is perfectly printed in error file
    *
    * @throws FileNotFoundException if program is not able to find log files (output.txt and
-   *                               error.txt)
+   *     error.txt)
    */
   @Test
   public void testFileErrorMessage() throws FileNotFoundException {
@@ -129,7 +128,7 @@ public final class FileLoggerModuleTest {
    * This test verify that nothing is printed in error file
    *
    * @throws FileNotFoundException if program is not able to find log files (output.txt and
-   *                               error.txt)
+   *     error.txt)
    */
   @Test
   public void testNoFileErrorMessage() throws FileNotFoundException {

@@ -87,7 +87,6 @@ public class App {
     }
     LOGGER.info("More readers added...");
 
-
     // In the system console, it can see that the read operations are executed concurrently while
     // write operations are exclusive.
     executeService.shutdown();
@@ -97,7 +96,5 @@ public class App {
       LOGGER.error("Error waiting for ExecutorService shutdown", e);
       Thread.currentThread().interrupt();
     }
-
   }
-
 }

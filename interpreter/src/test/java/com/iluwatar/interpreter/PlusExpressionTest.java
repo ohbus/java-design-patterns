@@ -43,11 +43,8 @@ public class PlusExpressionTest extends ExpressionTest<PlusExpression> {
     return prepareParameters(Integer::sum);
   }
 
-  /**
-   * Create a new test instance using the given test parameters and expected result
-   */
+  /** Create a new test instance using the given test parameters and expected result */
   public PlusExpressionTest() {
     super("+", PlusExpression::new);
   }
-
 }

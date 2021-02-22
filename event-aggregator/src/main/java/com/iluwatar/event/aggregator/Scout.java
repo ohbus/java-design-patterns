@@ -23,13 +23,10 @@
 
 package com.iluwatar.event.aggregator;
 
-/**
- * Scout produces events.
- */
+/** Scout produces events. */
 public class Scout extends EventEmitter {
 
-  public Scout() {
-  }
+  public Scout() {}
 
   public Scout(EventObserver obs) {
     super(obs);

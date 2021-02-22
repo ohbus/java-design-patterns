@@ -39,9 +39,7 @@ import org.junit.jupiter.api.Test;
  */
 public class SizeSelectorTest {
 
-  /**
-   * Verify if the size selector gives the correct results
-   */
+  /** Verify if the size selector gives the correct results */
   @Test
   public void testMovement() {
     final var normalCreature = mock(Creature.class);
@@ -54,5 +52,4 @@ public class SizeSelectorTest {
     assertTrue(normalSelector.test(normalCreature));
     assertFalse(normalSelector.test(smallCreature));
   }
-
 }

@@ -25,9 +25,7 @@ package com.iluwatar.hexagonal.domain;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-/**
- * Lottery ticked id.
- */
+/** Lottery ticked id. */
 public class LotteryTicketId {
 
   private static final AtomicInteger numAllocated = new AtomicInteger(0);

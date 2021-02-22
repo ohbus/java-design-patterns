@@ -27,15 +27,13 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
-/**
- * Document interface.
- */
+/** Document interface. */
 public interface Document {
 
   /**
    * Puts the value related to the key.
    *
-   * @param key   element key
+   * @param key element key
    * @param value element value
    * @return Void
    */
@@ -52,7 +50,7 @@ public interface Document {
   /**
    * Gets the stream of child documents.
    *
-   * @param key         element key
+   * @param key element key
    * @param constructor constructor of child class
    * @return child documents
    */

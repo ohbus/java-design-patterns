@@ -34,6 +34,7 @@ import org.slf4j.LoggerFactory;
  * when all we can do to handle the exception is to log it. This pattern should not be used
  * everywhere. It is very important to logically handle the exceptions in a system, but some
  * situations like the ones described above require this pattern, so that we don't need to repeat
+ *
  * <pre>
  * <code>
  *   try {
@@ -42,7 +43,9 @@ import org.slf4j.LoggerFactory;
  *     // ignore by logging or throw error if unexpected exception occurs
  *   }
  * </code>
- * </pre> every time we need to ignore an exception.
+ * </pre>
+ *
+ * every time we need to ignore an exception.
  */
 public class App {
 

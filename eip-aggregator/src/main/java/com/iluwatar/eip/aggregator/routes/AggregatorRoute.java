@@ -34,26 +34,24 @@ import org.springframework.stereotype.Component;
  * <i>direct:endpoint</i>. Route accepts messages containing String as a body, it aggregates the
  * messages based on the settings and forwards them as CSV to the output chanel.
  *
- * <p>Settings for the aggregation are: aggregate until 3 messages are bundled or wait 2000ms
- * before sending bundled messages further.
+ * <p>Settings for the aggregation are: aggregate until 3 messages are bundled or wait 2000ms before
+ * sending bundled messages further.
  *
- * <p>In this example input/output endpoints names are stored in <i>application.properties</i>
- * file.
+ * <p>In this example input/output endpoints names are stored in <i>application.properties</i> file.
  */
 @Component
 public class AggregatorRoute extends RouteBuilder {
 
-  @Autowired
-  private MessageAggregationStrategy aggregator;
+  @Autowired private MessageAggregationStrategy aggregator;
 
-  /**
-   * Configures the route.
-   */
+  /** Configures the route. */
   @Override
   public void configure() {
     // Main route
-    from("{{entry}}").aggregate(constant(true), aggregator)
-        .completionSize(3).completionInterval(2000)
+    from("{{entry}}")
+        .aggregate(constant(true), aggregator)
+        .completionSize(3)
+        .completionInterval(2000)
         .to("{{endpoint}}");
   }
 }

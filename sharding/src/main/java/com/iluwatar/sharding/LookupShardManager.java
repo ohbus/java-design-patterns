@@ -26,14 +26,12 @@ package com.iluwatar.sharding;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * ShardManager with lookup strategy. In this strategy the sharding logic implements
- * a map that routes a request for data to the shard that contains that data by using
- * the shard key.
+ * ShardManager with lookup strategy. In this strategy the sharding logic implements a map that
+ * routes a request for data to the shard that contains that data by using the shard key.
  */
 public class LookupShardManager extends ShardManager {
 
@@ -61,5 +59,4 @@ public class LookupShardManager extends ShardManager {
       return new Random().nextInt(shardCount - 1) + 1;
     }
   }
-
 }

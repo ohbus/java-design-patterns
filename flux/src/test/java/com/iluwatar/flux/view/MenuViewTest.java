@@ -66,7 +66,5 @@ public class MenuViewTest {
 
     // We should receive a menu click action and a content changed action
     verify(store, times(2)).onAction(any(Action.class));
-
   }
-
 }

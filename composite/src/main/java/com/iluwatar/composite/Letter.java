@@ -23,9 +23,7 @@
 
 package com.iluwatar.composite;
 
-/**
- * Letter.
- */
+/** Letter. */
 public class Letter extends LetterComposite {
 
   private final char character;

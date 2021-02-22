@@ -28,9 +28,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- * Address class Created by dheeraj.mummarareddy on 3/4/18.
- */
+/** Address class Created by dheeraj.mummarareddy on 3/4/18. */
 @DynamoDBDocument
 public class Address implements Serializable {
 
@@ -131,11 +129,21 @@ public class Address implements Serializable {
   @Override
   public String toString() {
     return "Address{"
-        + "addressLineOne='" + addressLineOne + '\''
-        + ", addressLineTwo='" + addressLineTwo + '\''
-        + ", city='" + city + '\''
-        + ", state='" + state + '\''
-        + ", zipCode='" + zipCode + '\''
+        + "addressLineOne='"
+        + addressLineOne
+        + '\''
+        + ", addressLineTwo='"
+        + addressLineTwo
+        + '\''
+        + ", city='"
+        + city
+        + '\''
+        + ", state='"
+        + state
+        + '\''
+        + ", zipCode='"
+        + zipCode
+        + '\''
         + '}';
   }
 }

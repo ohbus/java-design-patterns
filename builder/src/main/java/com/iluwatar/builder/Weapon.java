@@ -23,12 +23,13 @@
 
 package com.iluwatar.builder;
 
-/**
- * Weapon enumeration.
- */
+/** Weapon enumeration. */
 public enum Weapon {
-
-  DAGGER, SWORD, AXE, WARHAMMER, BOW;
+  DAGGER,
+  SWORD,
+  AXE,
+  WARHAMMER,
+  BOW;
 
   @Override
   public String toString() {

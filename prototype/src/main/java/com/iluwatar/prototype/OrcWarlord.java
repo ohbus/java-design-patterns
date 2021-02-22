@@ -23,9 +23,7 @@
 
 package com.iluwatar.prototype;
 
-/**
- * OrcWarlord.
- */
+/** OrcWarlord. */
 public class OrcWarlord extends Warlord {
 
   private final String weapon;

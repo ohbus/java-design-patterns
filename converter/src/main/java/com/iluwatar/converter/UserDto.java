@@ -25,9 +25,7 @@ package com.iluwatar.converter;
 
 import java.util.Objects;
 
-/**
- * User DTO class.
- */
+/** User DTO class. */
 public class UserDto {
 
   private final String firstName;
@@ -39,9 +37,9 @@ public class UserDto {
    * Constructor.
    *
    * @param firstName user's first name
-   * @param lastName  user's last name
-   * @param isActive  flag indicating whether the user is active
-   * @param email     user's email address
+   * @param lastName user's last name
+   * @param isActive flag indicating whether the user is active
+   * @param email user's email address
    */
   public UserDto(String firstName, String lastName, boolean isActive, String email) {
     this.firstName = firstName;
@@ -75,8 +73,10 @@ public class UserDto {
       return false;
     }
     var userDto = (UserDto) o;
-    return isActive == userDto.isActive && Objects.equals(firstName, userDto.firstName) && Objects
-        .equals(lastName, userDto.lastName) && Objects.equals(email, userDto.email);
+    return isActive == userDto.isActive
+        && Objects.equals(firstName, userDto.firstName)
+        && Objects.equals(lastName, userDto.lastName)
+        && Objects.equals(email, userDto.email);
   }
 
   @Override
@@ -86,7 +86,18 @@ public class UserDto {
 
   @Override
   public String toString() {
-    return "UserDto{" + "firstName='" + firstName + '\'' + ", lastName='" + lastName + '\''
-        + ", isActive=" + isActive + ", email='" + email + '\'' + '}';
+    return "UserDto{"
+        + "firstName='"
+        + firstName
+        + '\''
+        + ", lastName='"
+        + lastName
+        + '\''
+        + ", isActive="
+        + isActive
+        + ", email='"
+        + email
+        + '\''
+        + '}';
   }
 }

@@ -26,9 +26,7 @@ package com.iluwatar.front.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * View for archers.
- */
+/** View for archers. */
 public class ArcherView implements View {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(ArcherView.class);

@@ -26,9 +26,7 @@ package com.iluwatar.strategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Melee strategy.
- */
+/** Melee strategy. */
 public class MeleeStrategy implements DragonSlayingStrategy {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(MeleeStrategy.class);

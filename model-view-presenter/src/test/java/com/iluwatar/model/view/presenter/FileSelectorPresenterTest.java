@@ -37,24 +37,16 @@ import org.junit.jupiter.api.Test;
  */
 public class FileSelectorPresenterTest {
 
-  /**
-   * The Presenter component.
-   */
+  /** The Presenter component. */
   private FileSelectorPresenter presenter;
 
-  /**
-   * The View component, implemented this time as a Stub!!!
-   */
+  /** The View component, implemented this time as a Stub!!! */
   private FileSelectorStub stub;
 
-  /**
-   * The Model component.
-   */
+  /** The Model component. */
   private FileLoader loader;
 
-  /**
-   * Initializes the components of the test case.
-   */
+  /** Initializes the components of the test case. */
   @BeforeEach
   public void setUp() {
     this.stub = new FileSelectorStub();
@@ -63,9 +55,7 @@ public class FileSelectorPresenterTest {
     presenter.setLoader(loader);
   }
 
-  /**
-   * Tests if the Presenter was successfully connected with the View.
-   */
+  /** Tests if the Presenter was successfully connected with the View. */
   @Test
   public void wiring() {
     presenter.start();
@@ -74,9 +64,7 @@ public class FileSelectorPresenterTest {
     assertTrue(stub.isOpened());
   }
 
-  /**
-   * Tests if the name of the file changes.
-   */
+  /** Tests if the name of the file changes. */
   @Test
   public void updateFileNameToLoader() {
     var expectedFile = "Stamatis";
@@ -104,9 +92,7 @@ public class FileSelectorPresenterTest {
     assertEquals(1, stub.getMessagesSent());
   }
 
-  /**
-   * Tests if we receive a confirmation when we attempt to open a file that it doesn't exist.
-   */
+  /** Tests if we receive a confirmation when we attempt to open a file that it doesn't exist. */
   @Test
   public void fileConfirmationWhenFileDoesNotExist() {
     stub.setFileName("RandomName.txt");
@@ -119,9 +105,7 @@ public class FileSelectorPresenterTest {
     assertEquals(1, stub.getMessagesSent());
   }
 
-  /**
-   * Tests if we can open the file, when it exists.
-   */
+  /** Tests if we can open the file, when it exists. */
   @Test
   public void fileConfirmationWhenFileExists() {
     stub.setFileName("etc/data/test.txt");
@@ -133,9 +117,7 @@ public class FileSelectorPresenterTest {
     assertTrue(stub.dataDisplayed());
   }
 
-  /**
-   * Tests if the view closes after cancellation.
-   */
+  /** Tests if the view closes after cancellation. */
   @Test
   public void cancellation() {
     presenter.start();

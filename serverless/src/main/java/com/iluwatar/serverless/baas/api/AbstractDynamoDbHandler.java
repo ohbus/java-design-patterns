@@ -48,10 +48,8 @@ public abstract class AbstractDynamoDbHandler<T extends Serializable> {
   }
 
   private void initAmazonDynamoDb() {
-    var amazonDynamoDb = AmazonDynamoDBClientBuilder
-        .standard()
-        .withRegion(Regions.US_EAST_1)
-        .build();
+    var amazonDynamoDb =
+        AmazonDynamoDBClientBuilder.standard().withRegion(Regions.US_EAST_1).build();
 
     this.dynamoDbMapper = new DynamoDBMapper(amazonDynamoDb);
   }
@@ -76,7 +74,7 @@ public abstract class AbstractDynamoDbHandler<T extends Serializable> {
    * API Gateway response.
    *
    * @param statusCode - status code
-   * @param body       - Object body
+   * @param body - Object body
    * @return - api gateway proxy response
    */
   protected APIGatewayProxyResponseEvent apiGatewayProxyResponseEvent(Integer statusCode, T body) {

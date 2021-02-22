@@ -25,16 +25,12 @@ package com.iluwatar.servant;
 
 import java.util.List;
 
-/**
- * Servant.
- */
+/** Servant. */
 public class Servant {
 
   public String name;
 
-  /**
-   * Constructor.
-   */
+  /** Constructor. */
   public Servant(String name) {
     this.name = name;
   }
@@ -51,9 +47,7 @@ public class Servant {
     r.receiveCompliments();
   }
 
-  /**
-   * Check if we will be hanged.
-   */
+  /** Check if we will be hanged. */
   public boolean checkIfYouWillBeHanged(List<Royalty> tableGuests) {
     return tableGuests.stream().allMatch(Royalty::getMood);
   }

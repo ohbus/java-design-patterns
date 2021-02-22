@@ -39,10 +39,9 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 /**
  * Test class for <i>AggregatorRoute</i>.
- * <p>
- * In order for it to work we have to mock endpoints we want to read/write to. To mock those we need
- * to substitute original endpoint names to mocks.
- * </p>
+ *
+ * <p>In order for it to work we have to mock endpoints we want to read/write to. To mock those we
+ * need to substitute original endpoint names to mocks.
  */
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = AggregatorRouteTest.class)
@@ -73,7 +72,8 @@ public class AggregatorRouteTest {
     entry.sendBody("TEST4");
     entry.sendBody("TEST5");
 
-    // Endpoint should have three different messages in the end order of the messages is not important
+    // Endpoint should have three different messages in the end order of the messages is not
+    // important
     endpoint.expectedMessageCount(2);
     endpoint.assertIsSatisfied();
 

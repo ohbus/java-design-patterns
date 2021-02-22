@@ -36,9 +36,7 @@ public class Worker implements Runnable {
   private final TaskSet taskSet;
   private final TaskHandler taskHandler;
 
-  /**
-   * Constructor to create a worker which will take work from the work center.
-   */
+  /** Constructor to create a worker which will take work from the work center. */
   public Worker(long id, WorkCenter workCenter, TaskSet taskSet, TaskHandler taskHandler) {
     super();
     this.id = id;

@@ -36,9 +36,7 @@ import org.junit.Test;
  */
 public class RainbowFishV2Test {
 
-  /**
-   * Verify if the getters of a {@link RainbowFish} return the expected values
-   */
+  /** Verify if the getters of a {@link RainbowFish} return the expected values */
   @Test
   public void testValues() {
     final var fish = new RainbowFishV2("name", 1, 2, 3, false, true, false);
@@ -50,5 +48,4 @@ public class RainbowFishV2Test {
     assertTrue(fish.getHungry());
     assertFalse(fish.getAngry());
   }
-
 }

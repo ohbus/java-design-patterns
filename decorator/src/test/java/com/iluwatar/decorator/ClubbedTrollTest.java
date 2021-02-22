@@ -31,9 +31,7 @@ import static org.mockito.internal.verification.VerificationModeFactory.times;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * Tests for {@link ClubbedTroll}
- */
+/** Tests for {@link ClubbedTroll} */
 public class ClubbedTrollTest {
 
   @Test

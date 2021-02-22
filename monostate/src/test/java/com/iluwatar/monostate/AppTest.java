@@ -25,14 +25,11 @@ package com.iluwatar.monostate;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * Application Test Entry
- */
+/** Application Test Entry */
 public class AppTest {
 
   @Test
   public void testMain() {
-    App.main(new String[]{});
+    App.main(new String[] {});
   }
-
 }

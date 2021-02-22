@@ -26,9 +26,7 @@ package com.iluwatar.proxy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * The proxy controlling access to the {@link IvoryTower}.
- */
+/** The proxy controlling access to the {@link IvoryTower}. */
 public class WizardTowerProxy implements WizardTower {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(WizardTowerProxy.class);

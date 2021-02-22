@@ -27,8 +27,7 @@ package com.iluwatar.value.object;
  * HeroStat is a value object.
  *
  * @see <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/doc-files/ValueBased.html">
- *     http://docs.oracle.com/javase/8/docs/api/java/lang/doc-files/ValueBased.html
- *     </a>
+ *     http://docs.oracle.com/javase/8/docs/api/java/lang/doc-files/ValueBased.html </a>
  */
 public class HeroStat {
 
@@ -71,8 +70,13 @@ public class HeroStat {
 
   @Override
   public String toString() {
-    return "HeroStat [strength=" + strength + ", intelligence=" + intelligence
-        + ", luck=" + luck + "]";
+    return "HeroStat [strength="
+        + strength
+        + ", intelligence="
+        + intelligence
+        + ", luck="
+        + luck
+        + "]";
   }
 
   @Override

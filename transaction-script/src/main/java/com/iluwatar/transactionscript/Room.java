@@ -23,9 +23,7 @@
 
 package com.iluwatar.transactionscript;
 
-/**
- * A room POJO that represents the data that will be read from the data source.
- */
+/** A room POJO that represents the data that will be read from the data source. */
 public class Room {
 
   private int id;
@@ -35,6 +33,7 @@ public class Room {
 
   /**
    * Create an instance of room.
+   *
    * @param id room id
    * @param roomType room type
    * @param price room price
@@ -114,10 +113,14 @@ public class Room {
   @Override
   public String toString() {
     return "Room{"
-        + "id=" + id
-        + ", roomType=" + roomType
-        + ", price=" + price
-        + ", booked=" + booked
+        + "id="
+        + id
+        + ", roomType="
+        + roomType
+        + ", price="
+        + price
+        + ", booked="
+        + booked
         + '}';
   }
 }

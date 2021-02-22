@@ -23,9 +23,7 @@
 
 package com.iluwatar.leaderfollowers;
 
-/**
- * A unit of work to be processed by the Workers.
- */
+/** A unit of work to be processed by the Workers. */
 public class Task {
 
   private final int time;
@@ -47,5 +45,4 @@ public class Task {
   public boolean isFinished() {
     return this.finished;
   }
-
 }

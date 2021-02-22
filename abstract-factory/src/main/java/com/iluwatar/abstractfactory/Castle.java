@@ -23,9 +23,7 @@
 
 package com.iluwatar.abstractfactory;
 
-/**
- * Castle interface.
- */
+/** Castle interface. */
 public interface Castle {
 
   String getDescription();

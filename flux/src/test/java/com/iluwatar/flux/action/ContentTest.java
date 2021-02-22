@@ -43,5 +43,4 @@ public class ContentTest {
       assertFalse(toString.trim().isEmpty());
     }
   }
-
 }

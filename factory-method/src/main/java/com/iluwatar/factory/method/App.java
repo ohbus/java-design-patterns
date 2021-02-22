@@ -34,44 +34,43 @@ import org.slf4j.LoggerFactory;
  * derived classes—rather than by calling a constructor.
  *
  * <p>In this Factory Method example we have an interface ({@link Blacksmith}) with a method for
- * creating objects ({@link Blacksmith#manufactureWeapon}). The concrete subclasses (
- * {@link OrcBlacksmith}, {@link ElfBlacksmith}) then override the method to produce objects of
- * their liking.
- * 
+ * creating objects ({@link Blacksmith#manufactureWeapon}). The concrete subclasses ( {@link
+ * OrcBlacksmith}, {@link ElfBlacksmith}) then override the method to produce objects of their
+ * liking.
  */
 public class App {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(App.class);
 
   private final Blacksmith blacksmith;
-  
+
   /**
-   * Creates an instance of <code>App</code> which will use <code>blacksmith</code> to manufacture 
-   * the weapons for war.
-   * <code>App</code> is unaware which concrete implementation of {@link Blacksmith} it is using.
-   * The decision of which blacksmith implementation to use may depend on configuration, or
-   * the type of rival in war.
+   * Creates an instance of <code>App</code> which will use <code>blacksmith</code> to manufacture
+   * the weapons for war. <code>App</code> is unaware which concrete implementation of {@link
+   * Blacksmith} it is using. The decision of which blacksmith implementation to use may depend on
+   * configuration, or the type of rival in war.
+   *
    * @param blacksmith a non-null implementation of blacksmith
    */
   public App(Blacksmith blacksmith) {
     this.blacksmith = blacksmith;
   }
-  
+
   /**
    * Program entry point.
-   * 
+   *
    * @param args command line args
    */
   public static void main(String[] args) {
     // Lets go to war with Orc weapons
     var app = new App(new OrcBlacksmith());
     app.manufactureWeapons();
-    
+
     // Lets go to war with Elf weapons
     app = new App(new ElfBlacksmith());
     app.manufactureWeapons();
   }
-  
+
   private void manufactureWeapons() {
     var weapon = blacksmith.manufactureWeapon(WeaponType.SPEAR);
     LOGGER.info(weapon.toString());

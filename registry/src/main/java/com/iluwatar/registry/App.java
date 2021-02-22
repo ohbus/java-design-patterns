@@ -46,5 +46,4 @@ public class App {
     LOGGER.info("John {}", customerRegistry.getCustomer("1"));
     LOGGER.info("Julia {}", customerRegistry.getCustomer("2"));
   }
-
 }

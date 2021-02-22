@@ -23,12 +23,10 @@
 
 package com.iluwatar.command;
 
-/**
- * Enumeration for target size.
- */
+/** Enumeration for target size. */
 public enum Size {
-
-  SMALL("small"), NORMAL("normal");
+  SMALL("small"),
+  NORMAL("normal");
 
   private final String title;
 

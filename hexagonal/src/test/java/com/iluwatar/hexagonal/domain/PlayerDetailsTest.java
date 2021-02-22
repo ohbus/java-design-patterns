@@ -28,9 +28,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * Unit tests for {@link PlayerDetails}
- */
+/** Unit tests for {@link PlayerDetails} */
 class PlayerDetailsTest {
 
   @Test

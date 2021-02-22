@@ -28,15 +28,11 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-/**
- * Application test
- */
+/** Application test */
 class CachingTest {
   private App app;
 
-  /**
-   * Setup of application test includes: initializing DB connection and cache size/capacity.
-   */
+  /** Setup of application test includes: initializing DB connection and cache size/capacity. */
   @BeforeEach
   public void setUp() {
     // VirtualDB (instead of MongoDB) was used in running the JUnit tests
@@ -50,25 +46,25 @@ class CachingTest {
 
   @Test
   void testReadAndWriteThroughStrategy() {
-	assertNotNull(app);
+    assertNotNull(app);
     app.useReadAndWriteThroughStrategy();
   }
 
   @Test
   void testReadThroughAndWriteAroundStrategy() {
-	assertNotNull(app);
+    assertNotNull(app);
     app.useReadThroughAndWriteAroundStrategy();
   }
 
   @Test
   void testReadThroughAndWriteBehindStrategy() {
-	assertNotNull(app);
+    assertNotNull(app);
     app.useReadThroughAndWriteBehindStrategy();
   }
 
   @Test
   void testCacheAsideStrategy() {
-	assertNotNull(app);
+    assertNotNull(app);
     app.useCacheAsideStategy();
   }
 }

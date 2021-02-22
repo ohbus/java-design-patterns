@@ -49,8 +49,7 @@ import java.io.IOException;
  */
 public final class App {
 
-  private App() {
-  }
+  private App() {}
 
   /**
    * Application entry point
@@ -83,6 +82,5 @@ public final class App {
     } catch (IOException ex) {
       ex.printStackTrace();
     }
-
   }
 }

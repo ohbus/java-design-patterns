@@ -37,7 +37,7 @@ public class VideoResource {
    * Constructor.
    *
    * @param fieldJsonMapper map object to json.
-   * @param videos          initialize resource with existing videos. Act as database.
+   * @param videos initialize resource with existing videos. Act as database.
    */
   public VideoResource(FieldJsonMapper fieldJsonMapper, Map<Integer, Video> videos) {
     this.fieldJsonMapper = fieldJsonMapper;
@@ -47,7 +47,7 @@ public class VideoResource {
   /**
    * Get Details.
    *
-   * @param id     video id
+   * @param id video id
    * @param fields fields to get information about
    * @return full response if no fields specified else partial response for given field.
    */

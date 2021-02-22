@@ -26,9 +26,7 @@ package com.iluwatar.sharding;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * The Shard class stored data in a HashMap.
- */
+/** The Shard class stored data in a HashMap. */
 public class Shard {
 
   private final int id;
@@ -55,5 +53,4 @@ public class Shard {
   public int getId() {
     return id;
   }
-
 }

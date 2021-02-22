@@ -38,16 +38,16 @@ public class Book {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
+
   private String title;
   private double price;
-  @ManyToOne
-  private Author author;
+  @ManyToOne private Author author;
 
   /**
    * Constructor.
    *
-   * @param title  title of the book
-   * @param price  price of the book
+   * @param title title of the book
+   * @param price price of the book
    * @param author author of the book
    */
   public Book(String title, double price, Author author) {
@@ -56,8 +56,7 @@ public class Book {
     this.author = author;
   }
 
-  protected Book() {
-  }
+  protected Book() {}
 
   public long getId() {
     return id;
@@ -95,5 +94,4 @@ public class Book {
   public String toString() {
     return "Book [title=" + title + ", price=" + price + ", author=" + author + "]";
   }
-
 }

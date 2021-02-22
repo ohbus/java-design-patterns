@@ -36,9 +36,7 @@ import org.junit.jupiter.api.Test;
  */
 public class HalflingThiefTest {
 
-  /**
-   * Verify if the thief uses the provided stealing method
-   */
+  /** Verify if the thief uses the provided stealing method */
   @Test
   public void testSteal() {
     final var method = mock(StealingMethod.class);
@@ -50,9 +48,7 @@ public class HalflingThiefTest {
     verifyNoMoreInteractions(method);
   }
 
-  /**
-   * Verify if the thief uses the provided stealing method, and the new method after changing it
-   */
+  /** Verify if the thief uses the provided stealing method, and the new method after changing it */
   @Test
   public void testChangeMethod() {
     final var initialMethod = mock(StealingMethod.class);
@@ -68,6 +64,5 @@ public class HalflingThiefTest {
     verify(newMethod).steal();
 
     verifyNoMoreInteractions(initialMethod, newMethod);
-
   }
 }

@@ -30,7 +30,6 @@ import com.iluwatar.commander.exceptions.IsEmptyException;
  *
  * @param <T> is the type of object the queue will hold.
  */
-
 public class Queue<T> {
 
   private Node<T> front;
@@ -47,9 +46,7 @@ public class Queue<T> {
     }
   }
 
-  /**
-   * Queue constructor.
-   */
+  /** Queue constructor. */
   Queue() {
     front = null;
     rear = null;

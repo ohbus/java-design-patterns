@@ -43,9 +43,7 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-/**
- * Tests {@link DbCustomerDao}.
- */
+/** Tests {@link DbCustomerDao}. */
 public class DbCustomerDaoTest {
 
   private static final String DB_URL = "jdbc:h2:~/dao";
@@ -60,14 +58,12 @@ public class DbCustomerDaoTest {
   @BeforeEach
   public void createSchema() throws SQLException {
     try (var connection = DriverManager.getConnection(DB_URL);
-         var statement = connection.createStatement()) {
+        var statement = connection.createStatement()) {
       statement.execute(CustomerSchemaSql.CREATE_SCHEMA_SQL);
     }
   }
 
-  /**
-   * Represents the scenario where DB connectivity is present.
-   */
+  /** Represents the scenario where DB connectivity is present. */
   @Nested
   public class ConnectionSuccess {
 
@@ -159,8 +155,8 @@ public class DbCustomerDaoTest {
       }
 
       @Test
-      public void updationShouldBeSuccessAndAccessingTheSameCustomerShouldReturnUpdatedInformation() throws
-          Exception {
+      public void updationShouldBeSuccessAndAccessingTheSameCustomerShouldReturnUpdatedInformation()
+          throws Exception {
         final var newFirstname = "Bernard";
         final var newLastname = "Montgomery";
         final var customer = new Customer(existingCustomer.getId(), newFirstname, newLastname);
@@ -205,41 +201,50 @@ public class DbCustomerDaoTest {
 
     @Test
     public void addingACustomerFailsWithExceptionAsFeedbackToClient() {
-      assertThrows(Exception.class, () -> {
-        dao.add(new Customer(2, "Bernard", "Montgomery"));
-      });
+      assertThrows(
+          Exception.class,
+          () -> {
+            dao.add(new Customer(2, "Bernard", "Montgomery"));
+          });
     }
 
     @Test
     public void deletingACustomerFailsWithExceptionAsFeedbackToTheClient() {
-      assertThrows(Exception.class, () -> {
-        dao.delete(existingCustomer);
-      });
+      assertThrows(
+          Exception.class,
+          () -> {
+            dao.delete(existingCustomer);
+          });
     }
 
     @Test
     public void updatingACustomerFailsWithFeedbackToTheClient() {
       final var newFirstname = "Bernard";
       final var newLastname = "Montgomery";
-      assertThrows(Exception.class, () -> {
-        dao.update(new Customer(existingCustomer.getId(), newFirstname, newLastname));
-      });
+      assertThrows(
+          Exception.class,
+          () -> {
+            dao.update(new Customer(existingCustomer.getId(), newFirstname, newLastname));
+          });
     }
 
     @Test
     public void retrievingACustomerByIdFailsWithExceptionAsFeedbackToClient() {
-      assertThrows(Exception.class, () -> {
-        dao.getById(existingCustomer.getId());
-      });
+      assertThrows(
+          Exception.class,
+          () -> {
+            dao.getById(existingCustomer.getId());
+          });
     }
 
     @Test
     public void retrievingAllCustomersFailsWithExceptionAsFeedbackToClient() {
-      assertThrows(Exception.class, () -> {
-        dao.getAll();
-      });
+      assertThrows(
+          Exception.class,
+          () -> {
+            dao.getAll();
+          });
     }
-
   }
 
   /**
@@ -250,7 +255,7 @@ public class DbCustomerDaoTest {
   @AfterEach
   public void deleteSchema() throws SQLException {
     try (var connection = DriverManager.getConnection(DB_URL);
-         var statement = connection.createStatement()) {
+        var statement = connection.createStatement()) {
       statement.execute(CustomerSchemaSql.DELETE_SCHEMA_SQL);
     }
   }
@@ -260,7 +265,6 @@ public class DbCustomerDaoTest {
       assertEquals(count, allCustomers.count());
     }
   }
-
 
   /**
    * An arbitrary number which does not correspond to an active Customer id.

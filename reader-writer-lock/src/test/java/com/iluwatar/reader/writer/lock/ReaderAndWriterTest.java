@@ -34,9 +34,7 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * @author hongshuwei@gmail.com
- */
+/** @author hongshuwei@gmail.com */
 public class ReaderAndWriterTest {
 
   private InMemoryAppender appender;
@@ -53,9 +51,7 @@ public class ReaderAndWriterTest {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(ReaderAndWriterTest.class);
 
-  /**
-   * Verify reader and writer can only get the lock to read and write orderly
-   */
+  /** Verify reader and writer can only get the lock to read and write orderly */
   @Test
   public void testReadAndWrite() throws Exception {
 
@@ -83,9 +79,7 @@ public class ReaderAndWriterTest {
     assertTrue(appender.logContains("Writer 1 finish"));
   }
 
-  /**
-   * Verify reader and writer can only get the lock to read and write orderly
-   */
+  /** Verify reader and writer can only get the lock to read and write orderly */
   @Test
   public void testWriteAndRead() throws Exception {
 
@@ -113,4 +107,3 @@ public class ReaderAndWriterTest {
     assertTrue(appender.logContains("Reader 1 finish"));
   }
 }
-

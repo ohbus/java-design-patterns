@@ -41,20 +41,29 @@ import org.apache.isis.applib.services.eventbus.ActionDomainEvent;
 import org.apache.isis.applib.services.i18n.TranslatableString;
 import org.apache.isis.applib.util.ObjectContracts;
 
-/**
- * Definition of a Simple Object.
- */
-@javax.jdo.annotations.PersistenceCapable(identityType = IdentityType.DATASTORE, schema = "simple",
+/** Definition of a Simple Object. */
+@javax.jdo.annotations.PersistenceCapable(
+    identityType = IdentityType.DATASTORE,
+    schema = "simple",
     table = "SimpleObject")
 @javax.jdo.annotations.DatastoreIdentity(
-    strategy = javax.jdo.annotations.IdGeneratorStrategy.IDENTITY, column = "id")
+    strategy = javax.jdo.annotations.IdGeneratorStrategy.IDENTITY,
+    column = "id")
 @javax.jdo.annotations.Version(strategy = VersionStrategy.VERSION_NUMBER, column = "version")
 @javax.jdo.annotations.Queries({
-    @javax.jdo.annotations.Query(name = "find", value = "SELECT "
-        + "FROM domainapp.dom.modules.simple.SimpleObject "),
-    @javax.jdo.annotations.Query(name = "findByName", value = "SELECT "
-        + "FROM domainapp.dom.modules.simple.SimpleObject " + "WHERE name.indexOf(:name) >= 0 ")})
-@javax.jdo.annotations.Unique(name = "SimpleObject_name_UNQ", members = {"name"})
+  @javax.jdo.annotations.Query(
+      name = "find",
+      value = "SELECT " + "FROM domainapp.dom.modules.simple.SimpleObject "),
+  @javax.jdo.annotations.Query(
+      name = "findByName",
+      value =
+          "SELECT "
+              + "FROM domainapp.dom.modules.simple.SimpleObject "
+              + "WHERE name.indexOf(:name) >= 0 ")
+})
+@javax.jdo.annotations.Unique(
+    name = "SimpleObject_name_UNQ",
+    members = {"name"})
 @DomainObject
 @DomainObjectLayout(bookmarking = BookmarkPolicy.AS_ROOT, cssClassFa = "fa-flag")
 public class SimpleObject implements Comparable<SimpleObject> {
@@ -85,12 +94,10 @@ public class SimpleObject implements Comparable<SimpleObject> {
 
   // region > updateName (action)
 
-  /**
-   * Event used to update the Name in the Domain.
-   */
+  /** Event used to update the Name in the Domain. */
   public static class UpdateNameDomainEvent extends ActionDomainEvent<SimpleObject> {
-    public UpdateNameDomainEvent(final SimpleObject source, final Identifier identifier,
-                                 final Object... arguments) {
+    public UpdateNameDomainEvent(
+        final SimpleObject source, final Identifier identifier, final Object... arguments) {
       super(source, identifier, arguments);
     }
   }
@@ -135,6 +142,5 @@ public class SimpleObject implements Comparable<SimpleObject> {
   private DomainObjectContainer container;
 
   // endregion
-
 
 }

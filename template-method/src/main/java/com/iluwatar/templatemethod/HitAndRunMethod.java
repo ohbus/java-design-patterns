@@ -26,9 +26,7 @@ package com.iluwatar.templatemethod;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * HitAndRunMethod implementation of {@link StealingMethod}.
- */
+/** HitAndRunMethod implementation of {@link StealingMethod}. */
 public class HitAndRunMethod extends StealingMethod {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(HitAndRunMethod.class);

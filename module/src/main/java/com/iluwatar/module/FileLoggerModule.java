@@ -32,8 +32,8 @@ import org.slf4j.LoggerFactory;
 /**
  * The FileLoggerModule is responsible for showing logs on File System.
  *
- * <p>The below example demonstrates a File logger module, which can print simple and error
- * messages in two designated files
+ * <p>The below example demonstrates a File logger module, which can print simple and error messages
+ * in two designated files
  */
 public final class FileLoggerModule {
 
@@ -47,8 +47,7 @@ public final class FileLoggerModule {
   public PrintStream output = null;
   public PrintStream error = null;
 
-  private FileLoggerModule() {
-  }
+  private FileLoggerModule() {}
 
   /**
    * Static method to get single instance of class.
@@ -68,7 +67,7 @@ public final class FileLoggerModule {
    * Following method performs the initialization.
    *
    * @throws FileNotFoundException if program is not able to find log files (output.txt and
-   *                               error.txt)
+   *     error.txt)
    */
   public FileLoggerModule prepare() throws FileNotFoundException {
 
@@ -80,9 +79,7 @@ public final class FileLoggerModule {
     return this;
   }
 
-  /**
-   * Following method performs the finalization.
-   */
+  /** Following method performs the finalization. */
   public void unprepare() {
 
     if (this.output != null) {

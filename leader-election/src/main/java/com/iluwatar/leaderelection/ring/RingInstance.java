@@ -27,7 +27,6 @@ import com.iluwatar.leaderelection.AbstractInstance;
 import com.iluwatar.leaderelection.Message;
 import com.iluwatar.leaderelection.MessageManager;
 import java.util.Arrays;
-import java.util.List;
 import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,9 +47,7 @@ public class RingInstance extends AbstractInstance {
   private static final Logger LOGGER = LoggerFactory.getLogger(RingInstance.class);
   private static final String INSTANCE = "Instance ";
 
-  /**
-   * Constructor of RingInstance.
-   */
+  /** Constructor of RingInstance. */
   public RingInstance(MessageManager messageManager, int localId, int leaderId) {
     super(messageManager, localId, leaderId);
   }
@@ -87,10 +84,11 @@ public class RingInstance extends AbstractInstance {
   protected void handleElectionMessage(Message message) {
     var content = message.getContent();
     LOGGER.info(INSTANCE + localId + " - Election Message: " + content);
-    var candidateList = Arrays.stream(content.trim().split(","))
-        .map(Integer::valueOf)
-        .sorted()
-        .collect(Collectors.toList());
+    var candidateList =
+        Arrays.stream(content.trim().split(","))
+            .map(Integer::valueOf)
+            .sorted()
+            .collect(Collectors.toList());
     if (candidateList.contains(localId)) {
       var newLeaderId = candidateList.get(0);
       LOGGER.info(INSTANCE + localId + " - New leader should be " + newLeaderId + ".");
@@ -118,9 +116,7 @@ public class RingInstance extends AbstractInstance {
     }
   }
 
-  /**
-   * Not used in Ring instance.
-   */
+  /** Not used in Ring instance. */
   @Override
   protected void handleLeaderInvokeMessage() {
     // Not used in Ring instance.
@@ -135,5 +131,4 @@ public class RingInstance extends AbstractInstance {
   protected void handleElectionInvokeMessage() {
     // Not used in Ring instance.
   }
-
 }

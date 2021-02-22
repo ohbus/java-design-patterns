@@ -31,9 +31,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-/**
- * Tests for Mongo banking adapter
- */
+/** Tests for Mongo banking adapter */
 @Disabled
 class MongoBankTest {
 
@@ -45,8 +43,9 @@ class MongoBankTest {
   @BeforeEach
   void init() {
     MongoConnectionPropertiesLoader.load();
-    var mongoClient = new MongoClient(System.getProperty("mongo-host"),
-        Integer.parseInt(System.getProperty("mongo-port")));
+    var mongoClient =
+        new MongoClient(
+            System.getProperty("mongo-host"), Integer.parseInt(System.getProperty("mongo-port")));
     mongoClient.dropDatabase(TEST_DB);
     mongoClient.close();
     mongoBank = new MongoBank(TEST_DB, TEST_ACCOUNTS_COLLECTION);

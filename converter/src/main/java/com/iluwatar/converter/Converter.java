@@ -44,7 +44,7 @@ public class Converter<T, U> {
   /**
    * Constructor.
    *
-   * @param fromDto    Function that converts given dto entity into the domain entity.
+   * @param fromDto Function that converts given dto entity into the domain entity.
    * @param fromEntity Function that converts given domain entity into the dto entity.
    */
   public Converter(final Function<T, U> fromDto, final Function<U, T> fromEntity) {
@@ -95,5 +95,4 @@ public class Converter<T, U> {
   public final List<T> createFromEntities(final Collection<U> entities) {
     return entities.stream().map(this::convertFromEntity).collect(Collectors.toList());
   }
-
 }

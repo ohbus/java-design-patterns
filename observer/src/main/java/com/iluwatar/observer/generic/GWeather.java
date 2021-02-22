@@ -27,9 +27,7 @@ import com.iluwatar.observer.WeatherType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * GWeather.
- */
+/** GWeather. */
 public class GWeather extends Observable<GWeather, Race, WeatherType> {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(GWeather.class);
@@ -40,9 +38,7 @@ public class GWeather extends Observable<GWeather, Race, WeatherType> {
     currentWeather = WeatherType.SUNNY;
   }
 
-  /**
-   * Makes time pass for weather.
-   */
+  /** Makes time pass for weather. */
   public void timePasses() {
     var enumValues = WeatherType.values();
     currentWeather = enumValues[(currentWeather.ordinal() + 1) % enumValues.length];

@@ -51,12 +51,9 @@ public class App {
     var kingJoffrey = new KingJoffrey();
     var kingsHand = new KingsHand(kingJoffrey);
 
-    var emitters = List.of(
-        kingsHand,
-        new LordBaelish(kingsHand),
-        new LordVarys(kingsHand),
-        new Scout(kingsHand)
-    );
+    var emitters =
+        List.of(
+            kingsHand, new LordBaelish(kingsHand), new LordVarys(kingsHand), new Scout(kingsHand));
 
     Arrays.stream(Weekday.values())
         .<Consumer<? super EventEmitter>>map(day -> emitter -> emitter.timePasses(day))

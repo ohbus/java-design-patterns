@@ -65,7 +65,7 @@ public class Hotel {
    * @throws Exception if any error
    */
   public void cancelRoomBooking(int roomNumber) throws Exception {
-  
+
     var room = hotelDao.getById(roomNumber);
 
     if (room.isEmpty()) {

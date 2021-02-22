@@ -27,16 +27,12 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * Unit tests for RangeShardManager class.
- */
+/** Unit tests for RangeShardManager class. */
 public class RangeShardManagerTest {
 
   private RangeShardManager rangeShardManager;
 
-  /**
-   * Initialize rangeShardManager instance.
-   */
+  /** Initialize rangeShardManager instance. */
   @Before
   public void setup() {
     rangeShardManager = new RangeShardManager();
@@ -54,5 +50,4 @@ public class RangeShardManagerTest {
     rangeShardManager.storeData(data);
     Assert.assertEquals(data, rangeShardManager.getShardById(1).getDataById(1));
   }
-
 }

@@ -26,9 +26,7 @@ package com.iluwatar.decorator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * SimpleTroll implements {@link Troll} interface directly.
- */
+/** SimpleTroll implements {@link Troll} interface directly. */
 public class SimpleTroll implements Troll {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(SimpleTroll.class);

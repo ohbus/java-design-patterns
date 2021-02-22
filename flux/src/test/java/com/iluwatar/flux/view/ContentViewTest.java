@@ -51,5 +51,4 @@ public class ContentViewTest {
     verify(store, times(1)).getContent();
     verifyNoMoreInteractions(store);
   }
-
 }

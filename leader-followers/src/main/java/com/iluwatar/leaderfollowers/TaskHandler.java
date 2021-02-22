@@ -26,21 +26,16 @@ package com.iluwatar.leaderfollowers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * The TaskHandler is used by the {@link Worker} to process the newly arrived task.
- */
+/** The TaskHandler is used by the {@link Worker} to process the newly arrived task. */
 public class TaskHandler {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(TaskHandler.class);
 
-  /**
-   * This interface handles one task at a time.
-   */
+  /** This interface handles one task at a time. */
   public void handleTask(Task task) throws InterruptedException {
     var time = task.getTime();
     Thread.sleep(time);
     LOGGER.info("It takes " + time + " milliseconds to finish the task");
     task.setFinished();
   }
-
 }

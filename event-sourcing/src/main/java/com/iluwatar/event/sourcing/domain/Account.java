@@ -53,7 +53,7 @@ public class Account {
    * Instantiates a new Account.
    *
    * @param accountNo the account no
-   * @param owner     the owner
+   * @param owner the owner
    */
   public Account(int accountNo, String owner) {
     this.accountNo = accountNo;
@@ -97,7 +97,6 @@ public class Account {
     this.money = money;
   }
 
-
   /**
    * Copy account.
    *
@@ -112,9 +111,13 @@ public class Account {
   @Override
   public String toString() {
     return "Account{"
-        + "accountNo=" + accountNo
-        + ", owner='" + owner + '\''
-        + ", money=" + money
+        + "accountNo="
+        + accountNo
+        + ", owner='"
+        + owner
+        + '\''
+        + ", money="
+        + money
         + '}';
   }
 
@@ -155,7 +158,6 @@ public class Account {
     handleDeposit(moneyDepositEvent.getMoney(), moneyDepositEvent.isRealTime());
   }
 
-
   /**
    * Handles the AccountCreateEvent.
    *
@@ -185,6 +187,4 @@ public class Account {
   public void handleTransferToEvent(MoneyTransferEvent moneyTransferEvent) {
     handleDeposit(moneyTransferEvent.getMoney(), moneyTransferEvent.isRealTime());
   }
-
-
 }

@@ -32,26 +32,22 @@ import java.util.List;
  * instances of the class share the same state, all instances will delegate to the same server on
  * receiving a new Request.
  */
-
 public class LoadBalancer {
   private static final List<Server> SERVERS = new ArrayList<>();
   private static int lastServedId;
 
   static {
     var id = 0;
-    for (var port : new int[]{8080, 8081, 8082, 8083, 8084}) {
+    for (var port : new int[] {8080, 8081, 8082, 8083, 8084}) {
       SERVERS.add(new Server("localhost", port, ++id));
     }
   }
 
-  /**
-   * Add new server.
-   */
+  /** Add new server. */
   public final void addServer(Server server) {
     synchronized (SERVERS) {
       SERVERS.add(server);
     }
-
   }
 
   public final int getNoOfServers() {
@@ -62,9 +58,7 @@ public class LoadBalancer {
     return lastServedId;
   }
 
-  /**
-   * Handle request.
-   */
+  /** Handle request. */
   public synchronized void serverRequest(Request request) {
     if (lastServedId >= SERVERS.size()) {
       lastServedId = 0;
@@ -72,5 +66,4 @@ public class LoadBalancer {
     var server = SERVERS.get(lastServedId++);
     server.serve(request);
   }
-
 }

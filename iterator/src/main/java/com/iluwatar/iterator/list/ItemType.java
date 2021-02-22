@@ -23,11 +23,10 @@
 
 package com.iluwatar.iterator.list;
 
-/**
- * ItemType enumeration.
- */
+/** ItemType enumeration. */
 public enum ItemType {
-
-  ANY, WEAPON, RING, POTION
-
+  ANY,
+  WEAPON,
+  RING,
+  POTION
 }

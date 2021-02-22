@@ -31,11 +31,10 @@ public class ForeignTaxCalculatorTest {
   private ForeignTaxCalculator target;
 
   @Test
-  public void testTaxCalculation(){
+  public void testTaxCalculation() {
     target = new ForeignTaxCalculator();
 
-    var tax=target.calculate(100.0);
-    Assertions.assertEquals(tax,60.0);
+    var tax = target.calculate(100.0);
+    Assertions.assertEquals(tax, 60.0);
   }
-
 }

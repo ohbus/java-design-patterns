@@ -32,9 +32,7 @@ package com.iluwatar.priority.queue;
  * @see "https://docs.microsoft.com/en-us/previous-versions/msp-n-p/dn589794(v=pandp.10)"
  */
 public class Application {
-  /**
-   * main entry.
-   */
+  /** main entry. */
   public static void main(String[] args) throws Exception {
 
     var queueManager = new QueueManager(10);
@@ -53,7 +51,5 @@ public class Application {
     // run worker
     var worker = new Worker(queueManager);
     worker.run();
-
-
   }
 }

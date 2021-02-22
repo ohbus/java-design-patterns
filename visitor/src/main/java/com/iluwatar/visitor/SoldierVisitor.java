@@ -26,9 +26,7 @@ package com.iluwatar.visitor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * SoldierVisitor.
- */
+/** SoldierVisitor. */
 public class SoldierVisitor implements UnitVisitor {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(SoldierVisitor.class);

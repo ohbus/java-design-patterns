@@ -28,9 +28,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import units.CommanderUnit;
 
-/**
- * Class defining Commander.
- */
+/** Class defining Commander. */
 public class Commander implements CommanderExtension {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(Commander.class);

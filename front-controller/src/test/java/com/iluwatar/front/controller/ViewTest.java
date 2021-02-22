@@ -53,14 +53,13 @@ public class ViewTest {
 
   static List<Object[]> dataProvider() {
     return List.of(
-        new Object[]{new ArcherView(), "Displaying archers"},
-        new Object[]{new CatapultView(), "Displaying catapults"},
-        new Object[]{new ErrorView(), "Error 500"}
-    );
+        new Object[] {new ArcherView(), "Displaying archers"},
+        new Object[] {new CatapultView(), "Displaying catapults"},
+        new Object[] {new ErrorView(), "Error 500"});
   }
 
   /**
-   * @param view           The view that's been tested
+   * @param view The view that's been tested
    * @param displayMessage The expected display message
    */
   @ParameterizedTest
@@ -71,5 +70,4 @@ public class ViewTest {
     assertEquals(displayMessage, appender.getLastMessage());
     assertEquals(1, appender.getLogSize());
   }
-
 }

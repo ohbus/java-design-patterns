@@ -63,7 +63,5 @@ public class MenuStoreTest {
     verify(view, times(1)).storeChanged(eq(menuStore));
     verifyNoMoreInteractions(view);
     assertEquals(MenuItem.PRODUCTS, menuStore.getSelected());
-
   }
-
 }

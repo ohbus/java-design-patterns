@@ -23,9 +23,7 @@
 
 package com.iluwatar.producer.consumer;
 
-/**
- * Class take part of an {@link Producer}-{@link Consumer} exchange.
- */
+/** Class take part of an {@link Producer}-{@link Consumer} exchange. */
 public class Item {
 
   private final String producer;
@@ -46,5 +44,4 @@ public class Item {
 
     return producer;
   }
-
 }

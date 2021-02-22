@@ -23,12 +23,12 @@
 
 package com.iluwatar.nullobject;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
+
+import org.junit.jupiter.api.Test;
 
 /**
  * Date: 12/26/15 - 11:47 PM
@@ -37,9 +37,7 @@ import static org.junit.jupiter.api.Assertions.assertSame;
  */
 class NullNodeTest {
 
-  /**
-   * Verify if {@link NullNode#getInstance()} actually returns the same object instance
-   */
+  /** Verify if {@link NullNode#getInstance()} actually returns the same object instance */
   @Test
   void testGetInstance() {
     final var instance = NullNode.getInstance();
@@ -57,7 +55,7 @@ class NullNodeTest {
   }
 
   /**
-   * Removed unnecessary test method for {@link NullNode#walk()} as the method doesn't have an implementation.
+   * Removed unnecessary test method for {@link NullNode#walk()} as the method doesn't have an
+   * implementation.
    */
-
 }

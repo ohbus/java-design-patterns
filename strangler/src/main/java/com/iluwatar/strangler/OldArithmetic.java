@@ -26,12 +26,10 @@ package com.iluwatar.strangler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Old version system depends on old version source ({@link OldSource}).
- */
+/** Old version system depends on old version source ({@link OldSource}). */
 public class OldArithmetic {
   private static final Logger LOGGER = LoggerFactory.getLogger(OldArithmetic.class);
-  private static final  String VERSION = "1.0";
+  private static final String VERSION = "1.0";
 
   private final OldSource source;
 
@@ -41,6 +39,7 @@ public class OldArithmetic {
 
   /**
    * Accumulate sum.
+   *
    * @param nums numbers need to add together
    * @return accumulate sum
    */
@@ -51,6 +50,7 @@ public class OldArithmetic {
 
   /**
    * Accumulate multiplication.
+   *
    * @param nums numbers need to multiply together
    * @return accumulate multiplication
    */

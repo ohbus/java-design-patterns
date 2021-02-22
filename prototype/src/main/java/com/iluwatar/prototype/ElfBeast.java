@@ -23,9 +23,7 @@
 
 package com.iluwatar.prototype;
 
-/**
- * ElfBeast.
- */
+/** ElfBeast. */
 public class ElfBeast extends Beast {
 
   private final String helpType;
@@ -66,5 +64,4 @@ public class ElfBeast extends Beast {
     }
     return helpType.equals(other.helpType);
   }
-
 }

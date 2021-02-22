@@ -29,14 +29,10 @@ package com.iluwatar.separatedinterface.invoice;
  */
 public class InvoiceGenerator {
 
-  /**
-   * The TaxCalculator interface to calculate the payable tax.
-   */
+  /** The TaxCalculator interface to calculate the payable tax. */
   private final TaxCalculator taxCalculator;
 
-  /**
-   * The base product amount without tax.
-   */
+  /** The base product amount without tax. */
   private final double amount;
 
   public InvoiceGenerator(double amount, TaxCalculator taxCalculator) {
@@ -47,5 +43,4 @@ public class InvoiceGenerator {
   public double getAmountWithTax() {
     return amount + taxCalculator.calculate(amount);
   }
-
 }

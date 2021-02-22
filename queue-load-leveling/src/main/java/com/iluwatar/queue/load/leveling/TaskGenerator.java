@@ -32,7 +32,6 @@ import org.slf4j.LoggerFactory;
  */
 public class TaskGenerator implements Task, Runnable {
 
-
   private static final Logger LOGGER = LoggerFactory.getLogger(App.class);
 
   // MessageQueue reference using which we will submit our messages.
@@ -47,9 +46,7 @@ public class TaskGenerator implements Task, Runnable {
     this.msgCount = msgCount;
   }
 
-  /**
-   * Submit messages to the Blocking Queue.
-   */
+  /** Submit messages to the Blocking Queue. */
   public void submit(Message msg) {
     try {
       this.msgQueue.submitMsg(msg);

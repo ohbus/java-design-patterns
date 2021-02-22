@@ -39,15 +39,11 @@ import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
 import org.junit.Test;
 
-/**
- * Fixture Pattern Integration Test
- */
+/** Fixture Pattern Integration Test */
 public class SimpleObjectsIntegTest extends SimpleAppIntegTest {
 
-  @Inject
-  FixtureScripts fixtureScripts;
-  @Inject
-  SimpleObjects simpleObjects;
+  @Inject FixtureScripts fixtureScripts;
+  @Inject SimpleObjects simpleObjects;
 
   @Test
   public void testListAll() {
@@ -109,8 +105,8 @@ public class SimpleObjectsIntegTest extends SimpleAppIntegTest {
     nextTransaction();
 
     // then
-    expectedExceptions
-        .expectCause(causalChainContains(SQLIntegrityConstraintViolationException.class));
+    expectedExceptions.expectCause(
+        causalChainContains(SQLIntegrityConstraintViolationException.class));
 
     // when
     wrap(simpleObjects).create("Faz");

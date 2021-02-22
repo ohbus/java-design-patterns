@@ -51,19 +51,15 @@ public class DragonSlayingStrategyTest {
    */
   static Collection<Object[]> dataProvider() {
     return List.of(
-        new Object[]{
-            new MeleeStrategy(),
-            "With your Excalibur you sever the dragon's head!"
+        new Object[] {new MeleeStrategy(), "With your Excalibur you sever the dragon's head!"},
+        new Object[] {
+          new ProjectileStrategy(),
+          "You shoot the dragon with the magical crossbow and it falls dead on the ground!"
         },
-        new Object[]{
-            new ProjectileStrategy(),
-            "You shoot the dragon with the magical crossbow and it falls dead on the ground!"
-        },
-        new Object[]{
-            new SpellStrategy(),
-            "You cast the spell of disintegration and the dragon vaporizes in a pile of dust!"
-        }
-    );
+        new Object[] {
+          new SpellStrategy(),
+          "You cast the spell of disintegration and the dragon vaporizes in a pile of dust!"
+        });
   }
 
   private InMemoryAppender appender;
@@ -78,10 +74,7 @@ public class DragonSlayingStrategyTest {
     appender.stop();
   }
 
-
-  /**
-   * Test if executing the strategy gives the correct response.
-   */
+  /** Test if executing the strategy gives the correct response. */
   @ParameterizedTest
   @MethodSource("dataProvider")
   public void testExecute(DragonSlayingStrategy strategy, String expectedResult) {

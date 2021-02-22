@@ -53,8 +53,7 @@ public class PartyMemberTest {
         Arguments.of((Supplier<PartyMember>) Hobbit::new),
         Arguments.of((Supplier<PartyMember>) Hunter::new),
         Arguments.of((Supplier<PartyMember>) Rogue::new),
-        Arguments.of((Supplier<PartyMember>) Wizard::new)
-    );
+        Arguments.of((Supplier<PartyMember>) Wizard::new));
   }
 
   private InMemoryAppender appender;
@@ -69,9 +68,7 @@ public class PartyMemberTest {
     appender.stop();
   }
 
-  /**
-   * Verify if a party action triggers the correct output to the std-Out
-   */
+  /** Verify if a party action triggers the correct output to the std-Out */
   @ParameterizedTest
   @MethodSource("dataProvider")
   public void testPartyAction(Supplier<PartyMember> memberSupplier) {
@@ -85,9 +82,7 @@ public class PartyMemberTest {
     assertEquals(Action.values().length, appender.getLogSize());
   }
 
-  /**
-   * Verify if a member action triggers the expected interactions with the party class
-   */
+  /** Verify if a member action triggers the expected interactions with the party class */
   @ParameterizedTest
   @MethodSource("dataProvider")
   public void testAct(Supplier<PartyMember> memberSupplier) {
@@ -109,9 +104,7 @@ public class PartyMemberTest {
     assertEquals(Action.values().length + 1, appender.getLogSize());
   }
 
-  /**
-   * Verify if {@link PartyMemberBase#toString()} generate the expected output
-   */
+  /** Verify if {@link PartyMemberBase#toString()} generate the expected output */
   @ParameterizedTest
   @MethodSource("dataProvider")
   public void testToString(Supplier<PartyMember> memberSupplier) {
@@ -141,6 +134,4 @@ public class PartyMemberTest {
       return log.get(log.size() - 1).getFormattedMessage();
     }
   }
-
-
 }

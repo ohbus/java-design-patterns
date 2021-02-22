@@ -26,9 +26,7 @@ package com.iluwatar.flyweight;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * InvisibilityPotion.
- */
+/** InvisibilityPotion. */
 public class InvisibilityPotion implements Potion {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(InvisibilityPotion.class);

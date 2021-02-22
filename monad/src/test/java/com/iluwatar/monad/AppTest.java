@@ -25,14 +25,11 @@ package com.iluwatar.monad;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * Application Test
- */
+/** Application Test */
 public class AppTest {
 
   @Test
   public void testMain() {
-    App.main(new String[]{});
+    App.main(new String[] {});
   }
-
 }

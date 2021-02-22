@@ -32,9 +32,7 @@ import java.io.IOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * save person into persons collection Created by dheeraj.mummar on 3/4/18.
- */
+/** save person into persons collection Created by dheeraj.mummar on 3/4/18. */
 public class SavePersonApiHandler extends AbstractDynamoDbHandler<Person>
     implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
 

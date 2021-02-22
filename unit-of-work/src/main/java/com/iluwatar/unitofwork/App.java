@@ -26,16 +26,13 @@ package com.iluwatar.unitofwork;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * {@link App} Application for managing student data.
- */
+/** {@link App} Application for managing student data. */
 public class App {
   /**
    * Program entry point.
    *
    * @param args no argument sent
    */
-
   public static void main(String[] args) {
     var ram = new Student(1, "Ram", "Street 9, Cupertino");
     var shyam = new Student(2, "Shyam", "Z bridge, Pune");

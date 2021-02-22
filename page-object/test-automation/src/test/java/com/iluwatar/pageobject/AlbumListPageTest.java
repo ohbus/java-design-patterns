@@ -29,9 +29,7 @@ import com.gargoylesoftware.htmlunit.WebClient;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-/**
- * Test Album Selection and Album Listing
- */
+/** Test Album Selection and Album Listing */
 public class AlbumListPageTest {
 
   private final AlbumListPage albumListPage = new AlbumListPage(new WebClient());
@@ -47,5 +45,4 @@ public class AlbumListPageTest {
     albumPage.navigateToPage();
     assertTrue(albumPage.isAt());
   }
-
 }

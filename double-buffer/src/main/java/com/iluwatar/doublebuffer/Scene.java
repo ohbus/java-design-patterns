@@ -28,9 +28,7 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Scene class. Render the output frame.
- */
+/** Scene class. Render the output frame. */
 public class Scene {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(Scene.class);
@@ -41,9 +39,7 @@ public class Scene {
 
   private int next;
 
-  /**
-   * Constructor of Scene.
-   */
+  /** Constructor of Scene. */
   public Scene() {
     frameBuffers = new FrameBuffer[2];
     frameBuffers[0] = new FrameBuffer();
@@ -61,11 +57,12 @@ public class Scene {
     LOGGER.info("Start drawing next frame");
     LOGGER.info("Current buffer: " + current + " Next buffer: " + next);
     frameBuffers[next].clearAll();
-    coordinateList.forEach(coordinate -> {
-      var x = coordinate.getKey();
-      var y = coordinate.getValue();
-      frameBuffers[next].draw(x, y);
-    });
+    coordinateList.forEach(
+        coordinate -> {
+          var x = coordinate.getKey();
+          var y = coordinate.getValue();
+          frameBuffers[next].draw(x, y);
+        });
     LOGGER.info("Swap current and next buffer");
     swap();
     LOGGER.info("Finish swapping");
@@ -82,5 +79,4 @@ public class Scene {
     next = current ^ next;
     current = current ^ next;
   }
-
 }

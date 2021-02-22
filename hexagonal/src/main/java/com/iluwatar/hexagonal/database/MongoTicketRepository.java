@@ -38,9 +38,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import org.bson.Document;
 
-/**
- * Mongo lottery ticket database.
- */
+/** Mongo lottery ticket database. */
 public class MongoTicketRepository implements LotteryTicketRepository {
 
   private static final String DEFAULT_DB = "lotteryDB";
@@ -53,38 +51,30 @@ public class MongoTicketRepository implements LotteryTicketRepository {
   private MongoCollection<Document> ticketsCollection;
   private MongoCollection<Document> countersCollection;
 
-  /**
-   * Constructor.
-   */
+  /** Constructor. */
   public MongoTicketRepository() {
     connect();
   }
 
-  /**
-   * Constructor accepting parameters.
-   */
-  public MongoTicketRepository(String dbName, String ticketsCollectionName,
-                               String countersCollectionName) {
+  /** Constructor accepting parameters. */
+  public MongoTicketRepository(
+      String dbName, String ticketsCollectionName, String countersCollectionName) {
     connect(dbName, ticketsCollectionName, countersCollectionName);
   }
 
-  /**
-   * Connect to database with default parameters.
-   */
+  /** Connect to database with default parameters. */
   public void connect() {
     connect(DEFAULT_DB, DEFAULT_TICKETS_COLLECTION, DEFAULT_COUNTERS_COLLECTION);
   }
 
-  /**
-   * Connect to database with given parameters.
-   */
-  public void connect(String dbName, String ticketsCollectionName,
-                      String countersCollectionName) {
+  /** Connect to database with given parameters. */
+  public void connect(String dbName, String ticketsCollectionName, String countersCollectionName) {
     if (mongoClient != null) {
       mongoClient.close();
     }
-    mongoClient = new MongoClient(System.getProperty("mongo-host"),
-        Integer.parseInt(System.getProperty("mongo-port")));
+    mongoClient =
+        new MongoClient(
+            System.getProperty("mongo-host"), Integer.parseInt(System.getProperty("mongo-port")));
     database = mongoClient.getDatabase(dbName);
     ticketsCollection = database.getCollection(ticketsCollectionName);
     countersCollection = database.getCollection(countersCollectionName);
@@ -154,10 +144,7 @@ public class MongoTicketRepository implements LotteryTicketRepository {
 
   @Override
   public Map<LotteryTicketId, LotteryTicket> findAll() {
-    return ticketsCollection
-        .find(new Document())
-        .into(new ArrayList<>())
-        .stream()
+    return ticketsCollection.find(new Document()).into(new ArrayList<>()).stream()
         .map(this::docToTicket)
         .collect(Collectors.toMap(LotteryTicket::getId, Function.identity()));
   }
@@ -168,11 +155,12 @@ public class MongoTicketRepository implements LotteryTicketRepository {
   }
 
   private LotteryTicket docToTicket(Document doc) {
-    var playerDetails = new PlayerDetails(doc.getString("email"), doc.getString("bank"),
-        doc.getString("phone"));
-    var numbers = Arrays.stream(doc.getString("numbers").split(","))
-        .map(Integer::parseInt)
-        .collect(Collectors.toSet());
+    var playerDetails =
+        new PlayerDetails(doc.getString("email"), doc.getString("bank"), doc.getString("phone"));
+    var numbers =
+        Arrays.stream(doc.getString("numbers").split(","))
+            .map(Integer::parseInt)
+            .collect(Collectors.toSet());
     var lotteryNumbers = LotteryNumbers.create(numbers);
     var ticketId = new LotteryTicketId(doc.getInteger(TICKET_ID));
     return new LotteryTicket(ticketId, playerDetails, lotteryNumbers);

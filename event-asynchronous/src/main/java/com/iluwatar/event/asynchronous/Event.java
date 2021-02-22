@@ -26,9 +26,7 @@ package com.iluwatar.event.asynchronous;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Each Event runs as a separate/individual thread.
- */
+/** Each Event runs as a separate/individual thread. */
 public class Event implements IEvent, Runnable {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(Event.class);
@@ -43,8 +41,8 @@ public class Event implements IEvent, Runnable {
   /**
    * Constructor.
    *
-   * @param eventId       event ID
-   * @param eventTime     event time
+   * @param eventId event ID
+   * @param eventTime event time
    * @param isSynchronous is of synchronous type
    */
   public Event(final int eventId, final int eventTime, final boolean isSynchronous) {
@@ -108,5 +106,4 @@ public class Event implements IEvent, Runnable {
       eventListener.completedEventHandler(eventId);
     }
   }
-
 }

@@ -27,15 +27,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * @author anthony
- *
- */
+/** @author anthony */
 class NazgulEnumTest {
 
   /**
-   * Check that multiple calls to any one of the instances in the multiton returns 
-   * only that one particular instance, and do that for all instances in multiton
+   * Check that multiple calls to any one of the instances in the multiton returns only that one
+   * particular instance, and do that for all instances in multiton
    */
   @Test
   public void testTheSameObjectIsReturnedWithMultipleCalls() {

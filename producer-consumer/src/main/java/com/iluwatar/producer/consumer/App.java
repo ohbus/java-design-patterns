@@ -23,7 +23,6 @@
 
 package com.iluwatar.producer.consumer;
 
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import org.slf4j.Logger;
@@ -56,20 +55,22 @@ public class App {
     for (var i = 0; i < 2; i++) {
 
       final var producer = new Producer("Producer_" + i, queue);
-      executorService.submit(() -> {
-        while (true) {
-          producer.produce();
-        }
-      });
+      executorService.submit(
+          () -> {
+            while (true) {
+              producer.produce();
+            }
+          });
     }
 
     for (var i = 0; i < 3; i++) {
       final var consumer = new Consumer("Consumer_" + i, queue);
-      executorService.submit(() -> {
-        while (true) {
-          consumer.consume();
-        }
-      });
+      executorService.submit(
+          () -> {
+            while (true) {
+              consumer.consume();
+            }
+          });
     }
 
     executorService.shutdown();

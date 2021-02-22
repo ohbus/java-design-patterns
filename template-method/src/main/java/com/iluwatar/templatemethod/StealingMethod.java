@@ -26,9 +26,7 @@ package com.iluwatar.templatemethod;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * StealingMethod defines skeleton for the algorithm.
- */
+/** StealingMethod defines skeleton for the algorithm. */
 public abstract class StealingMethod {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(StealingMethod.class);
@@ -39,9 +37,7 @@ public abstract class StealingMethod {
 
   protected abstract void stealTheItem(String target);
 
-  /**
-   * Steal.
-   */
+  /** Steal. */
   public void steal() {
     var target = pickTarget();
     LOGGER.info("The target has been chosen as {}.", target);

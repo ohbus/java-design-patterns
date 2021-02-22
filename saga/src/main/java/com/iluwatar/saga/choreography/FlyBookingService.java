@@ -23,10 +23,7 @@
 
 package com.iluwatar.saga.choreography;
 
-
-/**
- * Class representing a service to book a fly.
- */
+/** Class representing a service to book a fly. */
 public class FlyBookingService extends Service {
   public FlyBookingService(ServiceDiscoveryService service) {
     super(service);

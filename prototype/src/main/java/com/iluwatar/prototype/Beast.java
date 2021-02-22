@@ -23,16 +23,12 @@
 
 package com.iluwatar.prototype;
 
-/**
- * Beast.
- */
+/** Beast. */
 public abstract class Beast implements Prototype {
 
-  public Beast() {
-  }
+  public Beast() {}
 
-  public Beast(Beast source) {
-  }
+  public Beast(Beast source) {}
 
   @Override
   public abstract Beast copy();
@@ -47,5 +43,4 @@ public abstract class Beast implements Prototype {
     }
     return getClass() == obj.getClass();
   }
-
 }

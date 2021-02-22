@@ -29,9 +29,7 @@ import java.util.stream.IntStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Render component manager for Game.
- */
+/** Render component manager for Game. */
 public class RenderComponentManager {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(RenderComponentManager.class);
@@ -46,18 +44,13 @@ public class RenderComponentManager {
     this.numEntities = numEntities;
   }
 
-  /**
-   * Start render component.
-   */
+  /** Start render component. */
   public void start() {
     LOGGER.info("Start Render Game Component ");
     IntStream.range(0, numEntities).forEach(i -> renderComponents[i] = new RenderComponent());
   }
 
-
-  /**
-   * render component.
-   */
+  /** render component. */
   public void render() {
     LOGGER.info("Update Render Game Component ");
     // Process Render.

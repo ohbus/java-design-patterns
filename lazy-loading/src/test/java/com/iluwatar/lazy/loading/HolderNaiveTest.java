@@ -23,8 +23,6 @@
 
 package com.iluwatar.lazy.loading;
 
-import java.lang.reflect.Field;
-
 /**
  * Date: 12/19/15 - 12:05 PM
  *
@@ -45,5 +43,4 @@ public class HolderNaiveTest extends AbstractHolderTest {
   Heavy getHeavy() {
     return holder.getHeavy();
   }
-
 }

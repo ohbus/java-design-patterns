@@ -35,9 +35,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
 
-/**
- * Tests for {@link SimpleTroll}
- */
+/** Tests for {@link SimpleTroll} */
 public class SimpleTrollTest {
 
   private InMemoryAppender appender;

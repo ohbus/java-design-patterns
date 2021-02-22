@@ -26,9 +26,7 @@ package com.iluwatar.business.delegate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Service EJB implementation.
- */
+/** Service EJB implementation. */
 public class EjbService implements BusinessService {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(EjbService.class);

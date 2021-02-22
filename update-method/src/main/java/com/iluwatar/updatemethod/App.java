@@ -27,10 +27,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * This pattern simulate a collection of independent objects by telling each to
- * process one frame of behavior at a time. The game world maintains a collection
- * of objects. Each object implements an update method that simulates one frame of
- * the object’s behavior. Each frame, the game updates every object in the collection.
+ * This pattern simulate a collection of independent objects by telling each to process one frame of
+ * behavior at a time. The game world maintains a collection of objects. Each object implements an
+ * update method that simulates one frame of the object’s behavior. Each frame, the game updates
+ * every object in the collection.
  */
 public class App {
 
@@ -40,6 +40,7 @@ public class App {
 
   /**
    * Program entry point.
+   *
    * @param args runtime arguments
    */
   public static void main(String[] args) {

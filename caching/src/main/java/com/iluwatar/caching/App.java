@@ -31,15 +31,15 @@ import org.slf4j.LoggerFactory;
  * the resources immediately after their use. The resources retain their identity, are kept in some
  * fast-access storage, and are re-used to avoid having to acquire them again. There are four main
  * caching strategies/techniques in this pattern; each with their own pros and cons. They are;
- * <code>write-through</code> which writes data to the cache and DB in a single transaction,
- * <code>write-around</code> which writes data immediately into the DB instead of the cache,
- * <code>write-behind</code> which writes data into the cache initially whilst the data is only
- * written into the DB when the cache is full, and <code>cache-aside</code> which pushes the
- * responsibility of keeping the data synchronized in both data sources to the application itself.
- * The <code>read-through</code> strategy is also included in the mentioned four strategies --
- * returns data from the cache to the caller <b>if</b> it exists <b>else</b> queries from DB and
- * stores it into the cache for future use. These strategies determine when the data in the cache
- * should be written back to the backing store (i.e. Database) and help keep both data sources
+ * <code>write-through</code> which writes data to the cache and DB in a single transaction, <code>
+ * write-around</code> which writes data immediately into the DB instead of the cache, <code>
+ * write-behind</code> which writes data into the cache initially whilst the data is only written
+ * into the DB when the cache is full, and <code>cache-aside</code> which pushes the responsibility
+ * of keeping the data synchronized in both data sources to the application itself. The <code>
+ * read-through</code> strategy is also included in the mentioned four strategies -- returns data
+ * from the cache to the caller <b>if</b> it exists <b>else</b> queries from DB and stores it into
+ * the cache for future use. These strategies determine when the data in the cache should be written
+ * back to the backing store (i.e. Database) and help keep both data sources
  * synchronized/up-to-date. This pattern can improve performance and also helps to maintain
  * consistency between data held in the cache and the data in the underlying data store.
  *
@@ -52,9 +52,8 @@ import org.slf4j.LoggerFactory;
  * whether the data is coming from the cache or the DB (i.e. separation of concern). The AppManager
  * ({@link AppManager}) handles the transaction of data to-and-from the underlying data store
  * (depending on the preferred caching policy/strategy).
- * <p>
- * <i>{@literal App --> AppManager --> CacheStore/LRUCache/CachingPolicy --> DBManager} </i>
- * </p>
+ *
+ * <p><i>{@literal App --> AppManager --> CacheStore/LRUCache/CachingPolicy --> DBManager} </i>
  *
  * @see CacheStore
  * @see LruCache
@@ -63,7 +62,6 @@ import org.slf4j.LoggerFactory;
 public class App {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(App.class);
-
 
   /**
    * Program entry point.
@@ -83,9 +81,7 @@ public class App {
     app.useCacheAsideStategy();
   }
 
-  /**
-   * Read-through and write-through.
-   */
+  /** Read-through and write-through. */
   public void useReadAndWriteThroughStrategy() {
     LOGGER.info("# CachingPolicy.THROUGH");
     AppManager.initCachingPolicy(CachingPolicy.THROUGH);
@@ -98,9 +94,7 @@ public class App {
     AppManager.find("001");
   }
 
-  /**
-   * Read-through and write-around.
-   */
+  /** Read-through and write-around. */
   public void useReadThroughAndWriteAroundStrategy() {
     LOGGER.info("# CachingPolicy.AROUND");
     AppManager.initCachingPolicy(CachingPolicy.AROUND);
@@ -120,9 +114,7 @@ public class App {
     AppManager.find("002");
   }
 
-  /**
-   * Read-through and write-behind.
-   */
+  /** Read-through and write-behind. */
   public void useReadThroughAndWriteBehindStrategy() {
     LOGGER.info("# CachingPolicy.BEHIND");
     AppManager.initCachingPolicy(CachingPolicy.BEHIND);
@@ -144,9 +136,7 @@ public class App {
     LOGGER.info(AppManager.printCacheContent());
   }
 
-  /**
-   * Cache-Aside.
-   */
+  /** Cache-Aside. */
   public void useCacheAsideStategy() {
     LOGGER.info("# CachingPolicy.ASIDE");
     AppManager.initCachingPolicy(CachingPolicy.ASIDE);

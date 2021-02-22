@@ -39,10 +39,9 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 /**
  * Test class for <i>WireTapRoute</i>.
- * <p>
- * In order for it to work we have to mock endpoints we want to read/write to. To mock those we need
- * to substitute original endpoint names to mocks.
- * </p>
+ *
+ * <p>In order for it to work we have to mock endpoints we want to read/write to. To mock those we
+ * need to substitute original endpoint names to mocks.
  */
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = WireTapRouteTest.class)

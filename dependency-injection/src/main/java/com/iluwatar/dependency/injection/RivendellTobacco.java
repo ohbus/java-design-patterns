@@ -23,8 +23,5 @@
 
 package com.iluwatar.dependency.injection;
 
-/**
- * RivendellTobacco concrete {@link Tobacco} implementation.
- */
-public class RivendellTobacco extends Tobacco {
-}
+/** RivendellTobacco concrete {@link Tobacco} implementation. */
+public class RivendellTobacco extends Tobacco {}

@@ -36,15 +36,15 @@ import org.junit.jupiter.api.Test;
  */
 public class EventTest {
 
-  /**
-   * Verify if every event has a non-null, non-empty description
-   */
+  /** Verify if every event has a non-null, non-empty description */
   @Test
   public void testToString() {
-    Arrays.stream(Event.values()).map(Event::toString).forEach(toString -> {
-      assertNotNull(toString);
-      assertFalse(toString.trim().isEmpty());
-    });
+    Arrays.stream(Event.values())
+        .map(Event::toString)
+        .forEach(
+            toString -> {
+              assertNotNull(toString);
+              assertFalse(toString.trim().isEmpty());
+            });
   }
-
 }

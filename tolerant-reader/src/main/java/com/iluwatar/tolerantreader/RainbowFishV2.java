@@ -23,9 +23,7 @@
 
 package com.iluwatar.tolerantreader;
 
-/**
- * RainbowFishV2 is the evolved schema.
- */
+/** RainbowFishV2 is the evolved schema. */
 public class RainbowFishV2 extends RainbowFish {
 
   private static final long serialVersionUID = 1L;
@@ -38,11 +36,15 @@ public class RainbowFishV2 extends RainbowFish {
     super(name, age, lengthMeters, weightTons);
   }
 
-  /**
-   * Constructor.
-   */
-  public RainbowFishV2(String name, int age, int lengthMeters, int weightTons, boolean sleeping,
-                       boolean hungry, boolean angry) {
+  /** Constructor. */
+  public RainbowFishV2(
+      String name,
+      int age,
+      int lengthMeters,
+      int weightTons,
+      boolean sleeping,
+      boolean hungry,
+      boolean angry) {
     this(name, age, lengthMeters, weightTons);
     this.sleeping = sleeping;
     this.hungry = hungry;

@@ -41,7 +41,7 @@ public class StudentRepository implements IUnitOfWork<Student> {
   /**
    * Constructor.
    *
-   * @param context         set of operations to be perform during commit.
+   * @param context set of operations to be perform during commit.
    * @param studentDatabase Database for student records.
    */
   public StudentRepository(Map<String, List<Student>> context, StudentDatabase studentDatabase) {
@@ -59,7 +59,6 @@ public class StudentRepository implements IUnitOfWork<Student> {
   public void registerModified(Student student) {
     LOGGER.info("Registering {} for modify in context.", student.getName());
     register(student, UnitActions.MODIFY.getActionValue());
-
   }
 
   @Override
@@ -77,9 +76,7 @@ public class StudentRepository implements IUnitOfWork<Student> {
     context.put(operation, studentsToOperate);
   }
 
-  /**
-   * All UnitOfWork operations are batched and executed together on commit only.
-   */
+  /** All UnitOfWork operations are batched and executed together on commit only. */
   @Override
   public void commit() {
     if (context == null || context.size() == 0) {

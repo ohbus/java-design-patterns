@@ -37,12 +37,9 @@ public class EpsonPrinter implements Printer {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(EpsonPrinter.class);
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   public void print(String message) {
     LOGGER.info("Epson Printer : {}", message);
   }
-
 }

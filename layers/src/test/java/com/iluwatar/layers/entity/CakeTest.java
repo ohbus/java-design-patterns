@@ -23,18 +23,14 @@
 
 package com.iluwatar.layers.entity;
 
-import com.iluwatar.layers.entity.Cake;
-import com.iluwatar.layers.entity.CakeLayer;
-import com.iluwatar.layers.entity.CakeTopping;
-import org.junit.jupiter.api.Test;
-
-import java.util.HashSet;
-import java.util.Set;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.HashSet;
+import java.util.Set;
+import org.junit.jupiter.api.Test;
 
 /**
  * Date: 12/15/15 - 8:02 PM
@@ -69,7 +65,8 @@ public class CakeTest {
     assertNotNull(cake.getLayers());
     assertTrue(cake.getLayers().isEmpty());
 
-    final var expectedLayers = Set.of(
+    final var expectedLayers =
+        Set.of(
             new CakeLayer("layer1", 1000),
             new CakeLayer("layer2", 2000),
             new CakeLayer("layer3", 3000));
@@ -113,10 +110,9 @@ public class CakeTest {
     cake.setTopping(topping);
     cake.addLayer(layer);
 
-    final var expected = "id=1234 topping=id=2345 name=topping calories=20 "
+    final var expected =
+        "id=1234 topping=id=2345 name=topping calories=20 "
             + "layers=[id=3456 name=layer calories=100]";
     assertEquals(expected, cake.toString());
-
   }
-
 }

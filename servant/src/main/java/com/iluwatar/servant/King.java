@@ -23,9 +23,7 @@
 
 package com.iluwatar.servant;
 
-/**
- * King.
- */
+/** King. */
 public class King implements Royalty {
 
   private boolean isDrunk;

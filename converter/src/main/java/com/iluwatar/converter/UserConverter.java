@@ -23,9 +23,7 @@
 
 package com.iluwatar.converter;
 
-/**
- * Example implementation of the simple User converter.
- */
+/** Example implementation of the simple User converter. */
 public class UserConverter extends Converter<UserDto, User> {
 
   public UserConverter() {
@@ -39,5 +37,4 @@ public class UserConverter extends Converter<UserDto, User> {
   private static User convertToEntity(UserDto dto) {
     return new User(dto.getFirstName(), dto.getLastName(), dto.isActive(), dto.getEmail());
   }
-
 }

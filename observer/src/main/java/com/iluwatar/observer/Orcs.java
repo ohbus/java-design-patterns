@@ -26,9 +26,7 @@ package com.iluwatar.observer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Orcs.
- */
+/** Orcs. */
 public class Orcs implements WeatherObserver {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(Orcs.class);

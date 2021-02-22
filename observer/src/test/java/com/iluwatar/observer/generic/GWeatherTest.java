@@ -23,16 +23,15 @@
 
 package com.iluwatar.observer.generic;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
+
 import com.iluwatar.observer.WeatherObserver;
 import com.iluwatar.observer.WeatherType;
 import com.iluwatar.observer.utils.InMemoryAppender;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InOrder;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.*;
 
 /**
  * Date: 12/27/15 - 11:08 AM
@@ -77,9 +76,7 @@ public class GWeatherTest {
     assertEquals(2, appender.getLogSize());
   }
 
-  /**
-   * Verify if the weather passes in the order of the {@link WeatherType}s
-   */
+  /** Verify if the weather passes in the order of the {@link WeatherType}s */
   @Test
   public void testTimePasses() {
     final var observer = mock(Race.class);
@@ -95,5 +92,4 @@ public class GWeatherTest {
 
     verifyNoMoreInteractions(observer);
   }
-
 }

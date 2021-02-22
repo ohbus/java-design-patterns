@@ -28,9 +28,7 @@ import static org.mockito.Mockito.spy;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * Tests for sword
- */
+/** Tests for sword */
 class SwordTest extends WeaponTest {
 
   /**

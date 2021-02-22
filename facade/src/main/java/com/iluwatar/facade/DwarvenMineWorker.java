@@ -27,9 +27,7 @@ import java.util.Arrays;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * DwarvenMineWorker is one of the goldmine subsystems.
- */
+/** DwarvenMineWorker is one of the goldmine subsystems. */
 public abstract class DwarvenMineWorker {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(DwarvenMineWorker.class);
@@ -73,9 +71,7 @@ public abstract class DwarvenMineWorker {
     }
   }
 
-  /**
-   * Perform actions.
-   */
+  /** Perform actions. */
   public void action(Action... actions) {
     Arrays.stream(actions).forEach(this::action);
   }
@@ -85,6 +81,10 @@ public abstract class DwarvenMineWorker {
   public abstract String name();
 
   enum Action {
-    GO_TO_SLEEP, WAKE_UP, GO_HOME, GO_TO_MINE, WORK
+    GO_TO_SLEEP,
+    WAKE_UP,
+    GO_HOME,
+    GO_TO_MINE,
+    WORK
   }
 }

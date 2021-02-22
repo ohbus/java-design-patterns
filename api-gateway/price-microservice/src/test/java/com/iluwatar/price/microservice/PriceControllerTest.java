@@ -27,9 +27,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * Test for Price Rest Controller
- */
+/** Test for Price Rest Controller */
 public class PriceControllerTest {
   @Test
   public void testgetPrice() {

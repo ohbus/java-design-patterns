@@ -92,9 +92,7 @@ public class TreeTest {
     assertEquals(7, TREE_ROOT.getTreeSize());
   }
 
-  /**
-   * Walk through the tree and verify if every item is handled
-   */
+  /** Walk through the tree and verify if every item is handled */
   @Test
   public void testWalk() {
     TREE_ROOT.walk();
@@ -160,5 +158,4 @@ public class TreeTest {
       return log.size();
     }
   }
-
 }

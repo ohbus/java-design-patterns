@@ -33,5 +33,4 @@ public interface IEvent {
   void stop();
 
   void status();
-
 }

@@ -26,9 +26,7 @@ package com.iluwatar.serverless.faas;
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- * Lambda context information.
- */
+/** Lambda context information. */
 public class LambdaInfo implements Serializable {
 
   private static final long serialVersionUID = 3936130599040848923L;
@@ -91,12 +89,23 @@ public class LambdaInfo implements Serializable {
   @Override
   public String toString() {
     return "LambdaInfo{"
-        + "awsRequestId='" + awsRequestId + '\''
-        + ", logGroupName='" + logGroupName + '\''
-        + ", logStreamName='" + logStreamName + '\''
-        + ", functionName='" + functionName + '\''
-        + ", functionVersion='" + functionVersion + '\''
-        + ", memoryLimitInMb=" + memoryLimitInMb
+        + "awsRequestId='"
+        + awsRequestId
+        + '\''
+        + ", logGroupName='"
+        + logGroupName
+        + '\''
+        + ", logStreamName='"
+        + logStreamName
+        + '\''
+        + ", functionName='"
+        + functionName
+        + '\''
+        + ", functionVersion='"
+        + functionVersion
+        + '\''
+        + ", memoryLimitInMb="
+        + memoryLimitInMb
         + '}';
   }
 

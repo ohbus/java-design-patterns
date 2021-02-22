@@ -53,10 +53,9 @@ public class ChapterResult<K> {
     return new ChapterResult<>(val, State.FAILURE);
   }
 
-  /**
-   * state for chapter.
-   */
+  /** state for chapter. */
   public enum State {
-    SUCCESS, FAILURE
+    SUCCESS,
+    FAILURE
   }
 }

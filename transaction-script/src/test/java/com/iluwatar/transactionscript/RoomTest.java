@@ -23,15 +23,13 @@
 
 package com.iluwatar.transactionscript;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-/**
- * Tests {@link Room}.
- */
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+/** Tests {@link Room}. */
 public class RoomTest {
 
   private Room room;
@@ -89,7 +87,10 @@ public class RoomTest {
 
   @Test
   public void testToString() {
-    assertEquals(String.format("Room{id=%s, roomType=%s, price=%s, booked=%s}",
-        room.getId(), room.getRoomType(), room.getPrice(), room.isBooked()), room.toString());
+    assertEquals(
+        String.format(
+            "Room{id=%s, roomType=%s, price=%s, booked=%s}",
+            room.getId(), room.getRoomType(), room.getPrice(), room.isBooked()),
+        room.toString());
   }
 }

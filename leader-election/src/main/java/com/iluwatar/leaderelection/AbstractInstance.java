@@ -28,9 +28,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Abstract class of all the instance implementation classes.
- */
+/** Abstract class of all the instance implementation classes. */
 public abstract class AbstractInstance implements Instance, Runnable {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(AbstractInstance.class);
@@ -44,9 +42,7 @@ public abstract class AbstractInstance implements Instance, Runnable {
   protected int leaderId;
   protected boolean alive;
 
-  /**
-   * Constructor of BullyInstance.
-   */
+  /** Constructor of BullyInstance. */
   public AbstractInstance(MessageManager messageManager, int localId, int leaderId) {
     this.messageManager = messageManager;
     this.messageQueue = new ConcurrentLinkedQueue<>();
@@ -55,9 +51,7 @@ public abstract class AbstractInstance implements Instance, Runnable {
     this.alive = true;
   }
 
-  /**
-   * The instance will execute the message in its message queue periodically once it is alive.
-   */
+  /** The instance will execute the message in its message queue periodically once it is alive. */
   @Override
   @SuppressWarnings("squid:S2189")
   public void run() {
@@ -150,5 +144,4 @@ public abstract class AbstractInstance implements Instance, Runnable {
   protected abstract void handleHeartbeatMessage(Message message);
 
   protected abstract void handleHeartbeatInvokeMessage();
-
 }

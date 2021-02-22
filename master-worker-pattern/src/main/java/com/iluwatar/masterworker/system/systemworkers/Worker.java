@@ -31,7 +31,6 @@ import com.iluwatar.masterworker.system.systemmaster.Master;
  * The abstract Worker class which extends Thread class to enable parallel processing. Contains
  * fields master(holding reference to master), workerId (unique id) and receivedData(from master).
  */
-
 public abstract class Worker extends Thread {
   private final Master master;
   private final int workerId;
@@ -52,7 +51,7 @@ public abstract class Worker extends Thread {
   }
 
   public void setReceivedData(Master m, Input<?> i) {
-    //check if ready to receive..if yes:
+    // check if ready to receive..if yes:
     this.receivedData = i;
   }
 
@@ -62,7 +61,7 @@ public abstract class Worker extends Thread {
     this.master.receiveData(data, this);
   }
 
-  public void run() { //from Thread class
+  public void run() { // from Thread class
     var work = executeOperation();
     sendToMaster(work);
   }

@@ -23,9 +23,7 @@
 
 package com.iluwatar.iterator.list;
 
-/**
- * Item.
- */
+/** Item. */
 public class Item {
 
   private ItemType type;

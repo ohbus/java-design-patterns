@@ -23,18 +23,14 @@
 
 package com.iluwatar.dao;
 
-/**
- * A customer POJO that represents the data that will be read from the data source.
- */
+/** A customer POJO that represents the data that will be read from the data source. */
 public class Customer {
 
   private int id;
   private String firstName;
   private String lastName;
 
-  /**
-   * Creates an instance of customer.
-   */
+  /** Creates an instance of customer. */
   public Customer(int id, String firstName, String lastName) {
     this.id = id;
     this.firstName = firstName;
@@ -67,8 +63,16 @@ public class Customer {
 
   @Override
   public String toString() {
-    return "Customer{" + "id=" + getId() + ", firstName='" + getFirstName() + '\'' + ", lastName='"
-        + getLastName() + '\'' + '}';
+    return "Customer{"
+        + "id="
+        + getId()
+        + ", firstName='"
+        + getFirstName()
+        + '\''
+        + ", lastName='"
+        + getLastName()
+        + '\''
+        + '}';
   }
 
   @Override

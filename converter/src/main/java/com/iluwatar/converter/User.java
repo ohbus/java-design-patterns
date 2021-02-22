@@ -25,9 +25,7 @@ package com.iluwatar.converter;
 
 import java.util.Objects;
 
-/**
- * User class.
- */
+/** User class. */
 public class User {
   private final String firstName;
   private final String lastName;
@@ -38,9 +36,9 @@ public class User {
    * Constructor.
    *
    * @param firstName user's first name
-   * @param lastName  user's last name
-   * @param isActive  flag indicating whether the user is active
-   * @param userId    user's identificator
+   * @param lastName user's last name
+   * @param isActive flag indicating whether the user is active
+   * @param userId user's identificator
    */
   public User(String firstName, String lastName, boolean isActive, String userId) {
     this.firstName = firstName;
@@ -74,8 +72,10 @@ public class User {
       return false;
     }
     var user = (User) o;
-    return isActive == user.isActive && Objects.equals(firstName, user.firstName) && Objects
-        .equals(lastName, user.lastName) && Objects.equals(userId, user.userId);
+    return isActive == user.isActive
+        && Objects.equals(firstName, user.firstName)
+        && Objects.equals(lastName, user.lastName)
+        && Objects.equals(userId, user.userId);
   }
 
   @Override
@@ -85,7 +85,18 @@ public class User {
 
   @Override
   public String toString() {
-    return "User{" + "firstName='" + firstName + '\'' + ", lastName='" + lastName + '\''
-        + ", isActive=" + isActive + ", userId='" + userId + '\'' + '}';
+    return "User{"
+        + "firstName='"
+        + firstName
+        + '\''
+        + ", lastName='"
+        + lastName
+        + '\''
+        + ", isActive="
+        + isActive
+        + ", userId='"
+        + userId
+        + '\''
+        + '}';
   }
 }

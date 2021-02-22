@@ -26,9 +26,7 @@ package com.iluwatar.flyweight;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * StrengthPotion.
- */
+/** StrengthPotion. */
 public class StrengthPotion implements Potion {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(StrengthPotion.class);

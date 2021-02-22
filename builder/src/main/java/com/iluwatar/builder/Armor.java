@@ -23,12 +23,12 @@
 
 package com.iluwatar.builder;
 
-/**
- * Armor enumeration.
- */
+/** Armor enumeration. */
 public enum Armor {
-
-  CLOTHES("clothes"), LEATHER("leather"), CHAIN_MAIL("chain mail"), PLATE_MAIL("plate mail");
+  CLOTHES("clothes"),
+  LEATHER("leather"),
+  CHAIN_MAIL("chain mail"),
+  PLATE_MAIL("plate mail");
 
   private final String title;
 

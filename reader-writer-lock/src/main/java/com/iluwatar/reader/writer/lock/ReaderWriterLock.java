@@ -42,7 +42,6 @@ public class ReaderWriterLock implements ReadWriteLock {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(ReaderWriterLock.class);
 
-
   private final Object readerMutex = new Object();
 
   private int currentReaderCount;
@@ -50,10 +49,10 @@ public class ReaderWriterLock implements ReadWriteLock {
   /**
    * Global mutex is used to indicate that whether reader or writer gets the lock in the moment.
    *
-   * <p>1. When it contains the reference of {@link #readerLock}, it means that the lock is
-   * acquired by the reader, another reader can also do the read operation concurrently. <br> 2.
-   * When it contains the reference of reference of {@link #writerLock}, it means that the lock is
-   * acquired by the writer exclusively, no more reader or writer can get the lock.
+   * <p>1. When it contains the reference of {@link #readerLock}, it means that the lock is acquired
+   * by the reader, another reader can also do the read operation concurrently. <br>
+   * 2. When it contains the reference of reference of {@link #writerLock}, it means that the lock
+   * is acquired by the writer exclusively, no more reader or writer can get the lock.
    *
    * <p>This is the most important field in this class to control the access for reader/writer.
    */
@@ -72,23 +71,17 @@ public class ReaderWriterLock implements ReadWriteLock {
     return writerLock;
   }
 
-  /**
-   * return true when globalMutex hold the reference of writerLock.
-   */
+  /** return true when globalMutex hold the reference of writerLock. */
   private boolean doesWriterOwnThisLock() {
     return globalMutex.contains(writerLock);
   }
 
-  /**
-   * Nobody get the lock when globalMutex contains nothing.
-   */
+  /** Nobody get the lock when globalMutex contains nothing. */
   private boolean isLockFree() {
     return globalMutex.isEmpty();
   }
 
-  /**
-   * Reader Lock, can be access for more than one reader concurrently if no writer get the lock.
-   */
+  /** Reader Lock, can be access for more than one reader concurrently if no writer get the lock. */
   private class ReadLock implements Lock {
 
     @Override
@@ -137,7 +130,6 @@ public class ReaderWriterLock implements ReadWriteLock {
           }
         }
       }
-
     }
 
     @Override
@@ -159,12 +151,9 @@ public class ReaderWriterLock implements ReadWriteLock {
     public Condition newCondition() {
       throw new UnsupportedOperationException();
     }
-
   }
 
-  /**
-   * Writer Lock, can only be accessed by one writer concurrently.
-   */
+  /** Writer Lock, can only be accessed by one writer concurrently. */
   private class WriteLock implements Lock {
 
     @Override
@@ -214,5 +203,4 @@ public class ReaderWriterLock implements ReadWriteLock {
       throw new UnsupportedOperationException();
     }
   }
-
 }

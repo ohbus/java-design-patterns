@@ -43,39 +43,38 @@ public class StatusMemberTest {
 
   @Test
   public void statusRecordsTheStartTime() {
-    //given
+    // given
     final var startTime = LocalDateTime.of(2017, Month.APRIL, 1, 19, 9);
     final var startingData = new StartingData(startTime);
     final var statusMember = new StatusMember(1);
-    //when
+    // when
     statusMember.accept(startingData);
-    //then
+    // then
     assertEquals(startTime, statusMember.getStarted());
   }
 
   @Test
   public void statusRecordsTheStopTime() {
-    //given
+    // given
     final var stop = LocalDateTime.of(2017, Month.APRIL, 1, 19, 12);
     final var stoppingData = new StoppingData(stop);
     stoppingData.setDataBus(DataBus.getInstance());
     final var statusMember = new StatusMember(1);
-    //when
+    // when
     statusMember.accept(stoppingData);
-    //then
+    // then
     assertEquals(stop, statusMember.getStopped());
   }
 
   @Test
   public void statusIgnoresMessageData() {
-    //given
+    // given
     final var messageData = new MessageData("message");
     final var statusMember = new StatusMember(1);
-    //when
+    // when
     statusMember.accept(messageData);
-    //then
+    // then
     assertNull(statusMember.getStarted());
     assertNull(statusMember.getStopped());
   }
-
 }

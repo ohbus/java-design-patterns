@@ -53,8 +53,7 @@ public final class App {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(App.class);
 
-  private App() {
-  }
+  private App() {}
 
   /**
    * Application entry point
@@ -86,6 +85,5 @@ public final class App {
     } catch (IOException ex) {
       LOGGER.error("An error occured.", ex);
     }
-
   }
 }

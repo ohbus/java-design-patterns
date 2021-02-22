@@ -23,15 +23,13 @@
 
 package com.iluwatar.subclasssandbox;
 
+import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOutNormalized;
+
 import com.github.stefanbirkner.systemlambda.Statement;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOutNormalized;
-
-/**
- * SkyLaunch unit tests.
- */
+/** SkyLaunch unit tests. */
 public class SkyLaunchTest {
 
   @Test
@@ -53,8 +51,7 @@ public class SkyLaunchTest {
   @Test
   public void testSpawnParticles() throws Exception {
     var skyLaunch = new SkyLaunch();
-    var outputLog = getLogContent(
-            () -> skyLaunch.spawnParticles("PARTICLE_TYPE", 100));
+    var outputLog = getLogContent(() -> skyLaunch.spawnParticles("PARTICLE_TYPE", 100));
     var expectedLog = "Spawn 100 particle with type PARTICLE_TYPE";
     Assert.assertEquals(outputLog, expectedLog);
   }
@@ -62,8 +59,7 @@ public class SkyLaunchTest {
   @Test
   public void testActivate() throws Exception {
     var skyLaunch = new SkyLaunch();
-    var logs = tapSystemOutNormalized(skyLaunch::activate)
-            .split("\n");
+    var logs = tapSystemOutNormalized(skyLaunch::activate).split("\n");
     final var expectedSize = 3;
     final var log1 = getLogContent(logs[0]);
     final var expectedLog1 = "Move to ( 0.0, 0.0, 20.0 )";

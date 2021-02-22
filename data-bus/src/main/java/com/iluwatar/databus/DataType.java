@@ -52,7 +52,6 @@ package com.iluwatar.databus;
  *
  * @author Paul Campbell (pcampbell@kemitix.net)
  */
-
 public interface DataType {
 
   /**

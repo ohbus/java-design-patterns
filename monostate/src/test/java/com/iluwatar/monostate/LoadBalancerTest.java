@@ -72,7 +72,5 @@ public class LoadBalancerTest {
 
     verify(server, times(2)).serve(request);
     verifyNoMoreInteractions(server);
-
   }
-
 }

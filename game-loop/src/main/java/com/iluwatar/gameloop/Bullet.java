@@ -23,9 +23,7 @@
 
 package com.iluwatar.gameloop;
 
-/**
- * Bullet object class.
- */
+/** Bullet object class. */
 public class Bullet {
 
   private float position;

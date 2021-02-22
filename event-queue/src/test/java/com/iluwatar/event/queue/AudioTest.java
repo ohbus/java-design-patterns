@@ -23,20 +23,18 @@
 
 package com.iluwatar.event.queue;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-import javax.sound.sampled.UnsupportedAudioFileException;
-import java.io.IOException;
-
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.io.IOException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * Testing the Audio service of the Queue
- * @author mkuprivecz
  *
+ * @author mkuprivecz
  */
 public class AudioTest {
 
@@ -48,12 +46,14 @@ public class AudioTest {
   }
   /**
    * Test here that the playSound method works correctly
-   * @throws UnsupportedAudioFileException when the audio file is not supported 
+   *
+   * @throws UnsupportedAudioFileException when the audio file is not supported
    * @throws IOException when the file is not readable
    * @throws InterruptedException when the test is interrupted externally
    */
   @Test
-  public void testPlaySound() throws UnsupportedAudioFileException, IOException, InterruptedException {
+  public void testPlaySound()
+      throws UnsupportedAudioFileException, IOException, InterruptedException {
     audio.playSound(audio.getAudioStream("./etc/Bass-Drum-1.wav"), -10.0f);
     // test that service is started
     assertTrue(audio.isServiceRunning());
@@ -67,7 +67,8 @@ public class AudioTest {
 
   /**
    * Test here that the Queue
-   * @throws UnsupportedAudioFileException when the audio file is not supported 
+   *
+   * @throws UnsupportedAudioFileException when the audio file is not supported
    * @throws IOException when the file is not readable
    * @throws InterruptedException when the test is interrupted externally
    */
@@ -86,5 +87,4 @@ public class AudioTest {
     // test that service is finished
     assertFalse(audio.isServiceRunning());
   }
-
 }

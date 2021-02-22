@@ -30,10 +30,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-
-/**
- * Exposes the Price microservice's endpoints.
- */
+/** Exposes the Price microservice's endpoints. */
 @RestController
 public class PriceController {
   private static final Logger LOGGER = getLogger(PriceController.class);

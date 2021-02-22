@@ -23,9 +23,7 @@
 
 package com.iluwatar.objectmother;
 
-/**
- * Defines all attributes and behaviour related to the King.
- */
+/** Defines all attributes and behaviour related to the King. */
 public class King implements Royalty {
   boolean isDrunk = false;
   boolean isHappy = false;
@@ -66,6 +64,5 @@ public class King implements Royalty {
     } else {
       this.makeHappy();
     }
-
   }
 }

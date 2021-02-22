@@ -37,10 +37,9 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 /**
  * Test class for <i>SplitterRoute</i>.
- * <p>
- * In order for it to work we have to mock endpoints we want to read/write to. To mock those we need
- * to substitute original endpoint names to mocks.
- * </p>
+ *
+ * <p>In order for it to work we have to mock endpoints we want to read/write to. To mock those we
+ * need to substitute original endpoint names to mocks.
  */
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = SplitterRouteTest.class)
@@ -65,9 +64,10 @@ public class SplitterRouteTest {
   public void testSplitter() throws Exception {
 
     // Three items in one entry message
-    entry.sendBody(new String[]{"TEST1", "TEST2", "TEST3"});
+    entry.sendBody(new String[] {"TEST1", "TEST2", "TEST3"});
 
-    // Endpoint should have three different messages in the end order of the messages is not important
+    // Endpoint should have three different messages in the end order of the messages is not
+    // important
     endpoint.expectedMessageCount(3);
     endpoint.assertIsSatisfied();
   }

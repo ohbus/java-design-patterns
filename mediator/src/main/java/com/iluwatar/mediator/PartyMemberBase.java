@@ -26,9 +26,7 @@ package com.iluwatar.mediator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Abstract base class for party members.
- */
+/** Abstract base class for party members. */
 public abstract class PartyMemberBase implements PartyMember {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(PartyMemberBase.class);
@@ -56,5 +54,4 @@ public abstract class PartyMemberBase implements PartyMember {
 
   @Override
   public abstract String toString();
-
 }

@@ -31,15 +31,12 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * LambdaInfoApiHandler - simple api to get lambda context Created by dheeraj.mummar on 2/5/18.
- */
+/** LambdaInfoApiHandler - simple api to get lambda context Created by dheeraj.mummar on 2/5/18. */
 public class LambdaInfoApiHandler
     implements RequestHandler<Map<String, Object>, ApiGatewayResponse> {
 
   private static final Logger LOG = LoggerFactory.getLogger(LambdaInfoApiHandler.class);
   private static final Integer SUCCESS_STATUS_CODE = 200;
-
 
   @Override
   public ApiGatewayResponse handleRequest(Map<String, Object> input, Context context) {

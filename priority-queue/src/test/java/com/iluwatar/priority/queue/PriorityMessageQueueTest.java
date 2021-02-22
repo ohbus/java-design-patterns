@@ -28,11 +28,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * Test case for order of messages
- */
+/** Test case for order of messages */
 public class PriorityMessageQueueTest {
-
 
   @Test
   public void remove() {

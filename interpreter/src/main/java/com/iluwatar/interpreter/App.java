@@ -57,8 +57,10 @@ public class App {
       if (isOperator(s)) {
         var rightExpression = stack.pop();
         var leftExpression = stack.pop();
-        LOGGER.info("popped from stack left: {} right: {}",
-            leftExpression.interpret(), rightExpression.interpret());
+        LOGGER.info(
+            "popped from stack left: {} right: {}",
+            leftExpression.interpret(),
+            rightExpression.interpret());
         var operator = getOperatorInstance(s, leftExpression, rightExpression);
         LOGGER.info("operator: {}", operator);
         var result = operator.interpret();
@@ -78,9 +80,7 @@ public class App {
     return s.equals("+") || s.equals("-") || s.equals("*");
   }
 
-  /**
-   * Get expression for string.
-   */
+  /** Get expression for string. */
   public static Expression getOperatorInstance(String s, Expression left, Expression right) {
     switch (s) {
       case "+":

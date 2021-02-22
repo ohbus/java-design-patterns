@@ -32,16 +32,12 @@ import java.util.Optional;
  */
 public class CommanderVisitorTest extends VisitorTest<CommanderVisitor> {
 
-  /**
-   * Create a new test instance for the given visitor.
-   */
+  /** Create a new test instance for the given visitor. */
   public CommanderVisitorTest() {
     super(
         new CommanderVisitor(),
         Optional.of("Good to see you commander"),
         Optional.empty(),
-        Optional.empty()
-    );
+        Optional.empty());
   }
-
 }

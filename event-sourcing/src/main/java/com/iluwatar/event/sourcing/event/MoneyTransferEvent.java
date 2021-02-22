@@ -43,14 +43,14 @@ public class MoneyTransferEvent extends DomainEvent {
   /**
    * Instantiates a new Money transfer event.
    *
-   * @param sequenceId    the sequence id
-   * @param createdTime   the created time
-   * @param money         the money
+   * @param sequenceId the sequence id
+   * @param createdTime the created time
+   * @param money the money
    * @param accountNoFrom the account no from
-   * @param accountNoTo   the account no to
+   * @param accountNoTo the account no to
    */
-  public MoneyTransferEvent(long sequenceId, long createdTime, BigDecimal money, int accountNoFrom,
-                            int accountNoTo) {
+  public MoneyTransferEvent(
+      long sequenceId, long createdTime, BigDecimal money, int accountNoFrom, int accountNoTo) {
     super(sequenceId, createdTime, "MoneyTransferEvent");
     this.money = money;
     this.accountNoFrom = accountNoFrom;
@@ -86,10 +86,12 @@ public class MoneyTransferEvent extends DomainEvent {
 
   @Override
   public void process() {
-    var accountFrom = Optional.ofNullable(AccountAggregate.getAccount(accountNoFrom))
-        .orElseThrow(() -> new RuntimeException("Account not found " + accountNoFrom));
-    var accountTo = Optional.ofNullable(AccountAggregate.getAccount(accountNoTo))
-        .orElseThrow(() -> new RuntimeException("Account not found " + accountNoTo));
+    var accountFrom =
+        Optional.ofNullable(AccountAggregate.getAccount(accountNoFrom))
+            .orElseThrow(() -> new RuntimeException("Account not found " + accountNoFrom));
+    var accountTo =
+        Optional.ofNullable(AccountAggregate.getAccount(accountNoTo))
+            .orElseThrow(() -> new RuntimeException("Account not found " + accountNoTo));
     accountFrom.handleTransferFromEvent(this);
     accountTo.handleTransferToEvent(this);
   }

@@ -23,19 +23,15 @@
 
 package com.iluwatar.leaderelection.bully;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import com.iluwatar.leaderelection.AbstractInstance;
 import com.iluwatar.leaderelection.Message;
 import com.iluwatar.leaderelection.MessageType;
+import java.util.Queue;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Field;
-import java.util.Queue;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-/**
- * BullyInstance unit test.
- */
+/** BullyInstance unit test. */
 public class BullyinstanceTest {
 
   @Test
@@ -51,7 +47,6 @@ public class BullyinstanceTest {
     } catch (IllegalAccessException | NoSuchFieldException e) {
       fail("fail to access messasge queue.");
     }
-
   }
 
   @Test
@@ -74,5 +69,4 @@ public class BullyinstanceTest {
     bullyInstance.setAlive(false);
     assertFalse(bullyInstance.isAlive());
   }
-
 }

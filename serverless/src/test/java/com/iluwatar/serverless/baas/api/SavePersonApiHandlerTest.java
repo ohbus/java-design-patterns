@@ -41,16 +41,13 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-/**
- * Unit tests for SavePersonApiHandler Created by dheeraj.mummar on 3/4/18.
- */
+/** Unit tests for SavePersonApiHandler Created by dheeraj.mummar on 3/4/18. */
 @RunWith(MockitoJUnitRunner.class)
 public class SavePersonApiHandlerTest {
 
   private SavePersonApiHandler savePersonApiHandler;
 
-  @Mock
-  private DynamoDBMapper dynamoDbMapper;
+  @Mock private DynamoDBMapper dynamoDbMapper;
 
   private final ObjectMapper objectMapper = new ObjectMapper();
 

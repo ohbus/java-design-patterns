@@ -32,28 +32,21 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-/**
- * Test Aggregation of domain objects
- */
+/** Test Aggregation of domain objects */
 public class AggregatorTest {
 
-  @InjectMocks
-  private Aggregator aggregator;
+  @InjectMocks private Aggregator aggregator;
 
-  @Mock
-  private ProductInformationClient informationClient;
+  @Mock private ProductInformationClient informationClient;
 
-  @Mock
-  private ProductInventoryClient inventoryClient;
+  @Mock private ProductInventoryClient inventoryClient;
 
   @BeforeEach
   public void setup() {
     MockitoAnnotations.initMocks(this);
   }
 
-  /**
-   * Tests getting the data for a desktop client
-   */
+  /** Tests getting the data for a desktop client */
   @Test
   public void testGetProduct() {
     var title = "The Product Title.";
@@ -67,5 +60,4 @@ public class AggregatorTest {
     assertEquals(title, testProduct.getTitle());
     assertEquals(inventories, testProduct.getProductInventories());
   }
-
 }

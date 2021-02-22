@@ -63,7 +63,5 @@ public class ContentStoreTest {
     verify(view, times(1)).storeChanged(eq(contentStore));
     verifyNoMoreInteractions(view);
     assertEquals(Content.COMPANY, contentStore.getContent());
-
   }
-
 }

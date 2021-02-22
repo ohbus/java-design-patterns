@@ -37,9 +37,9 @@ public class CustomerDto {
   /**
    * Constructor.
    *
-   * @param id        customer id
+   * @param id customer id
    * @param firstName customer first name
-   * @param lastName  customer last name
+   * @param lastName customer last name
    */
   public CustomerDto(String id, String firstName, String lastName) {
     this.id = id;

@@ -27,22 +27,19 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 
-/**
- * GameLoop unit test class.
- */
+/** GameLoop unit test class. */
 public class GameLoopTest {
 
   private GameLoop gameLoop;
 
-  /**
-   * Create mock implementation of GameLoop.
-   */
+  /** Create mock implementation of GameLoop. */
   @BeforeEach
   public void setup() {
-    gameLoop = new GameLoop() {
-      @Override
-      protected void processGameLoop() {}
-    };
+    gameLoop =
+        new GameLoop() {
+          @Override
+          protected void processGameLoop() {}
+        };
   }
 
   @AfterEach
@@ -66,5 +63,4 @@ public class GameLoopTest {
   public void testIsGameRunning() {
     Assertions.assertFalse(gameLoop.isGameRunning());
   }
-
 }

@@ -24,13 +24,10 @@
 package com.iluwatar.bytecode.util;
 
 import com.iluwatar.bytecode.Instruction;
-import com.iluwatar.bytecode.util.InstructionConverterUtil;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-/**
- * Test for {@Link InstructionConverterUtil}
- */
+/** Test for {@Link InstructionConverterUtil} */
 public class InstructionConverterUtilTest {
   @Test
   public void testEmptyInstruction() {
@@ -43,8 +40,9 @@ public class InstructionConverterUtilTest {
 
   @Test
   public void testInstructions() {
-    var instructions = "LITERAL 35 SET_HEALTH SET_WISDOM SET_AGILITY PLAY_SOUND"
-        + " SPAWN_PARTICLES GET_HEALTH ADD DIVIDE";
+    var instructions =
+        "LITERAL 35 SET_HEALTH SET_WISDOM SET_AGILITY PLAY_SOUND"
+            + " SPAWN_PARTICLES GET_HEALTH ADD DIVIDE";
 
     var bytecode = InstructionConverterUtil.convertToByteCode(instructions);
 
@@ -60,5 +58,4 @@ public class InstructionConverterUtilTest {
     Assertions.assertEquals(Instruction.ADD.getIntValue(), bytecode[8]);
     Assertions.assertEquals(Instruction.DIVIDE.getIntValue(), bytecode[9]);
   }
-
 }

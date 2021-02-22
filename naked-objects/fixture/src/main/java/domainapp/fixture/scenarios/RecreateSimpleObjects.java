@@ -30,24 +30,11 @@ import domainapp.fixture.modules.simple.SimpleObjectsTearDown;
 import java.util.List;
 import org.apache.isis.applib.fixturescripts.FixtureScript;
 
-
-/**
- * Create a bunch of simple Objects.
- */
+/** Create a bunch of simple Objects. */
 public class RecreateSimpleObjects extends FixtureScript {
 
-  public final List<String> names = List.of(
-      "Foo",
-      "Bar",
-      "Baz",
-      "Frodo",
-      "Froyo",
-      "Fizz",
-      "Bip",
-      "Bop",
-      "Bang",
-      "Boo"
-  );
+  public final List<String> names =
+      List.of("Foo", "Bar", "Baz", "Frodo", "Froyo", "Fizz", "Bip", "Bop", "Bang", "Boo");
 
   // region > number (optional input)
   private Integer number;
@@ -61,9 +48,7 @@ public class RecreateSimpleObjects extends FixtureScript {
     withDiscoverability(Discoverability.DISCOVERABLE);
   }
 
-  /**
-   * The number of objects to create, up to 10; optional, defaults to 3.
-   */
+  /** The number of objects to create, up to 10; optional, defaults to 3. */
   public Integer getNumber() {
     return number;
   }
@@ -73,9 +58,7 @@ public class RecreateSimpleObjects extends FixtureScript {
     return this;
   }
 
-  /**
-   * The simpleobjects created by this fixture (output).
-   */
+  /** The simpleobjects created by this fixture (output). */
   public List<SimpleObject> getSimpleObjects() {
     return simpleObjects;
   }
@@ -90,8 +73,8 @@ public class RecreateSimpleObjects extends FixtureScript {
 
     // validate
     if (paramNumber < 0 || paramNumber > names.size()) {
-      throw new IllegalArgumentException(String.format("number must be in range [0,%d)",
-          names.size()));
+      throw new IllegalArgumentException(
+          String.format("number must be in range [0,%d)", names.size()));
     }
 
     //

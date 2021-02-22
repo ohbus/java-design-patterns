@@ -31,11 +31,10 @@ public class DomesticTaxCalculatorTest {
   private DomesticTaxCalculator target;
 
   @Test
-  public void testTaxCalculation(){
+  public void testTaxCalculation() {
     target = new DomesticTaxCalculator();
 
-    var tax=target.calculate(100.0);
-    Assertions.assertEquals(tax,20.0);
+    var tax = target.calculate(100.0);
+    Assertions.assertEquals(tax, 20.0);
   }
-
 }

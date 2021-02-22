@@ -31,9 +31,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.Set;
 import org.junit.jupiter.api.Test;
 
-/**
- * Unit tests for {@link LotteryNumbers}
- */
+/** Unit tests for {@link LotteryNumbers} */
 class LotteryNumbersTest {
 
   @Test

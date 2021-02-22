@@ -29,8 +29,8 @@ import java.util.TimerTask;
 
 /**
  * Implementation of throttler interface. This class resets the counter every second.
- * @author drastogi
  *
+ * @author drastogi
  */
 public class ThrottleTimerImpl implements Throttler {
 
@@ -42,17 +42,18 @@ public class ThrottleTimerImpl implements Throttler {
     this.callsCount = callsCount;
   }
 
-  /**
-   * A timer is initiated with this method. The timer runs every second and resets the
-   * counter.
-   */
+  /** A timer is initiated with this method. The timer runs every second and resets the counter. */
   @Override
   public void start() {
-    new Timer(true).schedule(new TimerTask() {
-      @Override
-      public void run() {
-        callsCount.reset();
-      }
-    }, 0, throttlePeriod);
+    new Timer(true)
+        .schedule(
+            new TimerTask() {
+              @Override
+              public void run() {
+                callsCount.reset();
+              }
+            },
+            0,
+            throttlePeriod);
   }
 }

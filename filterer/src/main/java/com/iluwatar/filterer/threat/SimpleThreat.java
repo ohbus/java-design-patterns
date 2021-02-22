@@ -25,9 +25,7 @@ package com.iluwatar.filterer.threat;
 
 import java.util.Objects;
 
-/**
- * Represents a simple threat.
- */
+/** Represents a simple threat. */
 public class SimpleThreat implements Threat {
 
   private final ThreatType threatType;
@@ -38,8 +36,8 @@ public class SimpleThreat implements Threat {
    * Constructor.
    *
    * @param threatType {@link ThreatType}.
-   * @param id         threat id.
-   * @param name       threat name.
+   * @param id threat id.
+   * @param name threat name.
    */
   public SimpleThreat(final ThreatType threatType, final int id, String name) {
     this.threatType = threatType;
@@ -47,25 +45,19 @@ public class SimpleThreat implements Threat {
     this.name = name;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   public String name() {
     return name;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   public int id() {
     return id;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   public ThreatType type() {
     return threatType;
@@ -80,9 +72,7 @@ public class SimpleThreat implements Threat {
       return false;
     }
     var that = (SimpleThreat) o;
-    return id == that.id
-            && threatType == that.threatType
-            && Objects.equals(name, that.name);
+    return id == that.id && threatType == that.threatType && Objects.equals(name, that.name);
   }
 
   @Override
@@ -93,9 +83,13 @@ public class SimpleThreat implements Threat {
   @Override
   public String toString() {
     return "SimpleThreat{"
-            + "threatType=" + threatType
-            + ", id=" + id
-            + ", name='" + name + '\''
-            + '}';
+        + "threatType="
+        + threatType
+        + ", id="
+        + id
+        + ", name='"
+        + name
+        + '\''
+        + '}';
   }
 }

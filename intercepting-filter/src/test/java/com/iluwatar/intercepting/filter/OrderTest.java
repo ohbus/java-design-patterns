@@ -70,5 +70,4 @@ public class OrderTest {
     order.setOrderItem(EXPECTED_VALUE);
     assertEquals(EXPECTED_VALUE, order.getOrderItem());
   }
-
 }

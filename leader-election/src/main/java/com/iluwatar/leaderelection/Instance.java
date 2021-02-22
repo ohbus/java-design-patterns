@@ -23,9 +23,7 @@
 
 package com.iluwatar.leaderelection;
 
-/**
- * Instance interface.
- */
+/** Instance interface. */
 public interface Instance {
 
   /**
@@ -48,5 +46,4 @@ public interface Instance {
    * @param message Message sent by other instances
    */
   void onMessage(Message message);
-
 }

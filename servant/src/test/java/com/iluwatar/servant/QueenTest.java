@@ -23,7 +23,6 @@
 
 package com.iluwatar.servant;
 
-
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -67,5 +66,4 @@ public class QueenTest {
     queen.changeMood();
     assertTrue(queen.getMood());
   }
-
 }

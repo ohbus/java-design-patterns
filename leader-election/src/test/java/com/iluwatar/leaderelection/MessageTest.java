@@ -23,13 +23,11 @@
 
 package com.iluwatar.leaderelection;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/**
- * Message test case.
- */
+import org.junit.jupiter.api.Test;
+
+/** Message test case. */
 public class MessageTest {
 
   @Test
@@ -44,5 +42,4 @@ public class MessageTest {
     var message = new Message(MessageType.HEARTBEAT, content);
     assertEquals(content, message.getContent());
   }
-
 }

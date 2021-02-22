@@ -23,9 +23,7 @@
 
 package com.iluwatar.factory.method;
 
-/**
- * ElfWeapon.
- */
+/** ElfWeapon. */
 public class ElfWeapon implements Weapon {
 
   private final WeaponType weaponType;

@@ -23,7 +23,6 @@
 
 package com.iluwatar.lazy.loading;
 
-import java.lang.reflect.Field;
 import java.util.function.Supplier;
 
 /**
@@ -34,7 +33,6 @@ import java.util.function.Supplier;
 public class Java8HolderTest extends AbstractHolderTest {
 
   private final Java8Holder holder = new Java8Holder();
-
 
   @Override
   Heavy getInternalHeavyValue() throws Exception {
@@ -59,5 +57,4 @@ public class Java8HolderTest extends AbstractHolderTest {
   Heavy getHeavy() throws Exception {
     return holder.getHeavy();
   }
-
 }

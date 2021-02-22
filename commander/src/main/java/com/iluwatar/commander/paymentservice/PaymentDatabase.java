@@ -24,21 +24,17 @@
 package com.iluwatar.commander.paymentservice;
 
 import com.iluwatar.commander.Database;
-import com.iluwatar.commander.exceptions.DatabaseUnavailableException;
 import com.iluwatar.commander.paymentservice.PaymentService.PaymentRequest;
 import java.util.Hashtable;
 
-/**
- * PaymentDatabase is where the PaymentRequest is added, along with details.
- */
-
+/** PaymentDatabase is where the PaymentRequest is added, along with details. */
 public class PaymentDatabase extends Database<PaymentRequest> {
 
   private final Hashtable<String, PaymentRequest> data;
 
   public PaymentDatabase() {
     this.data = new Hashtable<>();
-    //0-fail, 1-error, 2-success
+    // 0-fail, 1-error, 2-success
   }
 
   @Override
@@ -50,5 +46,4 @@ public class PaymentDatabase extends Database<PaymentRequest> {
   public PaymentRequest get(String requestId) {
     return data.get(requestId);
   }
-
 }

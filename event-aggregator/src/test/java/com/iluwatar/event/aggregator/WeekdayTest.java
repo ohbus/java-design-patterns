@@ -38,11 +38,12 @@ public class WeekdayTest {
 
   @Test
   public void testToString() {
-    Arrays.stream(Weekday.values()).forEach(weekday -> {
-      final String toString = weekday.toString();
-      assertNotNull(toString);
-      assertEquals(weekday.name(), toString.toUpperCase());
-    });
+    Arrays.stream(Weekday.values())
+        .forEach(
+            weekday -> {
+              final String toString = weekday.toString();
+              assertNotNull(toString);
+              assertEquals(weekday.name(), toString.toUpperCase());
+            });
   }
-
 }

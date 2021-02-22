@@ -26,17 +26,13 @@ package com.iluwatar.hexagonal.mongo;
 import java.io.FileInputStream;
 import java.util.Properties;
 
-/**
- * Mongo connection properties loader.
- */
+/** Mongo connection properties loader. */
 public class MongoConnectionPropertiesLoader {
 
   private static final String DEFAULT_HOST = "localhost";
   private static final int DEFAULT_PORT = 27017;
 
-  /**
-   * Try to load connection properties from file. Fall back to default connection properties.
-   */
+  /** Try to load connection properties from file. Fall back to default connection properties. */
   public static void load() {
     var host = DEFAULT_HOST;
     var port = DEFAULT_PORT;

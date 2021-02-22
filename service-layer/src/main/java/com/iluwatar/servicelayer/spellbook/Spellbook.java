@@ -38,9 +38,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-/**
- * Spellbook entity.
- */
+/** Spellbook entity. */
 @Entity
 @Table(name = "SPELLBOOK")
 public class Spellbook extends BaseEntity {

@@ -31,20 +31,18 @@ import com.iluwatar.filterer.threat.SimpleThreatAwareSystem;
 import com.iluwatar.filterer.threat.Threat;
 import com.iluwatar.filterer.threat.ThreatAwareSystem;
 import com.iluwatar.filterer.threat.ThreatType;
-
 import java.util.List;
 import java.util.function.Predicate;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * This demo class represent how {@link com.iluwatar.filterer.domain.Filterer} pattern is used to
  * filter container-like objects to return filtered versions of themselves. The container like
- * objects are systems that are aware of threats that they can be vulnerable to. We would like
- * to have a way to create copy of different system objects but with filtered threats.
- * The thing is to keep it simple if we add new subtype of {@link Threat}
- * (for example {@link ProbableThreat}) - we still need to be able to filter by it's properties.
+ * objects are systems that are aware of threats that they can be vulnerable to. We would like to
+ * have a way to create copy of different system objects but with filtered threats. The thing is to
+ * keep it simple if we add new subtype of {@link Threat} (for example {@link ProbableThreat}) - we
+ * still need to be able to filter by it's properties.
  */
 public class App {
 
@@ -58,8 +56,8 @@ public class App {
   /**
    * Demonstrates how to filter {@link com.iluwatar.filterer.threat.ProbabilisticThreatAwareSystem}
    * based on probability property. The @{@link com.iluwatar.filterer.domain.Filterer#by(Predicate)}
-   * method is able to use {@link com.iluwatar.filterer.threat.ProbableThreat}
-   * as predicate argument.
+   * method is able to use {@link com.iluwatar.filterer.threat.ProbableThreat} as predicate
+   * argument.
    */
   private static void filteringSimpleProbableThreats() {
     LOGGER.info(" ### Filtering ProbabilisticThreatAwareSystem by probability ###");
@@ -70,22 +68,24 @@ public class App {
     List<ProbableThreat> probableThreats = List.of(trojanArcBomb, rootkit);
 
     var probabilisticThreatAwareSystem =
-            new SimpleProbabilisticThreatAwareSystem("Sys-1", probableThreats);
+        new SimpleProbabilisticThreatAwareSystem("Sys-1", probableThreats);
 
-    LOGGER.info("Filtering ProbabilisticThreatAwareSystem. Initial : "
-            + probabilisticThreatAwareSystem);
+    LOGGER.info(
+        "Filtering ProbabilisticThreatAwareSystem. Initial : " + probabilisticThreatAwareSystem);
 
-    //Filtering using filterer
-    var filteredThreatAwareSystem = probabilisticThreatAwareSystem.filtered()
+    // Filtering using filterer
+    var filteredThreatAwareSystem =
+        probabilisticThreatAwareSystem
+            .filtered()
             .by(probableThreat -> Double.compare(probableThreat.probability(), 0.99) == 0);
 
     LOGGER.info("Filtered by probability = 0.99 : " + filteredThreatAwareSystem);
   }
 
   /**
-   * Demonstrates how to filter {@link ThreatAwareSystem} based on startingOffset property
-   * of {@link SimpleThreat}. The @{@link com.iluwatar.filterer.domain.Filterer#by(Predicate)}
-   * method is able to use {@link Threat} as predicate argument.
+   * Demonstrates how to filter {@link ThreatAwareSystem} based on startingOffset property of {@link
+   * SimpleThreat}. The @{@link com.iluwatar.filterer.domain.Filterer#by(Predicate)} method is able
+   * to use {@link Threat} as predicate argument.
    */
   private static void filteringSimpleThreats() {
     LOGGER.info("### Filtering ThreatAwareSystem by ThreatType ###");
@@ -98,11 +98,10 @@ public class App {
 
     LOGGER.info("Filtering ThreatAwareSystem. Initial : " + threatAwareSystem);
 
-    //Filtering using Filterer
-    var rootkitThreatAwareSystem = threatAwareSystem.filtered()
-            .by(threat -> threat.type() == ThreatType.ROOTKIT);
+    // Filtering using Filterer
+    var rootkitThreatAwareSystem =
+        threatAwareSystem.filtered().by(threat -> threat.type() == ThreatType.ROOTKIT);
 
     LOGGER.info("Filtered by threatType = ROOTKIT : " + rootkitThreatAwareSystem);
   }
-
 }
