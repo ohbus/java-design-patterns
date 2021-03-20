@@ -491,6 +491,7 @@
                 </plugin>
 
                 <!-- Check style -->
+                <!--
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
@@ -523,6 +524,7 @@
                         </checkstyleRules>
                     </configuration>
                 </plugin>
+                -->
 
                 <plugin>
                     <groupId>org.sonarsource.scanner.maven</groupId>
