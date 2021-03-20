@@ -481,10 +481,10 @@
                     <configuration>
                         <java>
                             <eclipse>
-                                <file>${project.basedir}/.spotless/eclipse-formatter-settings.xml</file>
+                                <file>${session.executionRootDirectory}/.spotless/eclipse-formatter-settings.xml</file>
                             </eclipse>
                             <importOrder>
-                                <file>${project.basedir}/.spotless/intelij-idea.importorder</file>
+                                <file>${session.executionRootDirectory}/.spotless/intelij-idea.importorder</file>
                             </importOrder>
                         </java>
                     </configuration>
